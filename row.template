@@ -1,0 +1,23 @@
+set title 'DATASET / bitmapscan'
+
+plot "data/MACHINE/DATASET-bitmapscan-0-io_uring.data"  using X:Y with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/MACHINE/DATASET-bitmapscan-0-sync.data"      using X:Y with points pt 7 ps 0.75 title "sync", \
+     "data/MACHINE/DATASET-bitmapscan-0-worker.data"    using X:Y with points pt 7 ps 0.75 title "worker"
+
+set title 'DATASET / bitmapscan (prefetch)'
+
+plot "data/MACHINE/DATASET-bitmapscan-16-io_uring.data" using X:Y with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/MACHINE/DATASET-bitmapscan-16-sync.data"     using X:Y with points pt 7 ps 0.75 title "sync", \
+     "data/MACHINE/DATASET-bitmapscan-16-worker.data"   using X:Y with points pt 7 ps 0.75 title "worker"
+
+set title 'DATASET / indexscan'
+
+plot  "data/MACHINE/DATASET-indexscan-0-io_uring.data"   using X:Y with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/MACHINE/DATASET-indexscan-0-sync.data"       using X:Y with points pt 7 ps 0.75 title "sync", \
+     "data/MACHINE/DATASET-indexscan-0-worker.data"     using X:Y with points pt 7 ps 0.75 title "worker"
+
+set title 'DATASET / seqscan'
+
+plot "data/MACHINE/DATASET-seqscan-0-io_uring.data"     using X:Y with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/MACHINE/DATASET-seqscan-0-sync.data"         using X:Y with points pt 7 ps 0.75 title "sync", \
+     "data/MACHINE/DATASET-seqscan-0-worker.data"       using X:Y with points pt 7 ps 0.75 title "worker"
