@@ -1,17 +1,18 @@
 set terminal pdfcairo size 16,40 enhanced font 'Verdana,12'
-set output 'xeon-pages-cold.pdf'
-#set output 'xeon-pages-cold-scaled.pdf'
+set output 'xeon-pages-cold-log.pdf'
+#set output 'xeon-pages-cold-log.pdf'
 
 
 set log x
-set yrange [0:]
+set log y
+set yrange [0.01:]
 set key top left
 
 set xlabel 'selectivity'
 
 set multiplot layout 11,4 rowsfirst
 set xrange[0.1:100]
-set yrange[0:56571.393]
+set yrange[0.01:56571.393]
 set title 'uniform / bitmapscan' font 'Verdana Bold,12'
 
 set ylabel 'duration'
@@ -40,7 +41,7 @@ plot "data/xeon/uniform-seqscan-0-io_uring.data"     using 2:3 with points pt 7 
      "data/xeon/uniform-seqscan-0-sync.data"         using 2:3 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/uniform-seqscan-0-worker.data"       using 2:3 with points pt 7 ps 0.75 title "worker"
 set xrange[0.1:100]
-set yrange[0:50767.402]
+set yrange[0.01:50767.402]
 set title 'linear\_500 / bitmapscan' font 'Verdana Bold,12'
 
 set ylabel 'duration'
@@ -69,7 +70,7 @@ plot "data/xeon/linear\_500-seqscan-0-io_uring.data"     using 2:3 with points p
      "data/xeon/linear\_500-seqscan-0-sync.data"         using 2:3 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/linear\_500-seqscan-0-worker.data"       using 2:3 with points pt 7 ps 0.75 title "worker"
 set xrange[0.1:100]
-set yrange[0:51117.617]
+set yrange[0.01:51117.617]
 set title 'linear\_100 / bitmapscan' font 'Verdana Bold,12'
 
 set ylabel 'duration'
@@ -98,7 +99,7 @@ plot "data/xeon/linear\_100-seqscan-0-io_uring.data"     using 2:3 with points p
      "data/xeon/linear\_100-seqscan-0-sync.data"         using 2:3 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/linear\_100-seqscan-0-worker.data"       using 2:3 with points pt 7 ps 0.75 title "worker"
 set xrange[0.1:100]
-set yrange[0:49768.834]
+set yrange[0.01:49768.834]
 set title 'linear\_10 / bitmapscan' font 'Verdana Bold,12'
 
 set ylabel 'duration'
@@ -127,7 +128,7 @@ plot "data/xeon/linear\_10-seqscan-0-io_uring.data"     using 2:3 with points pt
      "data/xeon/linear\_10-seqscan-0-sync.data"         using 2:3 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/linear\_10-seqscan-0-worker.data"       using 2:3 with points pt 7 ps 0.75 title "worker"
 set xrange[0.1:100]
-set yrange[0:46836.601]
+set yrange[0.01:46836.601]
 set title 'linear\_1 / bitmapscan' font 'Verdana Bold,12'
 
 set ylabel 'duration'
@@ -156,7 +157,7 @@ plot "data/xeon/linear\_1-seqscan-0-io_uring.data"     using 2:3 with points pt 
      "data/xeon/linear\_1-seqscan-0-sync.data"         using 2:3 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/linear\_1-seqscan-0-worker.data"       using 2:3 with points pt 7 ps 0.75 title "worker"
 set xrange[0.1:100]
-set yrange[0:7848.477]
+set yrange[0.01:7848.477]
 set title 'linear / bitmapscan' font 'Verdana Bold,12'
 
 set ylabel 'duration'
@@ -185,7 +186,7 @@ plot "data/xeon/linear-seqscan-0-io_uring.data"     using 2:3 with points pt 7 p
      "data/xeon/linear-seqscan-0-sync.data"         using 2:3 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/linear-seqscan-0-worker.data"       using 2:3 with points pt 7 ps 0.75 title "worker"
 set xrange[0.1:100]
-set yrange[0:50046.62]
+set yrange[0.01:50046.62]
 set title 'cyclic\_500 / bitmapscan' font 'Verdana Bold,12'
 
 set ylabel 'duration'
@@ -214,7 +215,7 @@ plot "data/xeon/cyclic\_500-seqscan-0-io_uring.data"     using 2:3 with points p
      "data/xeon/cyclic\_500-seqscan-0-sync.data"         using 2:3 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/cyclic\_500-seqscan-0-worker.data"       using 2:3 with points pt 7 ps 0.75 title "worker"
 set xrange[0.1:100]
-set yrange[0:51187.956]
+set yrange[0.01:51187.956]
 set title 'cyclic\_100 / bitmapscan' font 'Verdana Bold,12'
 
 set ylabel 'duration'
@@ -243,7 +244,7 @@ plot "data/xeon/cyclic\_100-seqscan-0-io_uring.data"     using 2:3 with points p
      "data/xeon/cyclic\_100-seqscan-0-sync.data"         using 2:3 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/cyclic\_100-seqscan-0-worker.data"       using 2:3 with points pt 7 ps 0.75 title "worker"
 set xrange[0.1:100]
-set yrange[0:37131.871]
+set yrange[0.01:37131.871]
 set title 'cyclic\_10 / bitmapscan' font 'Verdana Bold,12'
 
 set ylabel 'duration'
@@ -272,7 +273,7 @@ plot "data/xeon/cyclic\_10-seqscan-0-io_uring.data"     using 2:3 with points pt
      "data/xeon/cyclic\_10-seqscan-0-sync.data"         using 2:3 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/cyclic\_10-seqscan-0-worker.data"       using 2:3 with points pt 7 ps 0.75 title "worker"
 set xrange[0.1:100]
-set yrange[0:11307.338]
+set yrange[0.01:11307.338]
 set title 'cyclic\_1 / bitmapscan' font 'Verdana Bold,12'
 
 set ylabel 'duration'
@@ -301,7 +302,7 @@ plot "data/xeon/cyclic\_1-seqscan-0-io_uring.data"     using 2:3 with points pt 
      "data/xeon/cyclic\_1-seqscan-0-sync.data"         using 2:3 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/cyclic\_1-seqscan-0-worker.data"       using 2:3 with points pt 7 ps 0.75 title "worker"
 set xrange[0.1:100]
-set yrange[0:10931.056]
+set yrange[0.01:10931.056]
 set title 'cyclic / bitmapscan' font 'Verdana Bold,12'
 
 set ylabel 'duration'

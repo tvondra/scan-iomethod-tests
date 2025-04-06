@@ -1,17 +1,18 @@
 set terminal pdfcairo size 16,40 enhanced font 'Verdana,12'
-set output 'ryzen_sata-pages-cold.pdf'
-#set output 'ryzen_sata-pages-cold-scaled.pdf'
+set output 'ryzen_sata-pages-cold-log.pdf'
+#set output 'ryzen_sata-pages-cold-log.pdf'
 
 
 set log x
-set yrange [0:]
+set log y
+set yrange [0.01:]
 set key top left
 
 set xlabel 'selectivity'
 
 set multiplot layout 11,4 rowsfirst
 set xrange[0.1:100]
-set yrange[0:45879.225]
+set yrange[0.01:45879.225]
 set title 'uniform / bitmapscan' font 'Verdana Bold,12'
 
 set ylabel 'duration'
@@ -40,7 +41,7 @@ plot "data/ryzen_sata/uniform-seqscan-0-io_uring.data"     using 2:3 with points
      "data/ryzen_sata/uniform-seqscan-0-sync.data"         using 2:3 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_sata/uniform-seqscan-0-worker.data"       using 2:3 with points pt 7 ps 0.75 title "worker"
 set xrange[0.1:100]
-set yrange[0:42159.173]
+set yrange[0.01:42159.173]
 set title 'linear\_500 / bitmapscan' font 'Verdana Bold,12'
 
 set ylabel 'duration'
@@ -69,7 +70,7 @@ plot "data/ryzen_sata/linear\_500-seqscan-0-io_uring.data"     using 2:3 with po
      "data/ryzen_sata/linear\_500-seqscan-0-sync.data"         using 2:3 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_sata/linear\_500-seqscan-0-worker.data"       using 2:3 with points pt 7 ps 0.75 title "worker"
 set xrange[0.1:100]
-set yrange[0:42921.653]
+set yrange[0.01:42921.653]
 set title 'linear\_100 / bitmapscan' font 'Verdana Bold,12'
 
 set ylabel 'duration'
@@ -98,7 +99,7 @@ plot "data/ryzen_sata/linear\_100-seqscan-0-io_uring.data"     using 2:3 with po
      "data/ryzen_sata/linear\_100-seqscan-0-sync.data"         using 2:3 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_sata/linear\_100-seqscan-0-worker.data"       using 2:3 with points pt 7 ps 0.75 title "worker"
 set xrange[0.1:100]
-set yrange[0:33870.637]
+set yrange[0.01:33870.637]
 set title 'linear\_10 / bitmapscan' font 'Verdana Bold,12'
 
 set ylabel 'duration'
@@ -127,7 +128,7 @@ plot "data/ryzen_sata/linear\_10-seqscan-0-io_uring.data"     using 2:3 with poi
      "data/ryzen_sata/linear\_10-seqscan-0-sync.data"         using 2:3 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_sata/linear\_10-seqscan-0-worker.data"       using 2:3 with points pt 7 ps 0.75 title "worker"
 set xrange[0.1:100]
-set yrange[0:10212.618]
+set yrange[0.01:10212.618]
 set title 'linear\_1 / bitmapscan' font 'Verdana Bold,12'
 
 set ylabel 'duration'
@@ -156,7 +157,7 @@ plot "data/ryzen_sata/linear\_1-seqscan-0-io_uring.data"     using 2:3 with poin
      "data/ryzen_sata/linear\_1-seqscan-0-sync.data"         using 2:3 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_sata/linear\_1-seqscan-0-worker.data"       using 2:3 with points pt 7 ps 0.75 title "worker"
 set xrange[0.1:100]
-set yrange[0:2865.155]
+set yrange[0.01:2865.155]
 set title 'linear / bitmapscan' font 'Verdana Bold,12'
 
 set ylabel 'duration'
@@ -185,7 +186,7 @@ plot "data/ryzen_sata/linear-seqscan-0-io_uring.data"     using 2:3 with points 
      "data/ryzen_sata/linear-seqscan-0-sync.data"         using 2:3 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_sata/linear-seqscan-0-worker.data"       using 2:3 with points pt 7 ps 0.75 title "worker"
 set xrange[0.1:100]
-set yrange[0:40509.277]
+set yrange[0.01:40509.277]
 set title 'cyclic\_500 / bitmapscan' font 'Verdana Bold,12'
 
 set ylabel 'duration'
@@ -214,7 +215,7 @@ plot "data/ryzen_sata/cyclic\_500-seqscan-0-io_uring.data"     using 2:3 with po
      "data/ryzen_sata/cyclic\_500-seqscan-0-sync.data"         using 2:3 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_sata/cyclic\_500-seqscan-0-worker.data"       using 2:3 with points pt 7 ps 0.75 title "worker"
 set xrange[0.1:100]
-set yrange[0:23864.167]
+set yrange[0.01:23864.167]
 set title 'cyclic\_100 / bitmapscan' font 'Verdana Bold,12'
 
 set ylabel 'duration'
@@ -243,7 +244,7 @@ plot "data/ryzen_sata/cyclic\_100-seqscan-0-io_uring.data"     using 2:3 with po
      "data/ryzen_sata/cyclic\_100-seqscan-0-sync.data"         using 2:3 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_sata/cyclic\_100-seqscan-0-worker.data"       using 2:3 with points pt 7 ps 0.75 title "worker"
 set xrange[0.1:100]
-set yrange[0:6595.366]
+set yrange[0.01:6595.366]
 set title 'cyclic\_10 / bitmapscan' font 'Verdana Bold,12'
 
 set ylabel 'duration'
@@ -272,7 +273,7 @@ plot "data/ryzen_sata/cyclic\_10-seqscan-0-io_uring.data"     using 2:3 with poi
      "data/ryzen_sata/cyclic\_10-seqscan-0-sync.data"         using 2:3 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_sata/cyclic\_10-seqscan-0-worker.data"       using 2:3 with points pt 7 ps 0.75 title "worker"
 set xrange[0.1:100]
-set yrange[0:4012.38]
+set yrange[0.01:4012.38]
 set title 'cyclic\_1 / bitmapscan' font 'Verdana Bold,12'
 
 set ylabel 'duration'
@@ -301,7 +302,7 @@ plot "data/ryzen_sata/cyclic\_1-seqscan-0-io_uring.data"     using 2:3 with poin
      "data/ryzen_sata/cyclic\_1-seqscan-0-sync.data"         using 2:3 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_sata/cyclic\_1-seqscan-0-worker.data"       using 2:3 with points pt 7 ps 0.75 title "worker"
 set xrange[0.1:100]
-set yrange[0:3891.559]
+set yrange[0.01:3891.559]
 set title 'cyclic / bitmapscan' font 'Verdana Bold,12'
 
 set ylabel 'duration'

@@ -86,6 +86,7 @@ EOF
 			#sed "s/MACHINE/$m/" plot.template | sed "s/SEL/$sel/" | sed "s/CACHE/$cache/" | sed "s/SCALE/raw/" > $m-$sel-$cache-raw.plot
 			#sed "s/MACHINE/$m/" plot.template | sed "s/SEL/$sel/" | sed "s/CACHE/$cache/" | sed "s/SCALE/scaled/"  > $m-$sel-$cache-scaled.plot
 			sed "s/MACHINE/$m/" plot.template | sed "s/SEL/$sel/" | sed "s/CACHE/$cache/" | sed "s/SCALE/scaled/"  > $m-$sel-$cache.plot
+			sed "s/MACHINE/$m/" plot-log.template | sed "s/SEL/$sel/" | sed "s/CACHE/$cache/" | sed "s/SCALE/scaled/"  > $m-$sel-$cache-log.plot
 
 			while IFS= read -r line; do
 
@@ -94,21 +95,25 @@ EOF
 				#echo "set xrange[$M:100]" >> $m-$sel-$cache-raw.plot
 				#echo "set xrange[$M:100]" >> $m-$sel-$cache-scaled.plot
 				echo "set xrange[$M:100]" >> $m-$sel-$cache.plot
+				echo "set xrange[$M:100]" >> $m-$sel-$cache-log.plot
 
 				#echo "set yrange[0:$max]" >> $m-$sel-$cache-scaled.plot
 				echo "set yrange[0:$max]" >> $m-$sel-$cache.plot
+				echo "set yrange[0.01:$max]" >> $m-$sel-$cache-log.plot
 
 				line=$(echo $line | sed 's/_/\\\\_/')
 
 				#sed "s/MACHINE/$m/" row.template | sed "s/X/$X/" | sed "s/Y/$Y/" | sed "s/DATASET/$line/" >> $m-$sel-$cache-raw.plot
 				#sed "s/MACHINE/$m/" row.template | sed "s/X/$X/" | sed "s/Y/$Y/" | sed "s/DATASET/$line/" >> $m-$sel-$cache-scaled.plot
 				sed "s/MACHINE/$m/" row.template | sed "s/X/$X/" | sed "s/Y/$Y/" | sed "s/DATASET/$line/" >> $m-$sel-$cache.plot
+				sed "s/MACHINE/$m/" row.template | sed "s/X/$X/" | sed "s/Y/$Y/" | sed "s/DATASET/$line/" >> $m-$sel-$cache-log.plot
 
 			done < datasets.data
 
 			#gnuplot $m-$sel-$cache-raw.plot
 			#gnuplot $m-$sel-$cache-scaled.plot
 			gnuplot $m-$sel-$cache.plot
+			gnuplot $m-$sel-$cache-log.plot
 
 		done
 

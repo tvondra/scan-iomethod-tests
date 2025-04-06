@@ -1,8 +1,12 @@
-set title 'DATASET / bitmapscan'
+set title 'DATASET / bitmapscan' font 'Verdana Bold,12'
+
+set ylabel 'duration'
 
 plot "data/MACHINE/DATASET-bitmapscan-0-io_uring.data"  using X:Y with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/MACHINE/DATASET-bitmapscan-0-sync.data"      using X:Y with points pt 7 ps 0.75 title "sync", \
      "data/MACHINE/DATASET-bitmapscan-0-worker.data"    using X:Y with points pt 7 ps 0.75 title "worker"
+
+unset ylabel
 
 set title 'DATASET / bitmapscan (prefetch)'
 
