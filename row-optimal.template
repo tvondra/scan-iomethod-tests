@@ -1,0 +1,9 @@
+set ylabel 'duration'
+
+plot "data/MACHINE/DATASET-indexscan-PREFETCH-BUFFERS-no.data"    using X:Y with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/MACHINE/DATASET-bitmapscan-PREFETCH-BUFFERS-no.data"   using X:Y with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
+     "data/MACHINE/DATASET-seqscan-PREFETCH-BUFFERS-no.data"      using X:Y with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
+     "data/MACHINE/DATASET-indexscan-PREFETCH-BUFFERS-yes.data"   using X:Y with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/MACHINE/DATASET-bitmapscan-PREFETCH-BUFFERS-yes.data"  using X:Y with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/MACHINE/DATASET-seqscan-PREFETCH-BUFFERS-yes.data"     using X:Y with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
+

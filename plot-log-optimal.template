@@ -1,0 +1,11 @@
+set terminal pdfcairo size 16,40 enhanced font 'Verdana,12'
+set output 'MACHINE-SEL-CACHE-BUFFERS-optimal-log.pdf'
+
+set log x
+set log y
+set yrange [0.01:]
+set key top left
+
+set xlabel 'selectivity'
+
+set multiplot layout 11,3 rowsfirst
