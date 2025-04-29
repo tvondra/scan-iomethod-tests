@@ -10,398 +10,497 @@ set xlabel 'selectivity'
 
 set multiplot layout 11,3 rowsfirst
 set xrange[0.1:100]
-set yrange[0.01:7486.882]
+set yrange[0.01:9019.927]
 set title 'uniform / eic=0' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/ryzen_nvme/uniform-indexscan-0-4GB-no.data"    using 2:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/ryzen_nvme/uniform-bitmapscan-0-4GB-no.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/ryzen_nvme/uniform-seqscan-0-4GB-no.data"      using 2:4 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/ryzen_nvme/uniform-indexscan-0-4GB-yes.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/ryzen_nvme/uniform-bitmapscan-0-4GB-yes.data"  using 2:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/ryzen_nvme/uniform-seqscan-0-4GB-yes.data"     using 2:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/ryzen_nvme/uniform-indexscan-0-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/ryzen_nvme/uniform-indexscan-prefetch-0-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/ryzen_nvme/uniform-bitmapscan-0-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/ryzen_nvme/uniform-seqscan-0-4GB-no.data"      using 1:4 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/ryzen_nvme/uniform-smoothscan-0-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/uniform-smoothscan-0-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/uniform-indexscan-0-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/ryzen_nvme/uniform-indexscan-prefetch-0-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/ryzen_nvme/uniform-bitmapscan-0-4GB-yes.data"  using 1:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/ryzen_nvme/uniform-seqscan-0-4GB-yes.data"     using 1:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:7486.882]
+set yrange[0.01:9019.927]
 set title 'uniform / eic=16' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/ryzen_nvme/uniform-indexscan-16-4GB-no.data"    using 2:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/ryzen_nvme/uniform-bitmapscan-16-4GB-no.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/ryzen_nvme/uniform-seqscan-16-4GB-no.data"      using 2:4 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/ryzen_nvme/uniform-indexscan-16-4GB-yes.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/ryzen_nvme/uniform-bitmapscan-16-4GB-yes.data"  using 2:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/ryzen_nvme/uniform-seqscan-16-4GB-yes.data"     using 2:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/ryzen_nvme/uniform-indexscan-16-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/ryzen_nvme/uniform-indexscan-prefetch-16-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/ryzen_nvme/uniform-bitmapscan-16-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/ryzen_nvme/uniform-seqscan-16-4GB-no.data"      using 1:4 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/ryzen_nvme/uniform-smoothscan-16-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/uniform-smoothscan-16-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/uniform-indexscan-16-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/ryzen_nvme/uniform-indexscan-prefetch-16-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/ryzen_nvme/uniform-bitmapscan-16-4GB-yes.data"  using 1:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/ryzen_nvme/uniform-seqscan-16-4GB-yes.data"     using 1:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:7486.882]
+set yrange[0.01:9019.927]
 set title 'uniform / eic=128' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/ryzen_nvme/uniform-indexscan-128-4GB-no.data"    using 2:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/ryzen_nvme/uniform-bitmapscan-128-4GB-no.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/ryzen_nvme/uniform-seqscan-128-4GB-no.data"      using 2:4 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/ryzen_nvme/uniform-indexscan-128-4GB-yes.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/ryzen_nvme/uniform-bitmapscan-128-4GB-yes.data"  using 2:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/ryzen_nvme/uniform-seqscan-128-4GB-yes.data"     using 2:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/ryzen_nvme/uniform-indexscan-128-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/ryzen_nvme/uniform-indexscan-prefetch-128-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/ryzen_nvme/uniform-bitmapscan-128-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/ryzen_nvme/uniform-seqscan-128-4GB-no.data"      using 1:4 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/ryzen_nvme/uniform-smoothscan-128-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/uniform-smoothscan-128-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/uniform-indexscan-128-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/ryzen_nvme/uniform-indexscan-prefetch-128-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/ryzen_nvme/uniform-bitmapscan-128-4GB-yes.data"  using 1:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/ryzen_nvme/uniform-seqscan-128-4GB-yes.data"     using 1:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:4313.418]
+set yrange[0.01:5349.277]
 set title 'linear\_500 / eic=0' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/ryzen_nvme/linear_500-indexscan-0-4GB-no.data"    using 2:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/ryzen_nvme/linear_500-bitmapscan-0-4GB-no.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/ryzen_nvme/linear_500-seqscan-0-4GB-no.data"      using 2:4 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/ryzen_nvme/linear_500-indexscan-0-4GB-yes.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/ryzen_nvme/linear_500-bitmapscan-0-4GB-yes.data"  using 2:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/ryzen_nvme/linear_500-seqscan-0-4GB-yes.data"     using 2:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/ryzen_nvme/linear_500-indexscan-0-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/ryzen_nvme/linear_500-indexscan-prefetch-0-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/ryzen_nvme/linear_500-bitmapscan-0-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/ryzen_nvme/linear_500-seqscan-0-4GB-no.data"      using 1:4 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/ryzen_nvme/linear_500-smoothscan-0-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/linear_500-smoothscan-0-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/linear_500-indexscan-0-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/ryzen_nvme/linear_500-indexscan-prefetch-0-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/ryzen_nvme/linear_500-bitmapscan-0-4GB-yes.data"  using 1:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/ryzen_nvme/linear_500-seqscan-0-4GB-yes.data"     using 1:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:4313.418]
+set yrange[0.01:5349.277]
 set title 'linear\_500 / eic=16' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/ryzen_nvme/linear_500-indexscan-16-4GB-no.data"    using 2:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/ryzen_nvme/linear_500-bitmapscan-16-4GB-no.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/ryzen_nvme/linear_500-seqscan-16-4GB-no.data"      using 2:4 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/ryzen_nvme/linear_500-indexscan-16-4GB-yes.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/ryzen_nvme/linear_500-bitmapscan-16-4GB-yes.data"  using 2:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/ryzen_nvme/linear_500-seqscan-16-4GB-yes.data"     using 2:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/ryzen_nvme/linear_500-indexscan-16-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/ryzen_nvme/linear_500-indexscan-prefetch-16-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/ryzen_nvme/linear_500-bitmapscan-16-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/ryzen_nvme/linear_500-seqscan-16-4GB-no.data"      using 1:4 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/ryzen_nvme/linear_500-smoothscan-16-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/linear_500-smoothscan-16-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/linear_500-indexscan-16-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/ryzen_nvme/linear_500-indexscan-prefetch-16-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/ryzen_nvme/linear_500-bitmapscan-16-4GB-yes.data"  using 1:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/ryzen_nvme/linear_500-seqscan-16-4GB-yes.data"     using 1:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:4313.418]
+set yrange[0.01:5349.277]
 set title 'linear\_500 / eic=128' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/ryzen_nvme/linear_500-indexscan-128-4GB-no.data"    using 2:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/ryzen_nvme/linear_500-bitmapscan-128-4GB-no.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/ryzen_nvme/linear_500-seqscan-128-4GB-no.data"      using 2:4 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/ryzen_nvme/linear_500-indexscan-128-4GB-yes.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/ryzen_nvme/linear_500-bitmapscan-128-4GB-yes.data"  using 2:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/ryzen_nvme/linear_500-seqscan-128-4GB-yes.data"     using 2:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/ryzen_nvme/linear_500-indexscan-128-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/ryzen_nvme/linear_500-indexscan-prefetch-128-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/ryzen_nvme/linear_500-bitmapscan-128-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/ryzen_nvme/linear_500-seqscan-128-4GB-no.data"      using 1:4 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/ryzen_nvme/linear_500-smoothscan-128-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/linear_500-smoothscan-128-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/linear_500-indexscan-128-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/ryzen_nvme/linear_500-indexscan-prefetch-128-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/ryzen_nvme/linear_500-bitmapscan-128-4GB-yes.data"  using 1:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/ryzen_nvme/linear_500-seqscan-128-4GB-yes.data"     using 1:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:5731.153]
+set yrange[0.01:7576.016]
 set title 'linear\_100 / eic=0' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/ryzen_nvme/linear_100-indexscan-0-4GB-no.data"    using 2:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/ryzen_nvme/linear_100-bitmapscan-0-4GB-no.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/ryzen_nvme/linear_100-seqscan-0-4GB-no.data"      using 2:4 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/ryzen_nvme/linear_100-indexscan-0-4GB-yes.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/ryzen_nvme/linear_100-bitmapscan-0-4GB-yes.data"  using 2:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/ryzen_nvme/linear_100-seqscan-0-4GB-yes.data"     using 2:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/ryzen_nvme/linear_100-indexscan-0-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/ryzen_nvme/linear_100-indexscan-prefetch-0-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/ryzen_nvme/linear_100-bitmapscan-0-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/ryzen_nvme/linear_100-seqscan-0-4GB-no.data"      using 1:4 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/ryzen_nvme/linear_100-smoothscan-0-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/linear_100-smoothscan-0-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/linear_100-indexscan-0-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/ryzen_nvme/linear_100-indexscan-prefetch-0-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/ryzen_nvme/linear_100-bitmapscan-0-4GB-yes.data"  using 1:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/ryzen_nvme/linear_100-seqscan-0-4GB-yes.data"     using 1:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:5731.153]
+set yrange[0.01:7576.016]
 set title 'linear\_100 / eic=16' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/ryzen_nvme/linear_100-indexscan-16-4GB-no.data"    using 2:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/ryzen_nvme/linear_100-bitmapscan-16-4GB-no.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/ryzen_nvme/linear_100-seqscan-16-4GB-no.data"      using 2:4 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/ryzen_nvme/linear_100-indexscan-16-4GB-yes.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/ryzen_nvme/linear_100-bitmapscan-16-4GB-yes.data"  using 2:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/ryzen_nvme/linear_100-seqscan-16-4GB-yes.data"     using 2:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/ryzen_nvme/linear_100-indexscan-16-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/ryzen_nvme/linear_100-indexscan-prefetch-16-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/ryzen_nvme/linear_100-bitmapscan-16-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/ryzen_nvme/linear_100-seqscan-16-4GB-no.data"      using 1:4 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/ryzen_nvme/linear_100-smoothscan-16-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/linear_100-smoothscan-16-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/linear_100-indexscan-16-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/ryzen_nvme/linear_100-indexscan-prefetch-16-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/ryzen_nvme/linear_100-bitmapscan-16-4GB-yes.data"  using 1:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/ryzen_nvme/linear_100-seqscan-16-4GB-yes.data"     using 1:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:5731.153]
+set yrange[0.01:7576.016]
 set title 'linear\_100 / eic=128' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/ryzen_nvme/linear_100-indexscan-128-4GB-no.data"    using 2:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/ryzen_nvme/linear_100-bitmapscan-128-4GB-no.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/ryzen_nvme/linear_100-seqscan-128-4GB-no.data"      using 2:4 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/ryzen_nvme/linear_100-indexscan-128-4GB-yes.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/ryzen_nvme/linear_100-bitmapscan-128-4GB-yes.data"  using 2:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/ryzen_nvme/linear_100-seqscan-128-4GB-yes.data"     using 2:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/ryzen_nvme/linear_100-indexscan-128-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/ryzen_nvme/linear_100-indexscan-prefetch-128-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/ryzen_nvme/linear_100-bitmapscan-128-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/ryzen_nvme/linear_100-seqscan-128-4GB-no.data"      using 1:4 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/ryzen_nvme/linear_100-smoothscan-128-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/linear_100-smoothscan-128-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/linear_100-indexscan-128-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/ryzen_nvme/linear_100-indexscan-prefetch-128-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/ryzen_nvme/linear_100-bitmapscan-128-4GB-yes.data"  using 1:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/ryzen_nvme/linear_100-seqscan-128-4GB-yes.data"     using 1:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:3964.515]
+set yrange[0.01:7527.048]
 set title 'linear\_10 / eic=0' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/ryzen_nvme/linear_10-indexscan-0-4GB-no.data"    using 2:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/ryzen_nvme/linear_10-bitmapscan-0-4GB-no.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/ryzen_nvme/linear_10-seqscan-0-4GB-no.data"      using 2:4 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/ryzen_nvme/linear_10-indexscan-0-4GB-yes.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/ryzen_nvme/linear_10-bitmapscan-0-4GB-yes.data"  using 2:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/ryzen_nvme/linear_10-seqscan-0-4GB-yes.data"     using 2:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/ryzen_nvme/linear_10-indexscan-0-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/ryzen_nvme/linear_10-indexscan-prefetch-0-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/ryzen_nvme/linear_10-bitmapscan-0-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/ryzen_nvme/linear_10-seqscan-0-4GB-no.data"      using 1:4 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/ryzen_nvme/linear_10-smoothscan-0-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/linear_10-smoothscan-0-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/linear_10-indexscan-0-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/ryzen_nvme/linear_10-indexscan-prefetch-0-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/ryzen_nvme/linear_10-bitmapscan-0-4GB-yes.data"  using 1:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/ryzen_nvme/linear_10-seqscan-0-4GB-yes.data"     using 1:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:3964.515]
+set yrange[0.01:7527.048]
 set title 'linear\_10 / eic=16' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/ryzen_nvme/linear_10-indexscan-16-4GB-no.data"    using 2:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/ryzen_nvme/linear_10-bitmapscan-16-4GB-no.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/ryzen_nvme/linear_10-seqscan-16-4GB-no.data"      using 2:4 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/ryzen_nvme/linear_10-indexscan-16-4GB-yes.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/ryzen_nvme/linear_10-bitmapscan-16-4GB-yes.data"  using 2:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/ryzen_nvme/linear_10-seqscan-16-4GB-yes.data"     using 2:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/ryzen_nvme/linear_10-indexscan-16-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/ryzen_nvme/linear_10-indexscan-prefetch-16-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/ryzen_nvme/linear_10-bitmapscan-16-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/ryzen_nvme/linear_10-seqscan-16-4GB-no.data"      using 1:4 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/ryzen_nvme/linear_10-smoothscan-16-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/linear_10-smoothscan-16-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/linear_10-indexscan-16-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/ryzen_nvme/linear_10-indexscan-prefetch-16-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/ryzen_nvme/linear_10-bitmapscan-16-4GB-yes.data"  using 1:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/ryzen_nvme/linear_10-seqscan-16-4GB-yes.data"     using 1:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:3964.515]
+set yrange[0.01:7527.048]
 set title 'linear\_10 / eic=128' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/ryzen_nvme/linear_10-indexscan-128-4GB-no.data"    using 2:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/ryzen_nvme/linear_10-bitmapscan-128-4GB-no.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/ryzen_nvme/linear_10-seqscan-128-4GB-no.data"      using 2:4 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/ryzen_nvme/linear_10-indexscan-128-4GB-yes.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/ryzen_nvme/linear_10-bitmapscan-128-4GB-yes.data"  using 2:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/ryzen_nvme/linear_10-seqscan-128-4GB-yes.data"     using 2:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/ryzen_nvme/linear_10-indexscan-128-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/ryzen_nvme/linear_10-indexscan-prefetch-128-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/ryzen_nvme/linear_10-bitmapscan-128-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/ryzen_nvme/linear_10-seqscan-128-4GB-no.data"      using 1:4 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/ryzen_nvme/linear_10-smoothscan-128-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/linear_10-smoothscan-128-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/linear_10-indexscan-128-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/ryzen_nvme/linear_10-indexscan-prefetch-128-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/ryzen_nvme/linear_10-bitmapscan-128-4GB-yes.data"  using 1:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/ryzen_nvme/linear_10-seqscan-128-4GB-yes.data"     using 1:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:3232.198]
+set yrange[0.01:7197.924]
 set title 'linear\_1 / eic=0' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/ryzen_nvme/linear_1-indexscan-0-4GB-no.data"    using 2:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/ryzen_nvme/linear_1-bitmapscan-0-4GB-no.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/ryzen_nvme/linear_1-seqscan-0-4GB-no.data"      using 2:4 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/ryzen_nvme/linear_1-indexscan-0-4GB-yes.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/ryzen_nvme/linear_1-bitmapscan-0-4GB-yes.data"  using 2:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/ryzen_nvme/linear_1-seqscan-0-4GB-yes.data"     using 2:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/ryzen_nvme/linear_1-indexscan-0-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/ryzen_nvme/linear_1-indexscan-prefetch-0-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/ryzen_nvme/linear_1-bitmapscan-0-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/ryzen_nvme/linear_1-seqscan-0-4GB-no.data"      using 1:4 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/ryzen_nvme/linear_1-smoothscan-0-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/linear_1-smoothscan-0-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/linear_1-indexscan-0-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/ryzen_nvme/linear_1-indexscan-prefetch-0-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/ryzen_nvme/linear_1-bitmapscan-0-4GB-yes.data"  using 1:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/ryzen_nvme/linear_1-seqscan-0-4GB-yes.data"     using 1:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:3232.198]
+set yrange[0.01:7197.924]
 set title 'linear\_1 / eic=16' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/ryzen_nvme/linear_1-indexscan-16-4GB-no.data"    using 2:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/ryzen_nvme/linear_1-bitmapscan-16-4GB-no.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/ryzen_nvme/linear_1-seqscan-16-4GB-no.data"      using 2:4 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/ryzen_nvme/linear_1-indexscan-16-4GB-yes.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/ryzen_nvme/linear_1-bitmapscan-16-4GB-yes.data"  using 2:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/ryzen_nvme/linear_1-seqscan-16-4GB-yes.data"     using 2:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/ryzen_nvme/linear_1-indexscan-16-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/ryzen_nvme/linear_1-indexscan-prefetch-16-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/ryzen_nvme/linear_1-bitmapscan-16-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/ryzen_nvme/linear_1-seqscan-16-4GB-no.data"      using 1:4 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/ryzen_nvme/linear_1-smoothscan-16-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/linear_1-smoothscan-16-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/linear_1-indexscan-16-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/ryzen_nvme/linear_1-indexscan-prefetch-16-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/ryzen_nvme/linear_1-bitmapscan-16-4GB-yes.data"  using 1:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/ryzen_nvme/linear_1-seqscan-16-4GB-yes.data"     using 1:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:3232.198]
+set yrange[0.01:7197.924]
 set title 'linear\_1 / eic=128' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/ryzen_nvme/linear_1-indexscan-128-4GB-no.data"    using 2:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/ryzen_nvme/linear_1-bitmapscan-128-4GB-no.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/ryzen_nvme/linear_1-seqscan-128-4GB-no.data"      using 2:4 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/ryzen_nvme/linear_1-indexscan-128-4GB-yes.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/ryzen_nvme/linear_1-bitmapscan-128-4GB-yes.data"  using 2:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/ryzen_nvme/linear_1-seqscan-128-4GB-yes.data"     using 2:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/ryzen_nvme/linear_1-indexscan-128-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/ryzen_nvme/linear_1-indexscan-prefetch-128-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/ryzen_nvme/linear_1-bitmapscan-128-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/ryzen_nvme/linear_1-seqscan-128-4GB-no.data"      using 1:4 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/ryzen_nvme/linear_1-smoothscan-128-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/linear_1-smoothscan-128-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/linear_1-indexscan-128-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/ryzen_nvme/linear_1-indexscan-prefetch-128-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/ryzen_nvme/linear_1-bitmapscan-128-4GB-yes.data"  using 1:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/ryzen_nvme/linear_1-seqscan-128-4GB-yes.data"     using 1:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:1679.316]
+set yrange[0.01:6178.003]
 set title 'linear / eic=0' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/ryzen_nvme/linear-indexscan-0-4GB-no.data"    using 2:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/ryzen_nvme/linear-bitmapscan-0-4GB-no.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/ryzen_nvme/linear-seqscan-0-4GB-no.data"      using 2:4 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/ryzen_nvme/linear-indexscan-0-4GB-yes.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/ryzen_nvme/linear-bitmapscan-0-4GB-yes.data"  using 2:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/ryzen_nvme/linear-seqscan-0-4GB-yes.data"     using 2:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/ryzen_nvme/linear-indexscan-0-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/ryzen_nvme/linear-indexscan-prefetch-0-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/ryzen_nvme/linear-bitmapscan-0-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/ryzen_nvme/linear-seqscan-0-4GB-no.data"      using 1:4 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/ryzen_nvme/linear-smoothscan-0-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/linear-smoothscan-0-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/linear-indexscan-0-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/ryzen_nvme/linear-indexscan-prefetch-0-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/ryzen_nvme/linear-bitmapscan-0-4GB-yes.data"  using 1:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/ryzen_nvme/linear-seqscan-0-4GB-yes.data"     using 1:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:1679.316]
+set yrange[0.01:6178.003]
 set title 'linear / eic=16' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/ryzen_nvme/linear-indexscan-16-4GB-no.data"    using 2:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/ryzen_nvme/linear-bitmapscan-16-4GB-no.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/ryzen_nvme/linear-seqscan-16-4GB-no.data"      using 2:4 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/ryzen_nvme/linear-indexscan-16-4GB-yes.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/ryzen_nvme/linear-bitmapscan-16-4GB-yes.data"  using 2:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/ryzen_nvme/linear-seqscan-16-4GB-yes.data"     using 2:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/ryzen_nvme/linear-indexscan-16-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/ryzen_nvme/linear-indexscan-prefetch-16-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/ryzen_nvme/linear-bitmapscan-16-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/ryzen_nvme/linear-seqscan-16-4GB-no.data"      using 1:4 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/ryzen_nvme/linear-smoothscan-16-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/linear-smoothscan-16-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/linear-indexscan-16-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/ryzen_nvme/linear-indexscan-prefetch-16-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/ryzen_nvme/linear-bitmapscan-16-4GB-yes.data"  using 1:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/ryzen_nvme/linear-seqscan-16-4GB-yes.data"     using 1:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:1679.316]
+set yrange[0.01:6178.003]
 set title 'linear / eic=128' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/ryzen_nvme/linear-indexscan-128-4GB-no.data"    using 2:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/ryzen_nvme/linear-bitmapscan-128-4GB-no.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/ryzen_nvme/linear-seqscan-128-4GB-no.data"      using 2:4 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/ryzen_nvme/linear-indexscan-128-4GB-yes.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/ryzen_nvme/linear-bitmapscan-128-4GB-yes.data"  using 2:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/ryzen_nvme/linear-seqscan-128-4GB-yes.data"     using 2:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/ryzen_nvme/linear-indexscan-128-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/ryzen_nvme/linear-indexscan-prefetch-128-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/ryzen_nvme/linear-bitmapscan-128-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/ryzen_nvme/linear-seqscan-128-4GB-no.data"      using 1:4 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/ryzen_nvme/linear-smoothscan-128-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/linear-smoothscan-128-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/linear-indexscan-128-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/ryzen_nvme/linear-indexscan-prefetch-128-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/ryzen_nvme/linear-bitmapscan-128-4GB-yes.data"  using 1:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/ryzen_nvme/linear-seqscan-128-4GB-yes.data"     using 1:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:4336.904]
+set yrange[0.01:5403.276]
 set title 'cyclic\_500 / eic=0' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/ryzen_nvme/cyclic_500-indexscan-0-4GB-no.data"    using 2:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/ryzen_nvme/cyclic_500-bitmapscan-0-4GB-no.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/ryzen_nvme/cyclic_500-seqscan-0-4GB-no.data"      using 2:4 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/ryzen_nvme/cyclic_500-indexscan-0-4GB-yes.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/ryzen_nvme/cyclic_500-bitmapscan-0-4GB-yes.data"  using 2:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/ryzen_nvme/cyclic_500-seqscan-0-4GB-yes.data"     using 2:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/ryzen_nvme/cyclic_500-indexscan-0-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/ryzen_nvme/cyclic_500-indexscan-prefetch-0-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/ryzen_nvme/cyclic_500-bitmapscan-0-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/ryzen_nvme/cyclic_500-seqscan-0-4GB-no.data"      using 1:4 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/ryzen_nvme/cyclic_500-smoothscan-0-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/cyclic_500-smoothscan-0-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/cyclic_500-indexscan-0-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/ryzen_nvme/cyclic_500-indexscan-prefetch-0-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/ryzen_nvme/cyclic_500-bitmapscan-0-4GB-yes.data"  using 1:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/ryzen_nvme/cyclic_500-seqscan-0-4GB-yes.data"     using 1:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:4336.904]
+set yrange[0.01:5403.276]
 set title 'cyclic\_500 / eic=16' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/ryzen_nvme/cyclic_500-indexscan-16-4GB-no.data"    using 2:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/ryzen_nvme/cyclic_500-bitmapscan-16-4GB-no.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/ryzen_nvme/cyclic_500-seqscan-16-4GB-no.data"      using 2:4 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/ryzen_nvme/cyclic_500-indexscan-16-4GB-yes.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/ryzen_nvme/cyclic_500-bitmapscan-16-4GB-yes.data"  using 2:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/ryzen_nvme/cyclic_500-seqscan-16-4GB-yes.data"     using 2:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/ryzen_nvme/cyclic_500-indexscan-16-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/ryzen_nvme/cyclic_500-indexscan-prefetch-16-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/ryzen_nvme/cyclic_500-bitmapscan-16-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/ryzen_nvme/cyclic_500-seqscan-16-4GB-no.data"      using 1:4 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/ryzen_nvme/cyclic_500-smoothscan-16-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/cyclic_500-smoothscan-16-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/cyclic_500-indexscan-16-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/ryzen_nvme/cyclic_500-indexscan-prefetch-16-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/ryzen_nvme/cyclic_500-bitmapscan-16-4GB-yes.data"  using 1:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/ryzen_nvme/cyclic_500-seqscan-16-4GB-yes.data"     using 1:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:4336.904]
+set yrange[0.01:5403.276]
 set title 'cyclic\_500 / eic=128' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/ryzen_nvme/cyclic_500-indexscan-128-4GB-no.data"    using 2:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/ryzen_nvme/cyclic_500-bitmapscan-128-4GB-no.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/ryzen_nvme/cyclic_500-seqscan-128-4GB-no.data"      using 2:4 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/ryzen_nvme/cyclic_500-indexscan-128-4GB-yes.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/ryzen_nvme/cyclic_500-bitmapscan-128-4GB-yes.data"  using 2:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/ryzen_nvme/cyclic_500-seqscan-128-4GB-yes.data"     using 2:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/ryzen_nvme/cyclic_500-indexscan-128-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/ryzen_nvme/cyclic_500-indexscan-prefetch-128-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/ryzen_nvme/cyclic_500-bitmapscan-128-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/ryzen_nvme/cyclic_500-seqscan-128-4GB-no.data"      using 1:4 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/ryzen_nvme/cyclic_500-smoothscan-128-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/cyclic_500-smoothscan-128-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/cyclic_500-indexscan-128-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/ryzen_nvme/cyclic_500-indexscan-prefetch-128-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/ryzen_nvme/cyclic_500-bitmapscan-128-4GB-yes.data"  using 1:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/ryzen_nvme/cyclic_500-seqscan-128-4GB-yes.data"     using 1:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:5724.487]
+set yrange[0.01:6880.555]
 set title 'cyclic\_100 / eic=0' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/ryzen_nvme/cyclic_100-indexscan-0-4GB-no.data"    using 2:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/ryzen_nvme/cyclic_100-bitmapscan-0-4GB-no.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/ryzen_nvme/cyclic_100-seqscan-0-4GB-no.data"      using 2:4 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/ryzen_nvme/cyclic_100-indexscan-0-4GB-yes.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/ryzen_nvme/cyclic_100-bitmapscan-0-4GB-yes.data"  using 2:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/ryzen_nvme/cyclic_100-seqscan-0-4GB-yes.data"     using 2:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/ryzen_nvme/cyclic_100-indexscan-0-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/ryzen_nvme/cyclic_100-indexscan-prefetch-0-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/ryzen_nvme/cyclic_100-bitmapscan-0-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/ryzen_nvme/cyclic_100-seqscan-0-4GB-no.data"      using 1:4 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/ryzen_nvme/cyclic_100-smoothscan-0-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/cyclic_100-smoothscan-0-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/cyclic_100-indexscan-0-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/ryzen_nvme/cyclic_100-indexscan-prefetch-0-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/ryzen_nvme/cyclic_100-bitmapscan-0-4GB-yes.data"  using 1:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/ryzen_nvme/cyclic_100-seqscan-0-4GB-yes.data"     using 1:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:5724.487]
+set yrange[0.01:6880.555]
 set title 'cyclic\_100 / eic=16' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/ryzen_nvme/cyclic_100-indexscan-16-4GB-no.data"    using 2:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/ryzen_nvme/cyclic_100-bitmapscan-16-4GB-no.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/ryzen_nvme/cyclic_100-seqscan-16-4GB-no.data"      using 2:4 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/ryzen_nvme/cyclic_100-indexscan-16-4GB-yes.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/ryzen_nvme/cyclic_100-bitmapscan-16-4GB-yes.data"  using 2:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/ryzen_nvme/cyclic_100-seqscan-16-4GB-yes.data"     using 2:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/ryzen_nvme/cyclic_100-indexscan-16-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/ryzen_nvme/cyclic_100-indexscan-prefetch-16-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/ryzen_nvme/cyclic_100-bitmapscan-16-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/ryzen_nvme/cyclic_100-seqscan-16-4GB-no.data"      using 1:4 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/ryzen_nvme/cyclic_100-smoothscan-16-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/cyclic_100-smoothscan-16-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/cyclic_100-indexscan-16-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/ryzen_nvme/cyclic_100-indexscan-prefetch-16-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/ryzen_nvme/cyclic_100-bitmapscan-16-4GB-yes.data"  using 1:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/ryzen_nvme/cyclic_100-seqscan-16-4GB-yes.data"     using 1:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:5724.487]
+set yrange[0.01:6880.555]
 set title 'cyclic\_100 / eic=128' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/ryzen_nvme/cyclic_100-indexscan-128-4GB-no.data"    using 2:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/ryzen_nvme/cyclic_100-bitmapscan-128-4GB-no.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/ryzen_nvme/cyclic_100-seqscan-128-4GB-no.data"      using 2:4 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/ryzen_nvme/cyclic_100-indexscan-128-4GB-yes.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/ryzen_nvme/cyclic_100-bitmapscan-128-4GB-yes.data"  using 2:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/ryzen_nvme/cyclic_100-seqscan-128-4GB-yes.data"     using 2:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/ryzen_nvme/cyclic_100-indexscan-128-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/ryzen_nvme/cyclic_100-indexscan-prefetch-128-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/ryzen_nvme/cyclic_100-bitmapscan-128-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/ryzen_nvme/cyclic_100-seqscan-128-4GB-no.data"      using 1:4 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/ryzen_nvme/cyclic_100-smoothscan-128-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/cyclic_100-smoothscan-128-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/cyclic_100-indexscan-128-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/ryzen_nvme/cyclic_100-indexscan-prefetch-128-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/ryzen_nvme/cyclic_100-bitmapscan-128-4GB-yes.data"  using 1:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/ryzen_nvme/cyclic_100-seqscan-128-4GB-yes.data"     using 1:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:3961.211]
+set yrange[0.01:7589.735]
 set title 'cyclic\_10 / eic=0' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/ryzen_nvme/cyclic_10-indexscan-0-4GB-no.data"    using 2:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/ryzen_nvme/cyclic_10-bitmapscan-0-4GB-no.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/ryzen_nvme/cyclic_10-seqscan-0-4GB-no.data"      using 2:4 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/ryzen_nvme/cyclic_10-indexscan-0-4GB-yes.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/ryzen_nvme/cyclic_10-bitmapscan-0-4GB-yes.data"  using 2:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/ryzen_nvme/cyclic_10-seqscan-0-4GB-yes.data"     using 2:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/ryzen_nvme/cyclic_10-indexscan-0-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/ryzen_nvme/cyclic_10-indexscan-prefetch-0-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/ryzen_nvme/cyclic_10-bitmapscan-0-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/ryzen_nvme/cyclic_10-seqscan-0-4GB-no.data"      using 1:4 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/ryzen_nvme/cyclic_10-smoothscan-0-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/cyclic_10-smoothscan-0-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/cyclic_10-indexscan-0-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/ryzen_nvme/cyclic_10-indexscan-prefetch-0-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/ryzen_nvme/cyclic_10-bitmapscan-0-4GB-yes.data"  using 1:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/ryzen_nvme/cyclic_10-seqscan-0-4GB-yes.data"     using 1:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:3961.211]
+set yrange[0.01:7589.735]
 set title 'cyclic\_10 / eic=16' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/ryzen_nvme/cyclic_10-indexscan-16-4GB-no.data"    using 2:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/ryzen_nvme/cyclic_10-bitmapscan-16-4GB-no.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/ryzen_nvme/cyclic_10-seqscan-16-4GB-no.data"      using 2:4 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/ryzen_nvme/cyclic_10-indexscan-16-4GB-yes.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/ryzen_nvme/cyclic_10-bitmapscan-16-4GB-yes.data"  using 2:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/ryzen_nvme/cyclic_10-seqscan-16-4GB-yes.data"     using 2:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/ryzen_nvme/cyclic_10-indexscan-16-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/ryzen_nvme/cyclic_10-indexscan-prefetch-16-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/ryzen_nvme/cyclic_10-bitmapscan-16-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/ryzen_nvme/cyclic_10-seqscan-16-4GB-no.data"      using 1:4 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/ryzen_nvme/cyclic_10-smoothscan-16-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/cyclic_10-smoothscan-16-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/cyclic_10-indexscan-16-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/ryzen_nvme/cyclic_10-indexscan-prefetch-16-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/ryzen_nvme/cyclic_10-bitmapscan-16-4GB-yes.data"  using 1:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/ryzen_nvme/cyclic_10-seqscan-16-4GB-yes.data"     using 1:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:3961.211]
+set yrange[0.01:7589.735]
 set title 'cyclic\_10 / eic=128' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/ryzen_nvme/cyclic_10-indexscan-128-4GB-no.data"    using 2:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/ryzen_nvme/cyclic_10-bitmapscan-128-4GB-no.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/ryzen_nvme/cyclic_10-seqscan-128-4GB-no.data"      using 2:4 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/ryzen_nvme/cyclic_10-indexscan-128-4GB-yes.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/ryzen_nvme/cyclic_10-bitmapscan-128-4GB-yes.data"  using 2:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/ryzen_nvme/cyclic_10-seqscan-128-4GB-yes.data"     using 2:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/ryzen_nvme/cyclic_10-indexscan-128-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/ryzen_nvme/cyclic_10-indexscan-prefetch-128-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/ryzen_nvme/cyclic_10-bitmapscan-128-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/ryzen_nvme/cyclic_10-seqscan-128-4GB-no.data"      using 1:4 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/ryzen_nvme/cyclic_10-smoothscan-128-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/cyclic_10-smoothscan-128-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/cyclic_10-indexscan-128-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/ryzen_nvme/cyclic_10-indexscan-prefetch-128-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/ryzen_nvme/cyclic_10-bitmapscan-128-4GB-yes.data"  using 1:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/ryzen_nvme/cyclic_10-seqscan-128-4GB-yes.data"     using 1:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:3247.502]
+set yrange[0.01:5784.653]
 set title 'cyclic\_1 / eic=0' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/ryzen_nvme/cyclic_1-indexscan-0-4GB-no.data"    using 2:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/ryzen_nvme/cyclic_1-bitmapscan-0-4GB-no.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/ryzen_nvme/cyclic_1-seqscan-0-4GB-no.data"      using 2:4 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/ryzen_nvme/cyclic_1-indexscan-0-4GB-yes.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/ryzen_nvme/cyclic_1-bitmapscan-0-4GB-yes.data"  using 2:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/ryzen_nvme/cyclic_1-seqscan-0-4GB-yes.data"     using 2:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/ryzen_nvme/cyclic_1-indexscan-0-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/ryzen_nvme/cyclic_1-indexscan-prefetch-0-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/ryzen_nvme/cyclic_1-bitmapscan-0-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/ryzen_nvme/cyclic_1-seqscan-0-4GB-no.data"      using 1:4 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/ryzen_nvme/cyclic_1-smoothscan-0-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/cyclic_1-smoothscan-0-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/cyclic_1-indexscan-0-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/ryzen_nvme/cyclic_1-indexscan-prefetch-0-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/ryzen_nvme/cyclic_1-bitmapscan-0-4GB-yes.data"  using 1:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/ryzen_nvme/cyclic_1-seqscan-0-4GB-yes.data"     using 1:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:3247.502]
+set yrange[0.01:5784.653]
 set title 'cyclic\_1 / eic=16' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/ryzen_nvme/cyclic_1-indexscan-16-4GB-no.data"    using 2:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/ryzen_nvme/cyclic_1-bitmapscan-16-4GB-no.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/ryzen_nvme/cyclic_1-seqscan-16-4GB-no.data"      using 2:4 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/ryzen_nvme/cyclic_1-indexscan-16-4GB-yes.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/ryzen_nvme/cyclic_1-bitmapscan-16-4GB-yes.data"  using 2:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/ryzen_nvme/cyclic_1-seqscan-16-4GB-yes.data"     using 2:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/ryzen_nvme/cyclic_1-indexscan-16-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/ryzen_nvme/cyclic_1-indexscan-prefetch-16-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/ryzen_nvme/cyclic_1-bitmapscan-16-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/ryzen_nvme/cyclic_1-seqscan-16-4GB-no.data"      using 1:4 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/ryzen_nvme/cyclic_1-smoothscan-16-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/cyclic_1-smoothscan-16-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/cyclic_1-indexscan-16-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/ryzen_nvme/cyclic_1-indexscan-prefetch-16-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/ryzen_nvme/cyclic_1-bitmapscan-16-4GB-yes.data"  using 1:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/ryzen_nvme/cyclic_1-seqscan-16-4GB-yes.data"     using 1:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:3247.502]
+set yrange[0.01:5784.653]
 set title 'cyclic\_1 / eic=128' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/ryzen_nvme/cyclic_1-indexscan-128-4GB-no.data"    using 2:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/ryzen_nvme/cyclic_1-bitmapscan-128-4GB-no.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/ryzen_nvme/cyclic_1-seqscan-128-4GB-no.data"      using 2:4 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/ryzen_nvme/cyclic_1-indexscan-128-4GB-yes.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/ryzen_nvme/cyclic_1-bitmapscan-128-4GB-yes.data"  using 2:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/ryzen_nvme/cyclic_1-seqscan-128-4GB-yes.data"     using 2:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/ryzen_nvme/cyclic_1-indexscan-128-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/ryzen_nvme/cyclic_1-indexscan-prefetch-128-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/ryzen_nvme/cyclic_1-bitmapscan-128-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/ryzen_nvme/cyclic_1-seqscan-128-4GB-no.data"      using 1:4 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/ryzen_nvme/cyclic_1-smoothscan-128-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/cyclic_1-smoothscan-128-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/cyclic_1-indexscan-128-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/ryzen_nvme/cyclic_1-indexscan-prefetch-128-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/ryzen_nvme/cyclic_1-bitmapscan-128-4GB-yes.data"  using 1:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/ryzen_nvme/cyclic_1-seqscan-128-4GB-yes.data"     using 1:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:2390.601]
+set yrange[0.01:5600.745]
 set title 'cyclic / eic=0' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/ryzen_nvme/cyclic-indexscan-0-4GB-no.data"    using 2:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/ryzen_nvme/cyclic-bitmapscan-0-4GB-no.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/ryzen_nvme/cyclic-seqscan-0-4GB-no.data"      using 2:4 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/ryzen_nvme/cyclic-indexscan-0-4GB-yes.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/ryzen_nvme/cyclic-bitmapscan-0-4GB-yes.data"  using 2:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/ryzen_nvme/cyclic-seqscan-0-4GB-yes.data"     using 2:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/ryzen_nvme/cyclic-indexscan-0-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/ryzen_nvme/cyclic-indexscan-prefetch-0-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/ryzen_nvme/cyclic-bitmapscan-0-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/ryzen_nvme/cyclic-seqscan-0-4GB-no.data"      using 1:4 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/ryzen_nvme/cyclic-smoothscan-0-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/cyclic-smoothscan-0-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/cyclic-indexscan-0-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/ryzen_nvme/cyclic-indexscan-prefetch-0-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/ryzen_nvme/cyclic-bitmapscan-0-4GB-yes.data"  using 1:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/ryzen_nvme/cyclic-seqscan-0-4GB-yes.data"     using 1:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:2390.601]
+set yrange[0.01:5600.745]
 set title 'cyclic / eic=16' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/ryzen_nvme/cyclic-indexscan-16-4GB-no.data"    using 2:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/ryzen_nvme/cyclic-bitmapscan-16-4GB-no.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/ryzen_nvme/cyclic-seqscan-16-4GB-no.data"      using 2:4 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/ryzen_nvme/cyclic-indexscan-16-4GB-yes.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/ryzen_nvme/cyclic-bitmapscan-16-4GB-yes.data"  using 2:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/ryzen_nvme/cyclic-seqscan-16-4GB-yes.data"     using 2:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/ryzen_nvme/cyclic-indexscan-16-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/ryzen_nvme/cyclic-indexscan-prefetch-16-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/ryzen_nvme/cyclic-bitmapscan-16-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/ryzen_nvme/cyclic-seqscan-16-4GB-no.data"      using 1:4 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/ryzen_nvme/cyclic-smoothscan-16-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/cyclic-smoothscan-16-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/cyclic-indexscan-16-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/ryzen_nvme/cyclic-indexscan-prefetch-16-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/ryzen_nvme/cyclic-bitmapscan-16-4GB-yes.data"  using 1:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/ryzen_nvme/cyclic-seqscan-16-4GB-yes.data"     using 1:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:2390.601]
+set yrange[0.01:5600.745]
 set title 'cyclic / eic=128' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/ryzen_nvme/cyclic-indexscan-128-4GB-no.data"    using 2:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/ryzen_nvme/cyclic-bitmapscan-128-4GB-no.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/ryzen_nvme/cyclic-seqscan-128-4GB-no.data"      using 2:4 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/ryzen_nvme/cyclic-indexscan-128-4GB-yes.data"   using 2:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/ryzen_nvme/cyclic-bitmapscan-128-4GB-yes.data"  using 2:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/ryzen_nvme/cyclic-seqscan-128-4GB-yes.data"     using 2:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/ryzen_nvme/cyclic-indexscan-128-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/ryzen_nvme/cyclic-indexscan-prefetch-128-4GB-no.data"    using 1:4 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/ryzen_nvme/cyclic-bitmapscan-128-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/ryzen_nvme/cyclic-seqscan-128-4GB-no.data"      using 1:4 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/ryzen_nvme/cyclic-smoothscan-128-4GB-no.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/cyclic-smoothscan-128-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/ryzen_nvme/cyclic-indexscan-128-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/ryzen_nvme/cyclic-indexscan-prefetch-128-4GB-yes.data"   using 1:4 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/ryzen_nvme/cyclic-bitmapscan-128-4GB-yes.data"  using 1:4 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/ryzen_nvme/cyclic-seqscan-128-4GB-yes.data"     using 1:4 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"

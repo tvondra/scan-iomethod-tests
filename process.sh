@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-MACHINES="xeon ryzen_nvme ryzen_sata"
+MACHINES="xeon ryzen_nvme"
+#MACHINES="xeon ryzen_nvme ryzen_sata"
 #MACHINES="xeon ryzen_sata"
 
 rm -Rf data
@@ -13,18 +14,31 @@ sqlite3 scans.db <<EOF
 create table results_xeon (seq int, cnt int, dataset text, scan text, prefetch int, run int, io_method text, io_workers int, shared_buffers text, start_val int, end_val int, optimal text, total_rows int, rows int, total_pages int, pages int, timing_cold numeric, timing_warm numeric);
 create table results_ryzen_nvme (seq int, cnt int, dataset text, scan text, prefetch int, run int, io_method text, io_workers int, shared_buffers text, start_val int, end_val int, optimal text, total_rows int, rows int, total_pages int, pages int, timing_cold numeric, timing_warm numeric);
 create table results_ryzen_sata (seq int, cnt int, dataset text, scan text, prefetch int, run int, io_method text, io_workers int, shared_buffers text, start_val int, end_val int, optimal text, total_rows int, rows int, total_pages int, pages int, timing_cold numeric, timing_warm numeric);
+
+create table results_xeon_2 (seq int, cnt int, dataset text, scan text, prefetch int, run int, io_method text, io_workers int, shared_buffers text, start_val int, end_val int, optimal text, total_rows int, rows int, total_pages int, pages int, timing_cold numeric, timing_warm numeric);
+create table results_ryzen_nvme_2 (seq int, cnt int, dataset text, scan text, prefetch int, run int, io_method text, io_workers int, shared_buffers text, start_val int, end_val int, optimal text, total_rows int, rows int, total_pages int, pages int, timing_cold numeric, timing_warm numeric);
 EOF
 
 sqlite3 scans.db <<EOF
 .mode csv
 .separator ' '
 .import ryzen-nvme.csv results_ryzen_nvme
+.import ryzen-nvme-smoothscan.csv results_ryzen_nvme
+.import ryzen-nvme-prefetch.csv results_ryzen_nvme_2
 .import ryzen-sata.csv results_ryzen_sata
 --.import ryzen-sata2.csv results_ryzen_sata
 .import xeon.csv results_xeon
+.import xeon-smoothscan.csv results_xeon
+.import xeon-prefetch.csv results_xeon_2
 --.import xeon2.csv results_xeon
 EOF
 
+sqlite3 scans.db <<EOF
+update results_ryzen_nvme_2 set scan = 'indexscan-prefetch';
+update results_xeon_2 set scan = 'indexscan-prefetch';
+insert into results_ryzen_nvme select * from results_ryzen_nvme_2;
+insert into results_xeon select * from results_xeon_2;
+EOF
 
 for m in $MACHINES; do
 

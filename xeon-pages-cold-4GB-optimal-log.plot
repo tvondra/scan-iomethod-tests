@@ -14,394 +14,493 @@ set yrange[0.01:58269.656]
 set title 'uniform / eic=0' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/xeon/uniform-indexscan-0-4GB-no.data"    using 2:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/xeon/uniform-bitmapscan-0-4GB-no.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/xeon/uniform-seqscan-0-4GB-no.data"      using 2:3 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/xeon/uniform-indexscan-0-4GB-yes.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/xeon/uniform-bitmapscan-0-4GB-yes.data"  using 2:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/xeon/uniform-seqscan-0-4GB-yes.data"     using 2:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/xeon/uniform-indexscan-0-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/xeon/uniform-indexscan-prefetch-0-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/xeon/uniform-bitmapscan-0-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/xeon/uniform-seqscan-0-4GB-no.data"      using 1:3 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/xeon/uniform-smoothscan-0-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/uniform-smoothscan-0-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/uniform-indexscan-0-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/xeon/uniform-indexscan-prefetch-0-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/xeon/uniform-bitmapscan-0-4GB-yes.data"  using 1:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/xeon/uniform-seqscan-0-4GB-yes.data"     using 1:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
 set yrange[0.01:58269.656]
 set title 'uniform / eic=16' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/xeon/uniform-indexscan-16-4GB-no.data"    using 2:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/xeon/uniform-bitmapscan-16-4GB-no.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/xeon/uniform-seqscan-16-4GB-no.data"      using 2:3 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/xeon/uniform-indexscan-16-4GB-yes.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/xeon/uniform-bitmapscan-16-4GB-yes.data"  using 2:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/xeon/uniform-seqscan-16-4GB-yes.data"     using 2:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/xeon/uniform-indexscan-16-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/xeon/uniform-indexscan-prefetch-16-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/xeon/uniform-bitmapscan-16-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/xeon/uniform-seqscan-16-4GB-no.data"      using 1:3 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/xeon/uniform-smoothscan-16-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/uniform-smoothscan-16-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/uniform-indexscan-16-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/xeon/uniform-indexscan-prefetch-16-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/xeon/uniform-bitmapscan-16-4GB-yes.data"  using 1:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/xeon/uniform-seqscan-16-4GB-yes.data"     using 1:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
 set yrange[0.01:58269.656]
 set title 'uniform / eic=128' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/xeon/uniform-indexscan-128-4GB-no.data"    using 2:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/xeon/uniform-bitmapscan-128-4GB-no.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/xeon/uniform-seqscan-128-4GB-no.data"      using 2:3 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/xeon/uniform-indexscan-128-4GB-yes.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/xeon/uniform-bitmapscan-128-4GB-yes.data"  using 2:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/xeon/uniform-seqscan-128-4GB-yes.data"     using 2:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/xeon/uniform-indexscan-128-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/xeon/uniform-indexscan-prefetch-128-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/xeon/uniform-bitmapscan-128-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/xeon/uniform-seqscan-128-4GB-no.data"      using 1:3 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/xeon/uniform-smoothscan-128-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/uniform-smoothscan-128-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/uniform-indexscan-128-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/xeon/uniform-indexscan-prefetch-128-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/xeon/uniform-bitmapscan-128-4GB-yes.data"  using 1:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/xeon/uniform-seqscan-128-4GB-yes.data"     using 1:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
 set yrange[0.01:57499.706]
 set title 'linear\_500 / eic=0' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/xeon/linear_500-indexscan-0-4GB-no.data"    using 2:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/xeon/linear_500-bitmapscan-0-4GB-no.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/xeon/linear_500-seqscan-0-4GB-no.data"      using 2:3 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/xeon/linear_500-indexscan-0-4GB-yes.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/xeon/linear_500-bitmapscan-0-4GB-yes.data"  using 2:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/xeon/linear_500-seqscan-0-4GB-yes.data"     using 2:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/xeon/linear_500-indexscan-0-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/xeon/linear_500-indexscan-prefetch-0-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/xeon/linear_500-bitmapscan-0-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/xeon/linear_500-seqscan-0-4GB-no.data"      using 1:3 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/xeon/linear_500-smoothscan-0-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/linear_500-smoothscan-0-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/linear_500-indexscan-0-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/xeon/linear_500-indexscan-prefetch-0-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/xeon/linear_500-bitmapscan-0-4GB-yes.data"  using 1:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/xeon/linear_500-seqscan-0-4GB-yes.data"     using 1:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
 set yrange[0.01:57499.706]
 set title 'linear\_500 / eic=16' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/xeon/linear_500-indexscan-16-4GB-no.data"    using 2:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/xeon/linear_500-bitmapscan-16-4GB-no.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/xeon/linear_500-seqscan-16-4GB-no.data"      using 2:3 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/xeon/linear_500-indexscan-16-4GB-yes.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/xeon/linear_500-bitmapscan-16-4GB-yes.data"  using 2:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/xeon/linear_500-seqscan-16-4GB-yes.data"     using 2:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/xeon/linear_500-indexscan-16-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/xeon/linear_500-indexscan-prefetch-16-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/xeon/linear_500-bitmapscan-16-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/xeon/linear_500-seqscan-16-4GB-no.data"      using 1:3 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/xeon/linear_500-smoothscan-16-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/linear_500-smoothscan-16-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/linear_500-indexscan-16-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/xeon/linear_500-indexscan-prefetch-16-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/xeon/linear_500-bitmapscan-16-4GB-yes.data"  using 1:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/xeon/linear_500-seqscan-16-4GB-yes.data"     using 1:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
 set yrange[0.01:57499.706]
 set title 'linear\_500 / eic=128' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/xeon/linear_500-indexscan-128-4GB-no.data"    using 2:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/xeon/linear_500-bitmapscan-128-4GB-no.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/xeon/linear_500-seqscan-128-4GB-no.data"      using 2:3 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/xeon/linear_500-indexscan-128-4GB-yes.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/xeon/linear_500-bitmapscan-128-4GB-yes.data"  using 2:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/xeon/linear_500-seqscan-128-4GB-yes.data"     using 2:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/xeon/linear_500-indexscan-128-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/xeon/linear_500-indexscan-prefetch-128-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/xeon/linear_500-bitmapscan-128-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/xeon/linear_500-seqscan-128-4GB-no.data"      using 1:3 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/xeon/linear_500-smoothscan-128-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/linear_500-smoothscan-128-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/linear_500-indexscan-128-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/xeon/linear_500-indexscan-prefetch-128-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/xeon/linear_500-bitmapscan-128-4GB-yes.data"  using 1:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/xeon/linear_500-seqscan-128-4GB-yes.data"     using 1:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
 set yrange[0.01:55751.062]
 set title 'linear\_100 / eic=0' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/xeon/linear_100-indexscan-0-4GB-no.data"    using 2:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/xeon/linear_100-bitmapscan-0-4GB-no.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/xeon/linear_100-seqscan-0-4GB-no.data"      using 2:3 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/xeon/linear_100-indexscan-0-4GB-yes.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/xeon/linear_100-bitmapscan-0-4GB-yes.data"  using 2:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/xeon/linear_100-seqscan-0-4GB-yes.data"     using 2:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/xeon/linear_100-indexscan-0-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/xeon/linear_100-indexscan-prefetch-0-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/xeon/linear_100-bitmapscan-0-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/xeon/linear_100-seqscan-0-4GB-no.data"      using 1:3 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/xeon/linear_100-smoothscan-0-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/linear_100-smoothscan-0-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/linear_100-indexscan-0-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/xeon/linear_100-indexscan-prefetch-0-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/xeon/linear_100-bitmapscan-0-4GB-yes.data"  using 1:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/xeon/linear_100-seqscan-0-4GB-yes.data"     using 1:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
 set yrange[0.01:55751.062]
 set title 'linear\_100 / eic=16' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/xeon/linear_100-indexscan-16-4GB-no.data"    using 2:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/xeon/linear_100-bitmapscan-16-4GB-no.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/xeon/linear_100-seqscan-16-4GB-no.data"      using 2:3 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/xeon/linear_100-indexscan-16-4GB-yes.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/xeon/linear_100-bitmapscan-16-4GB-yes.data"  using 2:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/xeon/linear_100-seqscan-16-4GB-yes.data"     using 2:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/xeon/linear_100-indexscan-16-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/xeon/linear_100-indexscan-prefetch-16-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/xeon/linear_100-bitmapscan-16-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/xeon/linear_100-seqscan-16-4GB-no.data"      using 1:3 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/xeon/linear_100-smoothscan-16-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/linear_100-smoothscan-16-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/linear_100-indexscan-16-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/xeon/linear_100-indexscan-prefetch-16-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/xeon/linear_100-bitmapscan-16-4GB-yes.data"  using 1:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/xeon/linear_100-seqscan-16-4GB-yes.data"     using 1:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
 set yrange[0.01:55751.062]
 set title 'linear\_100 / eic=128' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/xeon/linear_100-indexscan-128-4GB-no.data"    using 2:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/xeon/linear_100-bitmapscan-128-4GB-no.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/xeon/linear_100-seqscan-128-4GB-no.data"      using 2:3 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/xeon/linear_100-indexscan-128-4GB-yes.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/xeon/linear_100-bitmapscan-128-4GB-yes.data"  using 2:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/xeon/linear_100-seqscan-128-4GB-yes.data"     using 2:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/xeon/linear_100-indexscan-128-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/xeon/linear_100-indexscan-prefetch-128-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/xeon/linear_100-bitmapscan-128-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/xeon/linear_100-seqscan-128-4GB-no.data"      using 1:3 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/xeon/linear_100-smoothscan-128-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/linear_100-smoothscan-128-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/linear_100-indexscan-128-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/xeon/linear_100-indexscan-prefetch-128-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/xeon/linear_100-bitmapscan-128-4GB-yes.data"  using 1:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/xeon/linear_100-seqscan-128-4GB-yes.data"     using 1:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
 set yrange[0.01:49938.026]
 set title 'linear\_10 / eic=0' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/xeon/linear_10-indexscan-0-4GB-no.data"    using 2:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/xeon/linear_10-bitmapscan-0-4GB-no.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/xeon/linear_10-seqscan-0-4GB-no.data"      using 2:3 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/xeon/linear_10-indexscan-0-4GB-yes.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/xeon/linear_10-bitmapscan-0-4GB-yes.data"  using 2:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/xeon/linear_10-seqscan-0-4GB-yes.data"     using 2:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/xeon/linear_10-indexscan-0-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/xeon/linear_10-indexscan-prefetch-0-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/xeon/linear_10-bitmapscan-0-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/xeon/linear_10-seqscan-0-4GB-no.data"      using 1:3 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/xeon/linear_10-smoothscan-0-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/linear_10-smoothscan-0-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/linear_10-indexscan-0-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/xeon/linear_10-indexscan-prefetch-0-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/xeon/linear_10-bitmapscan-0-4GB-yes.data"  using 1:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/xeon/linear_10-seqscan-0-4GB-yes.data"     using 1:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
 set yrange[0.01:49938.026]
 set title 'linear\_10 / eic=16' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/xeon/linear_10-indexscan-16-4GB-no.data"    using 2:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/xeon/linear_10-bitmapscan-16-4GB-no.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/xeon/linear_10-seqscan-16-4GB-no.data"      using 2:3 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/xeon/linear_10-indexscan-16-4GB-yes.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/xeon/linear_10-bitmapscan-16-4GB-yes.data"  using 2:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/xeon/linear_10-seqscan-16-4GB-yes.data"     using 2:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/xeon/linear_10-indexscan-16-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/xeon/linear_10-indexscan-prefetch-16-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/xeon/linear_10-bitmapscan-16-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/xeon/linear_10-seqscan-16-4GB-no.data"      using 1:3 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/xeon/linear_10-smoothscan-16-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/linear_10-smoothscan-16-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/linear_10-indexscan-16-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/xeon/linear_10-indexscan-prefetch-16-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/xeon/linear_10-bitmapscan-16-4GB-yes.data"  using 1:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/xeon/linear_10-seqscan-16-4GB-yes.data"     using 1:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
 set yrange[0.01:49938.026]
 set title 'linear\_10 / eic=128' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/xeon/linear_10-indexscan-128-4GB-no.data"    using 2:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/xeon/linear_10-bitmapscan-128-4GB-no.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/xeon/linear_10-seqscan-128-4GB-no.data"      using 2:3 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/xeon/linear_10-indexscan-128-4GB-yes.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/xeon/linear_10-bitmapscan-128-4GB-yes.data"  using 2:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/xeon/linear_10-seqscan-128-4GB-yes.data"     using 2:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/xeon/linear_10-indexscan-128-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/xeon/linear_10-indexscan-prefetch-128-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/xeon/linear_10-bitmapscan-128-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/xeon/linear_10-seqscan-128-4GB-no.data"      using 1:3 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/xeon/linear_10-smoothscan-128-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/linear_10-smoothscan-128-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/linear_10-indexscan-128-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/xeon/linear_10-indexscan-prefetch-128-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/xeon/linear_10-bitmapscan-128-4GB-yes.data"  using 1:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/xeon/linear_10-seqscan-128-4GB-yes.data"     using 1:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:49819.342]
+set yrange[0.01:56211.587]
 set title 'linear\_1 / eic=0' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/xeon/linear_1-indexscan-0-4GB-no.data"    using 2:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/xeon/linear_1-bitmapscan-0-4GB-no.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/xeon/linear_1-seqscan-0-4GB-no.data"      using 2:3 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/xeon/linear_1-indexscan-0-4GB-yes.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/xeon/linear_1-bitmapscan-0-4GB-yes.data"  using 2:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/xeon/linear_1-seqscan-0-4GB-yes.data"     using 2:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/xeon/linear_1-indexscan-0-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/xeon/linear_1-indexscan-prefetch-0-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/xeon/linear_1-bitmapscan-0-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/xeon/linear_1-seqscan-0-4GB-no.data"      using 1:3 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/xeon/linear_1-smoothscan-0-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/linear_1-smoothscan-0-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/linear_1-indexscan-0-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/xeon/linear_1-indexscan-prefetch-0-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/xeon/linear_1-bitmapscan-0-4GB-yes.data"  using 1:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/xeon/linear_1-seqscan-0-4GB-yes.data"     using 1:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:49819.342]
+set yrange[0.01:56211.587]
 set title 'linear\_1 / eic=16' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/xeon/linear_1-indexscan-16-4GB-no.data"    using 2:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/xeon/linear_1-bitmapscan-16-4GB-no.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/xeon/linear_1-seqscan-16-4GB-no.data"      using 2:3 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/xeon/linear_1-indexscan-16-4GB-yes.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/xeon/linear_1-bitmapscan-16-4GB-yes.data"  using 2:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/xeon/linear_1-seqscan-16-4GB-yes.data"     using 2:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/xeon/linear_1-indexscan-16-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/xeon/linear_1-indexscan-prefetch-16-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/xeon/linear_1-bitmapscan-16-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/xeon/linear_1-seqscan-16-4GB-no.data"      using 1:3 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/xeon/linear_1-smoothscan-16-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/linear_1-smoothscan-16-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/linear_1-indexscan-16-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/xeon/linear_1-indexscan-prefetch-16-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/xeon/linear_1-bitmapscan-16-4GB-yes.data"  using 1:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/xeon/linear_1-seqscan-16-4GB-yes.data"     using 1:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:49819.342]
+set yrange[0.01:56211.587]
 set title 'linear\_1 / eic=128' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/xeon/linear_1-indexscan-128-4GB-no.data"    using 2:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/xeon/linear_1-bitmapscan-128-4GB-no.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/xeon/linear_1-seqscan-128-4GB-no.data"      using 2:3 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/xeon/linear_1-indexscan-128-4GB-yes.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/xeon/linear_1-bitmapscan-128-4GB-yes.data"  using 2:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/xeon/linear_1-seqscan-128-4GB-yes.data"     using 2:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/xeon/linear_1-indexscan-128-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/xeon/linear_1-indexscan-prefetch-128-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/xeon/linear_1-bitmapscan-128-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/xeon/linear_1-seqscan-128-4GB-no.data"      using 1:3 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/xeon/linear_1-smoothscan-128-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/linear_1-smoothscan-128-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/linear_1-indexscan-128-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/xeon/linear_1-indexscan-prefetch-128-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/xeon/linear_1-bitmapscan-128-4GB-yes.data"  using 1:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/xeon/linear_1-seqscan-128-4GB-yes.data"     using 1:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:7937.667]
+set yrange[0.01:19752.472]
 set title 'linear / eic=0' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/xeon/linear-indexscan-0-4GB-no.data"    using 2:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/xeon/linear-bitmapscan-0-4GB-no.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/xeon/linear-seqscan-0-4GB-no.data"      using 2:3 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/xeon/linear-indexscan-0-4GB-yes.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/xeon/linear-bitmapscan-0-4GB-yes.data"  using 2:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/xeon/linear-seqscan-0-4GB-yes.data"     using 2:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/xeon/linear-indexscan-0-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/xeon/linear-indexscan-prefetch-0-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/xeon/linear-bitmapscan-0-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/xeon/linear-seqscan-0-4GB-no.data"      using 1:3 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/xeon/linear-smoothscan-0-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/linear-smoothscan-0-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/linear-indexscan-0-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/xeon/linear-indexscan-prefetch-0-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/xeon/linear-bitmapscan-0-4GB-yes.data"  using 1:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/xeon/linear-seqscan-0-4GB-yes.data"     using 1:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:7937.667]
+set yrange[0.01:19752.472]
 set title 'linear / eic=16' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/xeon/linear-indexscan-16-4GB-no.data"    using 2:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/xeon/linear-bitmapscan-16-4GB-no.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/xeon/linear-seqscan-16-4GB-no.data"      using 2:3 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/xeon/linear-indexscan-16-4GB-yes.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/xeon/linear-bitmapscan-16-4GB-yes.data"  using 2:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/xeon/linear-seqscan-16-4GB-yes.data"     using 2:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/xeon/linear-indexscan-16-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/xeon/linear-indexscan-prefetch-16-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/xeon/linear-bitmapscan-16-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/xeon/linear-seqscan-16-4GB-no.data"      using 1:3 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/xeon/linear-smoothscan-16-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/linear-smoothscan-16-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/linear-indexscan-16-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/xeon/linear-indexscan-prefetch-16-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/xeon/linear-bitmapscan-16-4GB-yes.data"  using 1:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/xeon/linear-seqscan-16-4GB-yes.data"     using 1:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:7937.667]
+set yrange[0.01:19752.472]
 set title 'linear / eic=128' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/xeon/linear-indexscan-128-4GB-no.data"    using 2:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/xeon/linear-bitmapscan-128-4GB-no.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/xeon/linear-seqscan-128-4GB-no.data"      using 2:3 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/xeon/linear-indexscan-128-4GB-yes.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/xeon/linear-bitmapscan-128-4GB-yes.data"  using 2:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/xeon/linear-seqscan-128-4GB-yes.data"     using 2:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/xeon/linear-indexscan-128-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/xeon/linear-indexscan-prefetch-128-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/xeon/linear-bitmapscan-128-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/xeon/linear-seqscan-128-4GB-no.data"      using 1:3 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/xeon/linear-smoothscan-128-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/linear-smoothscan-128-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/linear-indexscan-128-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/xeon/linear-indexscan-prefetch-128-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/xeon/linear-bitmapscan-128-4GB-yes.data"  using 1:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/xeon/linear-seqscan-128-4GB-yes.data"     using 1:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:58033.28]
+set yrange[0.01:59442.831]
 set title 'cyclic\_500 / eic=0' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/xeon/cyclic_500-indexscan-0-4GB-no.data"    using 2:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/xeon/cyclic_500-bitmapscan-0-4GB-no.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/xeon/cyclic_500-seqscan-0-4GB-no.data"      using 2:3 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/xeon/cyclic_500-indexscan-0-4GB-yes.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/xeon/cyclic_500-bitmapscan-0-4GB-yes.data"  using 2:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/xeon/cyclic_500-seqscan-0-4GB-yes.data"     using 2:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/xeon/cyclic_500-indexscan-0-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/xeon/cyclic_500-indexscan-prefetch-0-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/xeon/cyclic_500-bitmapscan-0-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/xeon/cyclic_500-seqscan-0-4GB-no.data"      using 1:3 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/xeon/cyclic_500-smoothscan-0-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/cyclic_500-smoothscan-0-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/cyclic_500-indexscan-0-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/xeon/cyclic_500-indexscan-prefetch-0-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/xeon/cyclic_500-bitmapscan-0-4GB-yes.data"  using 1:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/xeon/cyclic_500-seqscan-0-4GB-yes.data"     using 1:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:58033.28]
+set yrange[0.01:59442.831]
 set title 'cyclic\_500 / eic=16' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/xeon/cyclic_500-indexscan-16-4GB-no.data"    using 2:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/xeon/cyclic_500-bitmapscan-16-4GB-no.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/xeon/cyclic_500-seqscan-16-4GB-no.data"      using 2:3 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/xeon/cyclic_500-indexscan-16-4GB-yes.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/xeon/cyclic_500-bitmapscan-16-4GB-yes.data"  using 2:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/xeon/cyclic_500-seqscan-16-4GB-yes.data"     using 2:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/xeon/cyclic_500-indexscan-16-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/xeon/cyclic_500-indexscan-prefetch-16-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/xeon/cyclic_500-bitmapscan-16-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/xeon/cyclic_500-seqscan-16-4GB-no.data"      using 1:3 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/xeon/cyclic_500-smoothscan-16-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/cyclic_500-smoothscan-16-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/cyclic_500-indexscan-16-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/xeon/cyclic_500-indexscan-prefetch-16-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/xeon/cyclic_500-bitmapscan-16-4GB-yes.data"  using 1:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/xeon/cyclic_500-seqscan-16-4GB-yes.data"     using 1:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:58033.28]
+set yrange[0.01:59442.831]
 set title 'cyclic\_500 / eic=128' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/xeon/cyclic_500-indexscan-128-4GB-no.data"    using 2:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/xeon/cyclic_500-bitmapscan-128-4GB-no.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/xeon/cyclic_500-seqscan-128-4GB-no.data"      using 2:3 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/xeon/cyclic_500-indexscan-128-4GB-yes.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/xeon/cyclic_500-bitmapscan-128-4GB-yes.data"  using 2:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/xeon/cyclic_500-seqscan-128-4GB-yes.data"     using 2:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/xeon/cyclic_500-indexscan-128-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/xeon/cyclic_500-indexscan-prefetch-128-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/xeon/cyclic_500-bitmapscan-128-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/xeon/cyclic_500-seqscan-128-4GB-no.data"      using 1:3 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/xeon/cyclic_500-smoothscan-128-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/cyclic_500-smoothscan-128-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/cyclic_500-indexscan-128-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/xeon/cyclic_500-indexscan-prefetch-128-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/xeon/cyclic_500-bitmapscan-128-4GB-yes.data"  using 1:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/xeon/cyclic_500-seqscan-128-4GB-yes.data"     using 1:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
 set yrange[0.01:51024.501]
 set title 'cyclic\_100 / eic=0' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/xeon/cyclic_100-indexscan-0-4GB-no.data"    using 2:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/xeon/cyclic_100-bitmapscan-0-4GB-no.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/xeon/cyclic_100-seqscan-0-4GB-no.data"      using 2:3 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/xeon/cyclic_100-indexscan-0-4GB-yes.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/xeon/cyclic_100-bitmapscan-0-4GB-yes.data"  using 2:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/xeon/cyclic_100-seqscan-0-4GB-yes.data"     using 2:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/xeon/cyclic_100-indexscan-0-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/xeon/cyclic_100-indexscan-prefetch-0-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/xeon/cyclic_100-bitmapscan-0-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/xeon/cyclic_100-seqscan-0-4GB-no.data"      using 1:3 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/xeon/cyclic_100-smoothscan-0-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/cyclic_100-smoothscan-0-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/cyclic_100-indexscan-0-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/xeon/cyclic_100-indexscan-prefetch-0-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/xeon/cyclic_100-bitmapscan-0-4GB-yes.data"  using 1:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/xeon/cyclic_100-seqscan-0-4GB-yes.data"     using 1:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
 set yrange[0.01:51024.501]
 set title 'cyclic\_100 / eic=16' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/xeon/cyclic_100-indexscan-16-4GB-no.data"    using 2:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/xeon/cyclic_100-bitmapscan-16-4GB-no.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/xeon/cyclic_100-seqscan-16-4GB-no.data"      using 2:3 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/xeon/cyclic_100-indexscan-16-4GB-yes.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/xeon/cyclic_100-bitmapscan-16-4GB-yes.data"  using 2:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/xeon/cyclic_100-seqscan-16-4GB-yes.data"     using 2:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/xeon/cyclic_100-indexscan-16-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/xeon/cyclic_100-indexscan-prefetch-16-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/xeon/cyclic_100-bitmapscan-16-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/xeon/cyclic_100-seqscan-16-4GB-no.data"      using 1:3 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/xeon/cyclic_100-smoothscan-16-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/cyclic_100-smoothscan-16-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/cyclic_100-indexscan-16-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/xeon/cyclic_100-indexscan-prefetch-16-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/xeon/cyclic_100-bitmapscan-16-4GB-yes.data"  using 1:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/xeon/cyclic_100-seqscan-16-4GB-yes.data"     using 1:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
 set yrange[0.01:51024.501]
 set title 'cyclic\_100 / eic=128' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/xeon/cyclic_100-indexscan-128-4GB-no.data"    using 2:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/xeon/cyclic_100-bitmapscan-128-4GB-no.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/xeon/cyclic_100-seqscan-128-4GB-no.data"      using 2:3 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/xeon/cyclic_100-indexscan-128-4GB-yes.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/xeon/cyclic_100-bitmapscan-128-4GB-yes.data"  using 2:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/xeon/cyclic_100-seqscan-128-4GB-yes.data"     using 2:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/xeon/cyclic_100-indexscan-128-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/xeon/cyclic_100-indexscan-prefetch-128-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/xeon/cyclic_100-bitmapscan-128-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/xeon/cyclic_100-seqscan-128-4GB-no.data"      using 1:3 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/xeon/cyclic_100-smoothscan-128-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/cyclic_100-smoothscan-128-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/cyclic_100-indexscan-128-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/xeon/cyclic_100-indexscan-prefetch-128-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/xeon/cyclic_100-bitmapscan-128-4GB-yes.data"  using 1:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/xeon/cyclic_100-seqscan-128-4GB-yes.data"     using 1:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
 set yrange[0.01:45420.338]
 set title 'cyclic\_10 / eic=0' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/xeon/cyclic_10-indexscan-0-4GB-no.data"    using 2:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/xeon/cyclic_10-bitmapscan-0-4GB-no.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/xeon/cyclic_10-seqscan-0-4GB-no.data"      using 2:3 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/xeon/cyclic_10-indexscan-0-4GB-yes.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/xeon/cyclic_10-bitmapscan-0-4GB-yes.data"  using 2:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/xeon/cyclic_10-seqscan-0-4GB-yes.data"     using 2:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/xeon/cyclic_10-indexscan-0-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/xeon/cyclic_10-indexscan-prefetch-0-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/xeon/cyclic_10-bitmapscan-0-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/xeon/cyclic_10-seqscan-0-4GB-no.data"      using 1:3 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/xeon/cyclic_10-smoothscan-0-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/cyclic_10-smoothscan-0-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/cyclic_10-indexscan-0-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/xeon/cyclic_10-indexscan-prefetch-0-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/xeon/cyclic_10-bitmapscan-0-4GB-yes.data"  using 1:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/xeon/cyclic_10-seqscan-0-4GB-yes.data"     using 1:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
 set yrange[0.01:45420.338]
 set title 'cyclic\_10 / eic=16' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/xeon/cyclic_10-indexscan-16-4GB-no.data"    using 2:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/xeon/cyclic_10-bitmapscan-16-4GB-no.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/xeon/cyclic_10-seqscan-16-4GB-no.data"      using 2:3 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/xeon/cyclic_10-indexscan-16-4GB-yes.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/xeon/cyclic_10-bitmapscan-16-4GB-yes.data"  using 2:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/xeon/cyclic_10-seqscan-16-4GB-yes.data"     using 2:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/xeon/cyclic_10-indexscan-16-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/xeon/cyclic_10-indexscan-prefetch-16-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/xeon/cyclic_10-bitmapscan-16-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/xeon/cyclic_10-seqscan-16-4GB-no.data"      using 1:3 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/xeon/cyclic_10-smoothscan-16-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/cyclic_10-smoothscan-16-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/cyclic_10-indexscan-16-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/xeon/cyclic_10-indexscan-prefetch-16-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/xeon/cyclic_10-bitmapscan-16-4GB-yes.data"  using 1:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/xeon/cyclic_10-seqscan-16-4GB-yes.data"     using 1:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
 set yrange[0.01:45420.338]
 set title 'cyclic\_10 / eic=128' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/xeon/cyclic_10-indexscan-128-4GB-no.data"    using 2:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/xeon/cyclic_10-bitmapscan-128-4GB-no.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/xeon/cyclic_10-seqscan-128-4GB-no.data"      using 2:3 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/xeon/cyclic_10-indexscan-128-4GB-yes.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/xeon/cyclic_10-bitmapscan-128-4GB-yes.data"  using 2:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/xeon/cyclic_10-seqscan-128-4GB-yes.data"     using 2:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/xeon/cyclic_10-indexscan-128-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/xeon/cyclic_10-indexscan-prefetch-128-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/xeon/cyclic_10-bitmapscan-128-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/xeon/cyclic_10-seqscan-128-4GB-no.data"      using 1:3 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/xeon/cyclic_10-smoothscan-128-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/cyclic_10-smoothscan-128-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/cyclic_10-indexscan-128-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/xeon/cyclic_10-indexscan-prefetch-128-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/xeon/cyclic_10-bitmapscan-128-4GB-yes.data"  using 1:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/xeon/cyclic_10-seqscan-128-4GB-yes.data"     using 1:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:11399.368]
+set yrange[0.01:20986.765]
 set title 'cyclic\_1 / eic=0' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/xeon/cyclic_1-indexscan-0-4GB-no.data"    using 2:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/xeon/cyclic_1-bitmapscan-0-4GB-no.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/xeon/cyclic_1-seqscan-0-4GB-no.data"      using 2:3 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/xeon/cyclic_1-indexscan-0-4GB-yes.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/xeon/cyclic_1-bitmapscan-0-4GB-yes.data"  using 2:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/xeon/cyclic_1-seqscan-0-4GB-yes.data"     using 2:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/xeon/cyclic_1-indexscan-0-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/xeon/cyclic_1-indexscan-prefetch-0-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/xeon/cyclic_1-bitmapscan-0-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/xeon/cyclic_1-seqscan-0-4GB-no.data"      using 1:3 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/xeon/cyclic_1-smoothscan-0-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/cyclic_1-smoothscan-0-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/cyclic_1-indexscan-0-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/xeon/cyclic_1-indexscan-prefetch-0-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/xeon/cyclic_1-bitmapscan-0-4GB-yes.data"  using 1:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/xeon/cyclic_1-seqscan-0-4GB-yes.data"     using 1:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:11399.368]
+set yrange[0.01:20986.765]
 set title 'cyclic\_1 / eic=16' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/xeon/cyclic_1-indexscan-16-4GB-no.data"    using 2:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/xeon/cyclic_1-bitmapscan-16-4GB-no.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/xeon/cyclic_1-seqscan-16-4GB-no.data"      using 2:3 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/xeon/cyclic_1-indexscan-16-4GB-yes.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/xeon/cyclic_1-bitmapscan-16-4GB-yes.data"  using 2:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/xeon/cyclic_1-seqscan-16-4GB-yes.data"     using 2:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/xeon/cyclic_1-indexscan-16-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/xeon/cyclic_1-indexscan-prefetch-16-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/xeon/cyclic_1-bitmapscan-16-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/xeon/cyclic_1-seqscan-16-4GB-no.data"      using 1:3 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/xeon/cyclic_1-smoothscan-16-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/cyclic_1-smoothscan-16-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/cyclic_1-indexscan-16-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/xeon/cyclic_1-indexscan-prefetch-16-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/xeon/cyclic_1-bitmapscan-16-4GB-yes.data"  using 1:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/xeon/cyclic_1-seqscan-16-4GB-yes.data"     using 1:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:11399.368]
+set yrange[0.01:20986.765]
 set title 'cyclic\_1 / eic=128' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/xeon/cyclic_1-indexscan-128-4GB-no.data"    using 2:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/xeon/cyclic_1-bitmapscan-128-4GB-no.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/xeon/cyclic_1-seqscan-128-4GB-no.data"      using 2:3 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/xeon/cyclic_1-indexscan-128-4GB-yes.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/xeon/cyclic_1-bitmapscan-128-4GB-yes.data"  using 2:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/xeon/cyclic_1-seqscan-128-4GB-yes.data"     using 2:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/xeon/cyclic_1-indexscan-128-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/xeon/cyclic_1-indexscan-prefetch-128-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/xeon/cyclic_1-bitmapscan-128-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/xeon/cyclic_1-seqscan-128-4GB-no.data"      using 1:3 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/xeon/cyclic_1-smoothscan-128-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/cyclic_1-smoothscan-128-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/cyclic_1-indexscan-128-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/xeon/cyclic_1-indexscan-prefetch-128-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/xeon/cyclic_1-bitmapscan-128-4GB-yes.data"  using 1:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/xeon/cyclic_1-seqscan-128-4GB-yes.data"     using 1:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:11062.663]
+set yrange[0.01:20253.789]
 set title 'cyclic / eic=0' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/xeon/cyclic-indexscan-0-4GB-no.data"    using 2:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/xeon/cyclic-bitmapscan-0-4GB-no.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/xeon/cyclic-seqscan-0-4GB-no.data"      using 2:3 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/xeon/cyclic-indexscan-0-4GB-yes.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/xeon/cyclic-bitmapscan-0-4GB-yes.data"  using 2:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/xeon/cyclic-seqscan-0-4GB-yes.data"     using 2:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/xeon/cyclic-indexscan-0-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/xeon/cyclic-indexscan-prefetch-0-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/xeon/cyclic-bitmapscan-0-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/xeon/cyclic-seqscan-0-4GB-no.data"      using 1:3 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/xeon/cyclic-smoothscan-0-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/cyclic-smoothscan-0-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/cyclic-indexscan-0-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/xeon/cyclic-indexscan-prefetch-0-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/xeon/cyclic-bitmapscan-0-4GB-yes.data"  using 1:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/xeon/cyclic-seqscan-0-4GB-yes.data"     using 1:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:11062.663]
+set yrange[0.01:20253.789]
 set title 'cyclic / eic=16' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/xeon/cyclic-indexscan-16-4GB-no.data"    using 2:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/xeon/cyclic-bitmapscan-16-4GB-no.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/xeon/cyclic-seqscan-16-4GB-no.data"      using 2:3 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/xeon/cyclic-indexscan-16-4GB-yes.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/xeon/cyclic-bitmapscan-16-4GB-yes.data"  using 2:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/xeon/cyclic-seqscan-16-4GB-yes.data"     using 2:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/xeon/cyclic-indexscan-16-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/xeon/cyclic-indexscan-prefetch-16-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/xeon/cyclic-bitmapscan-16-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/xeon/cyclic-seqscan-16-4GB-no.data"      using 1:3 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/xeon/cyclic-smoothscan-16-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/cyclic-smoothscan-16-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/cyclic-indexscan-16-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/xeon/cyclic-indexscan-prefetch-16-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/xeon/cyclic-bitmapscan-16-4GB-yes.data"  using 1:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/xeon/cyclic-seqscan-16-4GB-yes.data"     using 1:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
 set xrange[0.1:100]
-set yrange[0.01:11062.663]
+set yrange[0.01:20253.789]
 set title 'cyclic / eic=128' font 'Verdana Bold,12'
 set ylabel 'duration'
 
-plot "data/xeon/cyclic-indexscan-128-4GB-no.data"    using 2:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
-     "data/xeon/cyclic-bitmapscan-128-4GB-no.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#ccffcc" title "bitmapscan", \
-     "data/xeon/cyclic-seqscan-128-4GB-no.data"      using 2:3 with points pt 7 ps 0.75 lc rgb "#ccccff" title "seqscan", \
-     "data/xeon/cyclic-indexscan-128-4GB-yes.data"   using 2:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
-     "data/xeon/cyclic-bitmapscan-128-4GB-yes.data"  using 2:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/xeon/cyclic-seqscan-128-4GB-yes.data"     using 2:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
-
+plot "data/xeon/cyclic-indexscan-128-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
+     "data/xeon/cyclic-indexscan-prefetch-128-4GB-no.data"    using 1:3 with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/xeon/cyclic-bitmapscan-128-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/xeon/cyclic-seqscan-128-4GB-no.data"      using 1:3 with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/xeon/cyclic-smoothscan-128-4GB-no.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/cyclic-smoothscan-128-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
+     "data/xeon/cyclic-indexscan-128-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/xeon/cyclic-indexscan-prefetch-128-4GB-yes.data"   using 1:3 with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
+     "data/xeon/cyclic-bitmapscan-128-4GB-yes.data"  using 1:3 with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
+     "data/xeon/cyclic-seqscan-128-4GB-yes.data"     using 1:3 with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"

@@ -1,4 +1,4 @@
-set terminal pdfcairo size 16,40 enhanced font 'Verdana,12'
+set terminal pdfcairo size 25,40 enhanced font 'Verdana,12'
 set output 'ryzen_nvme-pages-warm-4GB-128.pdf'
 #set output 'ryzen_nvme-pages-warm-scaled.pdf'
 
@@ -9,9 +9,9 @@ set key top left
 
 set xlabel 'selectivity'
 
-set multiplot layout 11,3 rowsfirst
+set multiplot layout 11,5 rowsfirst
 set xrange[0.1:100]
-set yrange[0:7486.882]
+set yrange[0:9019.927]
 set title 'uniform / bitmapscan' font 'Verdana Bold,12'
 
 set ylabel 'duration'
@@ -30,14 +30,28 @@ plot  "data/ryzen_nvme/uniform-indexscan-128-io_uring-3-4GB.data"   using 2:4 wi
      "data/ryzen_nvme/uniform-indexscan-128-worker-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker", \
      "data/ryzen_nvme/uniform-indexscan-128-worker-12-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)"
 
+set title 'uniform / indexscan (prefetch)'
+
+plot  "data/ryzen_nvme/uniform-indexscan-prefetch-128-io_uring-3-4GB.data"   using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/ryzen_nvme/uniform-indexscan-prefetch-128-sync-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "sync", \
+     "data/ryzen_nvme/uniform-indexscan-prefetch-128-worker-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker", \
+     "data/ryzen_nvme/uniform-indexscan-prefetch-128-worker-12-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+
 set title 'uniform / seqscan'
 
 plot "data/ryzen_nvme/uniform-seqscan-128-io_uring-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/ryzen_nvme/uniform-seqscan-128-sync-3-4GB.data"         using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_nvme/uniform-seqscan-128-worker-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker", \
      "data/ryzen_nvme/uniform-seqscan-128-worker-12-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+
+set title 'uniform / smoothscan'
+
+plot "data/ryzen_nvme/uniform-smoothscan-128-io_uring-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/ryzen_nvme/uniform-smoothscan-128-sync-3-4GB.data"         using 2:4 with points pt 7 ps 0.75 title "sync", \
+     "data/ryzen_nvme/uniform-smoothscan-128-worker-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker", \
+     "data/ryzen_nvme/uniform-smoothscan-128-worker-12-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)"
 set xrange[0.1:100]
-set yrange[0:4313.418]
+set yrange[0:5349.277]
 set title 'linear\_500 / bitmapscan' font 'Verdana Bold,12'
 
 set ylabel 'duration'
@@ -56,14 +70,28 @@ plot  "data/ryzen_nvme/linear\_500-indexscan-128-io_uring-3-4GB.data"   using 2:
      "data/ryzen_nvme/linear\_500-indexscan-128-worker-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker", \
      "data/ryzen_nvme/linear\_500-indexscan-128-worker-12-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)"
 
+set title 'linear\_500 / indexscan (prefetch)'
+
+plot  "data/ryzen_nvme/linear\_500-indexscan-prefetch-128-io_uring-3-4GB.data"   using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/ryzen_nvme/linear\_500-indexscan-prefetch-128-sync-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "sync", \
+     "data/ryzen_nvme/linear\_500-indexscan-prefetch-128-worker-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker", \
+     "data/ryzen_nvme/linear\_500-indexscan-prefetch-128-worker-12-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+
 set title 'linear\_500 / seqscan'
 
 plot "data/ryzen_nvme/linear\_500-seqscan-128-io_uring-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/ryzen_nvme/linear\_500-seqscan-128-sync-3-4GB.data"         using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_nvme/linear\_500-seqscan-128-worker-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker", \
      "data/ryzen_nvme/linear\_500-seqscan-128-worker-12-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+
+set title 'linear\_500 / smoothscan'
+
+plot "data/ryzen_nvme/linear\_500-smoothscan-128-io_uring-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/ryzen_nvme/linear\_500-smoothscan-128-sync-3-4GB.data"         using 2:4 with points pt 7 ps 0.75 title "sync", \
+     "data/ryzen_nvme/linear\_500-smoothscan-128-worker-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker", \
+     "data/ryzen_nvme/linear\_500-smoothscan-128-worker-12-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)"
 set xrange[0.1:100]
-set yrange[0:5731.153]
+set yrange[0:7576.016]
 set title 'linear\_100 / bitmapscan' font 'Verdana Bold,12'
 
 set ylabel 'duration'
@@ -82,14 +110,28 @@ plot  "data/ryzen_nvme/linear\_100-indexscan-128-io_uring-3-4GB.data"   using 2:
      "data/ryzen_nvme/linear\_100-indexscan-128-worker-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker", \
      "data/ryzen_nvme/linear\_100-indexscan-128-worker-12-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)"
 
+set title 'linear\_100 / indexscan (prefetch)'
+
+plot  "data/ryzen_nvme/linear\_100-indexscan-prefetch-128-io_uring-3-4GB.data"   using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/ryzen_nvme/linear\_100-indexscan-prefetch-128-sync-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "sync", \
+     "data/ryzen_nvme/linear\_100-indexscan-prefetch-128-worker-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker", \
+     "data/ryzen_nvme/linear\_100-indexscan-prefetch-128-worker-12-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+
 set title 'linear\_100 / seqscan'
 
 plot "data/ryzen_nvme/linear\_100-seqscan-128-io_uring-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/ryzen_nvme/linear\_100-seqscan-128-sync-3-4GB.data"         using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_nvme/linear\_100-seqscan-128-worker-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker", \
      "data/ryzen_nvme/linear\_100-seqscan-128-worker-12-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+
+set title 'linear\_100 / smoothscan'
+
+plot "data/ryzen_nvme/linear\_100-smoothscan-128-io_uring-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/ryzen_nvme/linear\_100-smoothscan-128-sync-3-4GB.data"         using 2:4 with points pt 7 ps 0.75 title "sync", \
+     "data/ryzen_nvme/linear\_100-smoothscan-128-worker-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker", \
+     "data/ryzen_nvme/linear\_100-smoothscan-128-worker-12-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)"
 set xrange[0.1:100]
-set yrange[0:3964.515]
+set yrange[0:7527.048]
 set title 'linear\_10 / bitmapscan' font 'Verdana Bold,12'
 
 set ylabel 'duration'
@@ -108,14 +150,28 @@ plot  "data/ryzen_nvme/linear\_10-indexscan-128-io_uring-3-4GB.data"   using 2:4
      "data/ryzen_nvme/linear\_10-indexscan-128-worker-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker", \
      "data/ryzen_nvme/linear\_10-indexscan-128-worker-12-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)"
 
+set title 'linear\_10 / indexscan (prefetch)'
+
+plot  "data/ryzen_nvme/linear\_10-indexscan-prefetch-128-io_uring-3-4GB.data"   using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/ryzen_nvme/linear\_10-indexscan-prefetch-128-sync-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "sync", \
+     "data/ryzen_nvme/linear\_10-indexscan-prefetch-128-worker-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker", \
+     "data/ryzen_nvme/linear\_10-indexscan-prefetch-128-worker-12-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+
 set title 'linear\_10 / seqscan'
 
 plot "data/ryzen_nvme/linear\_10-seqscan-128-io_uring-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/ryzen_nvme/linear\_10-seqscan-128-sync-3-4GB.data"         using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_nvme/linear\_10-seqscan-128-worker-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker", \
      "data/ryzen_nvme/linear\_10-seqscan-128-worker-12-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+
+set title 'linear\_10 / smoothscan'
+
+plot "data/ryzen_nvme/linear\_10-smoothscan-128-io_uring-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/ryzen_nvme/linear\_10-smoothscan-128-sync-3-4GB.data"         using 2:4 with points pt 7 ps 0.75 title "sync", \
+     "data/ryzen_nvme/linear\_10-smoothscan-128-worker-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker", \
+     "data/ryzen_nvme/linear\_10-smoothscan-128-worker-12-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)"
 set xrange[0.1:100]
-set yrange[0:3232.198]
+set yrange[0:7197.924]
 set title 'linear\_1 / bitmapscan' font 'Verdana Bold,12'
 
 set ylabel 'duration'
@@ -134,14 +190,28 @@ plot  "data/ryzen_nvme/linear\_1-indexscan-128-io_uring-3-4GB.data"   using 2:4 
      "data/ryzen_nvme/linear\_1-indexscan-128-worker-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker", \
      "data/ryzen_nvme/linear\_1-indexscan-128-worker-12-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)"
 
+set title 'linear\_1 / indexscan (prefetch)'
+
+plot  "data/ryzen_nvme/linear\_1-indexscan-prefetch-128-io_uring-3-4GB.data"   using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/ryzen_nvme/linear\_1-indexscan-prefetch-128-sync-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "sync", \
+     "data/ryzen_nvme/linear\_1-indexscan-prefetch-128-worker-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker", \
+     "data/ryzen_nvme/linear\_1-indexscan-prefetch-128-worker-12-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+
 set title 'linear\_1 / seqscan'
 
 plot "data/ryzen_nvme/linear\_1-seqscan-128-io_uring-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/ryzen_nvme/linear\_1-seqscan-128-sync-3-4GB.data"         using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_nvme/linear\_1-seqscan-128-worker-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker", \
      "data/ryzen_nvme/linear\_1-seqscan-128-worker-12-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+
+set title 'linear\_1 / smoothscan'
+
+plot "data/ryzen_nvme/linear\_1-smoothscan-128-io_uring-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/ryzen_nvme/linear\_1-smoothscan-128-sync-3-4GB.data"         using 2:4 with points pt 7 ps 0.75 title "sync", \
+     "data/ryzen_nvme/linear\_1-smoothscan-128-worker-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker", \
+     "data/ryzen_nvme/linear\_1-smoothscan-128-worker-12-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)"
 set xrange[0.1:100]
-set yrange[0:1679.316]
+set yrange[0:6178.003]
 set title 'linear / bitmapscan' font 'Verdana Bold,12'
 
 set ylabel 'duration'
@@ -160,14 +230,28 @@ plot  "data/ryzen_nvme/linear-indexscan-128-io_uring-3-4GB.data"   using 2:4 wit
      "data/ryzen_nvme/linear-indexscan-128-worker-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker", \
      "data/ryzen_nvme/linear-indexscan-128-worker-12-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)"
 
+set title 'linear / indexscan (prefetch)'
+
+plot  "data/ryzen_nvme/linear-indexscan-prefetch-128-io_uring-3-4GB.data"   using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/ryzen_nvme/linear-indexscan-prefetch-128-sync-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "sync", \
+     "data/ryzen_nvme/linear-indexscan-prefetch-128-worker-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker", \
+     "data/ryzen_nvme/linear-indexscan-prefetch-128-worker-12-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+
 set title 'linear / seqscan'
 
 plot "data/ryzen_nvme/linear-seqscan-128-io_uring-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/ryzen_nvme/linear-seqscan-128-sync-3-4GB.data"         using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_nvme/linear-seqscan-128-worker-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker", \
      "data/ryzen_nvme/linear-seqscan-128-worker-12-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+
+set title 'linear / smoothscan'
+
+plot "data/ryzen_nvme/linear-smoothscan-128-io_uring-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/ryzen_nvme/linear-smoothscan-128-sync-3-4GB.data"         using 2:4 with points pt 7 ps 0.75 title "sync", \
+     "data/ryzen_nvme/linear-smoothscan-128-worker-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker", \
+     "data/ryzen_nvme/linear-smoothscan-128-worker-12-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)"
 set xrange[0.1:100]
-set yrange[0:4336.904]
+set yrange[0:5403.276]
 set title 'cyclic\_500 / bitmapscan' font 'Verdana Bold,12'
 
 set ylabel 'duration'
@@ -186,14 +270,28 @@ plot  "data/ryzen_nvme/cyclic\_500-indexscan-128-io_uring-3-4GB.data"   using 2:
      "data/ryzen_nvme/cyclic\_500-indexscan-128-worker-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker", \
      "data/ryzen_nvme/cyclic\_500-indexscan-128-worker-12-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)"
 
+set title 'cyclic\_500 / indexscan (prefetch)'
+
+plot  "data/ryzen_nvme/cyclic\_500-indexscan-prefetch-128-io_uring-3-4GB.data"   using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/ryzen_nvme/cyclic\_500-indexscan-prefetch-128-sync-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "sync", \
+     "data/ryzen_nvme/cyclic\_500-indexscan-prefetch-128-worker-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker", \
+     "data/ryzen_nvme/cyclic\_500-indexscan-prefetch-128-worker-12-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+
 set title 'cyclic\_500 / seqscan'
 
 plot "data/ryzen_nvme/cyclic\_500-seqscan-128-io_uring-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/ryzen_nvme/cyclic\_500-seqscan-128-sync-3-4GB.data"         using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_nvme/cyclic\_500-seqscan-128-worker-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker", \
      "data/ryzen_nvme/cyclic\_500-seqscan-128-worker-12-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+
+set title 'cyclic\_500 / smoothscan'
+
+plot "data/ryzen_nvme/cyclic\_500-smoothscan-128-io_uring-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/ryzen_nvme/cyclic\_500-smoothscan-128-sync-3-4GB.data"         using 2:4 with points pt 7 ps 0.75 title "sync", \
+     "data/ryzen_nvme/cyclic\_500-smoothscan-128-worker-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker", \
+     "data/ryzen_nvme/cyclic\_500-smoothscan-128-worker-12-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)"
 set xrange[0.1:100]
-set yrange[0:5724.487]
+set yrange[0:6880.555]
 set title 'cyclic\_100 / bitmapscan' font 'Verdana Bold,12'
 
 set ylabel 'duration'
@@ -212,14 +310,28 @@ plot  "data/ryzen_nvme/cyclic\_100-indexscan-128-io_uring-3-4GB.data"   using 2:
      "data/ryzen_nvme/cyclic\_100-indexscan-128-worker-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker", \
      "data/ryzen_nvme/cyclic\_100-indexscan-128-worker-12-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)"
 
+set title 'cyclic\_100 / indexscan (prefetch)'
+
+plot  "data/ryzen_nvme/cyclic\_100-indexscan-prefetch-128-io_uring-3-4GB.data"   using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/ryzen_nvme/cyclic\_100-indexscan-prefetch-128-sync-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "sync", \
+     "data/ryzen_nvme/cyclic\_100-indexscan-prefetch-128-worker-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker", \
+     "data/ryzen_nvme/cyclic\_100-indexscan-prefetch-128-worker-12-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+
 set title 'cyclic\_100 / seqscan'
 
 plot "data/ryzen_nvme/cyclic\_100-seqscan-128-io_uring-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/ryzen_nvme/cyclic\_100-seqscan-128-sync-3-4GB.data"         using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_nvme/cyclic\_100-seqscan-128-worker-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker", \
      "data/ryzen_nvme/cyclic\_100-seqscan-128-worker-12-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+
+set title 'cyclic\_100 / smoothscan'
+
+plot "data/ryzen_nvme/cyclic\_100-smoothscan-128-io_uring-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/ryzen_nvme/cyclic\_100-smoothscan-128-sync-3-4GB.data"         using 2:4 with points pt 7 ps 0.75 title "sync", \
+     "data/ryzen_nvme/cyclic\_100-smoothscan-128-worker-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker", \
+     "data/ryzen_nvme/cyclic\_100-smoothscan-128-worker-12-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)"
 set xrange[0.1:100]
-set yrange[0:3961.211]
+set yrange[0:7589.735]
 set title 'cyclic\_10 / bitmapscan' font 'Verdana Bold,12'
 
 set ylabel 'duration'
@@ -238,14 +350,28 @@ plot  "data/ryzen_nvme/cyclic\_10-indexscan-128-io_uring-3-4GB.data"   using 2:4
      "data/ryzen_nvme/cyclic\_10-indexscan-128-worker-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker", \
      "data/ryzen_nvme/cyclic\_10-indexscan-128-worker-12-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)"
 
+set title 'cyclic\_10 / indexscan (prefetch)'
+
+plot  "data/ryzen_nvme/cyclic\_10-indexscan-prefetch-128-io_uring-3-4GB.data"   using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/ryzen_nvme/cyclic\_10-indexscan-prefetch-128-sync-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "sync", \
+     "data/ryzen_nvme/cyclic\_10-indexscan-prefetch-128-worker-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker", \
+     "data/ryzen_nvme/cyclic\_10-indexscan-prefetch-128-worker-12-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+
 set title 'cyclic\_10 / seqscan'
 
 plot "data/ryzen_nvme/cyclic\_10-seqscan-128-io_uring-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/ryzen_nvme/cyclic\_10-seqscan-128-sync-3-4GB.data"         using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_nvme/cyclic\_10-seqscan-128-worker-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker", \
      "data/ryzen_nvme/cyclic\_10-seqscan-128-worker-12-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+
+set title 'cyclic\_10 / smoothscan'
+
+plot "data/ryzen_nvme/cyclic\_10-smoothscan-128-io_uring-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/ryzen_nvme/cyclic\_10-smoothscan-128-sync-3-4GB.data"         using 2:4 with points pt 7 ps 0.75 title "sync", \
+     "data/ryzen_nvme/cyclic\_10-smoothscan-128-worker-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker", \
+     "data/ryzen_nvme/cyclic\_10-smoothscan-128-worker-12-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)"
 set xrange[0.1:100]
-set yrange[0:3247.502]
+set yrange[0:5784.653]
 set title 'cyclic\_1 / bitmapscan' font 'Verdana Bold,12'
 
 set ylabel 'duration'
@@ -264,14 +390,28 @@ plot  "data/ryzen_nvme/cyclic\_1-indexscan-128-io_uring-3-4GB.data"   using 2:4 
      "data/ryzen_nvme/cyclic\_1-indexscan-128-worker-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker", \
      "data/ryzen_nvme/cyclic\_1-indexscan-128-worker-12-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)"
 
+set title 'cyclic\_1 / indexscan (prefetch)'
+
+plot  "data/ryzen_nvme/cyclic\_1-indexscan-prefetch-128-io_uring-3-4GB.data"   using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/ryzen_nvme/cyclic\_1-indexscan-prefetch-128-sync-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "sync", \
+     "data/ryzen_nvme/cyclic\_1-indexscan-prefetch-128-worker-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker", \
+     "data/ryzen_nvme/cyclic\_1-indexscan-prefetch-128-worker-12-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+
 set title 'cyclic\_1 / seqscan'
 
 plot "data/ryzen_nvme/cyclic\_1-seqscan-128-io_uring-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/ryzen_nvme/cyclic\_1-seqscan-128-sync-3-4GB.data"         using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_nvme/cyclic\_1-seqscan-128-worker-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker", \
      "data/ryzen_nvme/cyclic\_1-seqscan-128-worker-12-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+
+set title 'cyclic\_1 / smoothscan'
+
+plot "data/ryzen_nvme/cyclic\_1-smoothscan-128-io_uring-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/ryzen_nvme/cyclic\_1-smoothscan-128-sync-3-4GB.data"         using 2:4 with points pt 7 ps 0.75 title "sync", \
+     "data/ryzen_nvme/cyclic\_1-smoothscan-128-worker-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker", \
+     "data/ryzen_nvme/cyclic\_1-smoothscan-128-worker-12-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)"
 set xrange[0.1:100]
-set yrange[0:2390.601]
+set yrange[0:5600.745]
 set title 'cyclic / bitmapscan' font 'Verdana Bold,12'
 
 set ylabel 'duration'
@@ -290,9 +430,23 @@ plot  "data/ryzen_nvme/cyclic-indexscan-128-io_uring-3-4GB.data"   using 2:4 wit
      "data/ryzen_nvme/cyclic-indexscan-128-worker-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker", \
      "data/ryzen_nvme/cyclic-indexscan-128-worker-12-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)"
 
+set title 'cyclic / indexscan (prefetch)'
+
+plot  "data/ryzen_nvme/cyclic-indexscan-prefetch-128-io_uring-3-4GB.data"   using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/ryzen_nvme/cyclic-indexscan-prefetch-128-sync-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "sync", \
+     "data/ryzen_nvme/cyclic-indexscan-prefetch-128-worker-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker", \
+     "data/ryzen_nvme/cyclic-indexscan-prefetch-128-worker-12-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+
 set title 'cyclic / seqscan'
 
 plot "data/ryzen_nvme/cyclic-seqscan-128-io_uring-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/ryzen_nvme/cyclic-seqscan-128-sync-3-4GB.data"         using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_nvme/cyclic-seqscan-128-worker-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker", \
      "data/ryzen_nvme/cyclic-seqscan-128-worker-12-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+
+set title 'cyclic / smoothscan'
+
+plot "data/ryzen_nvme/cyclic-smoothscan-128-io_uring-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/ryzen_nvme/cyclic-smoothscan-128-sync-3-4GB.data"         using 2:4 with points pt 7 ps 0.75 title "sync", \
+     "data/ryzen_nvme/cyclic-smoothscan-128-worker-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker", \
+     "data/ryzen_nvme/cyclic-smoothscan-128-worker-12-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)"

@@ -1,4 +1,4 @@
-set terminal pdfcairo size 16,40 enhanced font 'Verdana,12'
+set terminal pdfcairo size 25,40 enhanced font 'Verdana,12'
 set output 'xeon-rows-cold-32GB-128-log.pdf'
 #set output 'xeon-rows-cold-32GB-log.pdf'
 
@@ -10,7 +10,7 @@ set key top left
 
 set xlabel 'selectivity'
 
-set multiplot layout 11,3 rowsfirst
+set multiplot layout 11,5 rowsfirst
 set xrange[0.01:100]
 set yrange[0.01:58269.656]
 set title 'uniform / bitmapscan' font 'Verdana Bold,12'
@@ -31,12 +31,26 @@ plot  "data/xeon/uniform-indexscan-128-io_uring-3-32GB.data"   using 1:3 with po
      "data/xeon/uniform-indexscan-128-worker-3-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "worker", \
      "data/xeon/uniform-indexscan-128-worker-12-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "worker (12)"
 
+set title 'uniform / indexscan (prefetch)'
+
+plot  "data/xeon/uniform-indexscan-prefetch-128-io_uring-3-32GB.data"   using 1:3 with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/xeon/uniform-indexscan-prefetch-128-sync-3-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "sync", \
+     "data/xeon/uniform-indexscan-prefetch-128-worker-3-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "worker", \
+     "data/xeon/uniform-indexscan-prefetch-128-worker-12-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "worker (12)"
+
 set title 'uniform / seqscan'
 
 plot "data/xeon/uniform-seqscan-128-io_uring-3-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/xeon/uniform-seqscan-128-sync-3-32GB.data"         using 1:3 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/uniform-seqscan-128-worker-3-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "worker", \
      "data/xeon/uniform-seqscan-128-worker-12-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "worker (12)"
+
+set title 'uniform / smoothscan'
+
+plot "data/xeon/uniform-smoothscan-128-io_uring-3-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/xeon/uniform-smoothscan-128-sync-3-32GB.data"         using 1:3 with points pt 7 ps 0.75 title "sync", \
+     "data/xeon/uniform-smoothscan-128-worker-3-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "worker", \
+     "data/xeon/uniform-smoothscan-128-worker-12-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "worker (12)"
 set xrange[0.01:100]
 set yrange[0.01:57499.706]
 set title 'linear\_500 / bitmapscan' font 'Verdana Bold,12'
@@ -57,12 +71,26 @@ plot  "data/xeon/linear\_500-indexscan-128-io_uring-3-32GB.data"   using 1:3 wit
      "data/xeon/linear\_500-indexscan-128-worker-3-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "worker", \
      "data/xeon/linear\_500-indexscan-128-worker-12-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "worker (12)"
 
+set title 'linear\_500 / indexscan (prefetch)'
+
+plot  "data/xeon/linear\_500-indexscan-prefetch-128-io_uring-3-32GB.data"   using 1:3 with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/xeon/linear\_500-indexscan-prefetch-128-sync-3-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "sync", \
+     "data/xeon/linear\_500-indexscan-prefetch-128-worker-3-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "worker", \
+     "data/xeon/linear\_500-indexscan-prefetch-128-worker-12-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "worker (12)"
+
 set title 'linear\_500 / seqscan'
 
 plot "data/xeon/linear\_500-seqscan-128-io_uring-3-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/xeon/linear\_500-seqscan-128-sync-3-32GB.data"         using 1:3 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/linear\_500-seqscan-128-worker-3-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "worker", \
      "data/xeon/linear\_500-seqscan-128-worker-12-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "worker (12)"
+
+set title 'linear\_500 / smoothscan'
+
+plot "data/xeon/linear\_500-smoothscan-128-io_uring-3-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/xeon/linear\_500-smoothscan-128-sync-3-32GB.data"         using 1:3 with points pt 7 ps 0.75 title "sync", \
+     "data/xeon/linear\_500-smoothscan-128-worker-3-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "worker", \
+     "data/xeon/linear\_500-smoothscan-128-worker-12-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "worker (12)"
 set xrange[0.01:100]
 set yrange[0.01:55751.062]
 set title 'linear\_100 / bitmapscan' font 'Verdana Bold,12'
@@ -83,12 +111,26 @@ plot  "data/xeon/linear\_100-indexscan-128-io_uring-3-32GB.data"   using 1:3 wit
      "data/xeon/linear\_100-indexscan-128-worker-3-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "worker", \
      "data/xeon/linear\_100-indexscan-128-worker-12-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "worker (12)"
 
+set title 'linear\_100 / indexscan (prefetch)'
+
+plot  "data/xeon/linear\_100-indexscan-prefetch-128-io_uring-3-32GB.data"   using 1:3 with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/xeon/linear\_100-indexscan-prefetch-128-sync-3-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "sync", \
+     "data/xeon/linear\_100-indexscan-prefetch-128-worker-3-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "worker", \
+     "data/xeon/linear\_100-indexscan-prefetch-128-worker-12-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "worker (12)"
+
 set title 'linear\_100 / seqscan'
 
 plot "data/xeon/linear\_100-seqscan-128-io_uring-3-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/xeon/linear\_100-seqscan-128-sync-3-32GB.data"         using 1:3 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/linear\_100-seqscan-128-worker-3-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "worker", \
      "data/xeon/linear\_100-seqscan-128-worker-12-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "worker (12)"
+
+set title 'linear\_100 / smoothscan'
+
+plot "data/xeon/linear\_100-smoothscan-128-io_uring-3-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/xeon/linear\_100-smoothscan-128-sync-3-32GB.data"         using 1:3 with points pt 7 ps 0.75 title "sync", \
+     "data/xeon/linear\_100-smoothscan-128-worker-3-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "worker", \
+     "data/xeon/linear\_100-smoothscan-128-worker-12-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "worker (12)"
 set xrange[0.01:100]
 set yrange[0.01:49938.026]
 set title 'linear\_10 / bitmapscan' font 'Verdana Bold,12'
@@ -109,14 +151,28 @@ plot  "data/xeon/linear\_10-indexscan-128-io_uring-3-32GB.data"   using 1:3 with
      "data/xeon/linear\_10-indexscan-128-worker-3-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "worker", \
      "data/xeon/linear\_10-indexscan-128-worker-12-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "worker (12)"
 
+set title 'linear\_10 / indexscan (prefetch)'
+
+plot  "data/xeon/linear\_10-indexscan-prefetch-128-io_uring-3-32GB.data"   using 1:3 with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/xeon/linear\_10-indexscan-prefetch-128-sync-3-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "sync", \
+     "data/xeon/linear\_10-indexscan-prefetch-128-worker-3-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "worker", \
+     "data/xeon/linear\_10-indexscan-prefetch-128-worker-12-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "worker (12)"
+
 set title 'linear\_10 / seqscan'
 
 plot "data/xeon/linear\_10-seqscan-128-io_uring-3-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/xeon/linear\_10-seqscan-128-sync-3-32GB.data"         using 1:3 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/linear\_10-seqscan-128-worker-3-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "worker", \
      "data/xeon/linear\_10-seqscan-128-worker-12-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "worker (12)"
+
+set title 'linear\_10 / smoothscan'
+
+plot "data/xeon/linear\_10-smoothscan-128-io_uring-3-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/xeon/linear\_10-smoothscan-128-sync-3-32GB.data"         using 1:3 with points pt 7 ps 0.75 title "sync", \
+     "data/xeon/linear\_10-smoothscan-128-worker-3-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "worker", \
+     "data/xeon/linear\_10-smoothscan-128-worker-12-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "worker (12)"
 set xrange[0.01:100]
-set yrange[0.01:49819.342]
+set yrange[0.01:56211.587]
 set title 'linear\_1 / bitmapscan' font 'Verdana Bold,12'
 
 set ylabel 'duration'
@@ -135,14 +191,28 @@ plot  "data/xeon/linear\_1-indexscan-128-io_uring-3-32GB.data"   using 1:3 with 
      "data/xeon/linear\_1-indexscan-128-worker-3-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "worker", \
      "data/xeon/linear\_1-indexscan-128-worker-12-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "worker (12)"
 
+set title 'linear\_1 / indexscan (prefetch)'
+
+plot  "data/xeon/linear\_1-indexscan-prefetch-128-io_uring-3-32GB.data"   using 1:3 with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/xeon/linear\_1-indexscan-prefetch-128-sync-3-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "sync", \
+     "data/xeon/linear\_1-indexscan-prefetch-128-worker-3-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "worker", \
+     "data/xeon/linear\_1-indexscan-prefetch-128-worker-12-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "worker (12)"
+
 set title 'linear\_1 / seqscan'
 
 plot "data/xeon/linear\_1-seqscan-128-io_uring-3-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/xeon/linear\_1-seqscan-128-sync-3-32GB.data"         using 1:3 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/linear\_1-seqscan-128-worker-3-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "worker", \
      "data/xeon/linear\_1-seqscan-128-worker-12-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "worker (12)"
+
+set title 'linear\_1 / smoothscan'
+
+plot "data/xeon/linear\_1-smoothscan-128-io_uring-3-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/xeon/linear\_1-smoothscan-128-sync-3-32GB.data"         using 1:3 with points pt 7 ps 0.75 title "sync", \
+     "data/xeon/linear\_1-smoothscan-128-worker-3-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "worker", \
+     "data/xeon/linear\_1-smoothscan-128-worker-12-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "worker (12)"
 set xrange[0.01:100]
-set yrange[0.01:7937.667]
+set yrange[0.01:19752.472]
 set title 'linear / bitmapscan' font 'Verdana Bold,12'
 
 set ylabel 'duration'
@@ -161,14 +231,28 @@ plot  "data/xeon/linear-indexscan-128-io_uring-3-32GB.data"   using 1:3 with poi
      "data/xeon/linear-indexscan-128-worker-3-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "worker", \
      "data/xeon/linear-indexscan-128-worker-12-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "worker (12)"
 
+set title 'linear / indexscan (prefetch)'
+
+plot  "data/xeon/linear-indexscan-prefetch-128-io_uring-3-32GB.data"   using 1:3 with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/xeon/linear-indexscan-prefetch-128-sync-3-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "sync", \
+     "data/xeon/linear-indexscan-prefetch-128-worker-3-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "worker", \
+     "data/xeon/linear-indexscan-prefetch-128-worker-12-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "worker (12)"
+
 set title 'linear / seqscan'
 
 plot "data/xeon/linear-seqscan-128-io_uring-3-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/xeon/linear-seqscan-128-sync-3-32GB.data"         using 1:3 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/linear-seqscan-128-worker-3-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "worker", \
      "data/xeon/linear-seqscan-128-worker-12-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "worker (12)"
+
+set title 'linear / smoothscan'
+
+plot "data/xeon/linear-smoothscan-128-io_uring-3-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/xeon/linear-smoothscan-128-sync-3-32GB.data"         using 1:3 with points pt 7 ps 0.75 title "sync", \
+     "data/xeon/linear-smoothscan-128-worker-3-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "worker", \
+     "data/xeon/linear-smoothscan-128-worker-12-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "worker (12)"
 set xrange[0.01:100]
-set yrange[0.01:58033.28]
+set yrange[0.01:59442.831]
 set title 'cyclic\_500 / bitmapscan' font 'Verdana Bold,12'
 
 set ylabel 'duration'
@@ -187,12 +271,26 @@ plot  "data/xeon/cyclic\_500-indexscan-128-io_uring-3-32GB.data"   using 1:3 wit
      "data/xeon/cyclic\_500-indexscan-128-worker-3-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "worker", \
      "data/xeon/cyclic\_500-indexscan-128-worker-12-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "worker (12)"
 
+set title 'cyclic\_500 / indexscan (prefetch)'
+
+plot  "data/xeon/cyclic\_500-indexscan-prefetch-128-io_uring-3-32GB.data"   using 1:3 with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/xeon/cyclic\_500-indexscan-prefetch-128-sync-3-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "sync", \
+     "data/xeon/cyclic\_500-indexscan-prefetch-128-worker-3-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "worker", \
+     "data/xeon/cyclic\_500-indexscan-prefetch-128-worker-12-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "worker (12)"
+
 set title 'cyclic\_500 / seqscan'
 
 plot "data/xeon/cyclic\_500-seqscan-128-io_uring-3-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/xeon/cyclic\_500-seqscan-128-sync-3-32GB.data"         using 1:3 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/cyclic\_500-seqscan-128-worker-3-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "worker", \
      "data/xeon/cyclic\_500-seqscan-128-worker-12-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "worker (12)"
+
+set title 'cyclic\_500 / smoothscan'
+
+plot "data/xeon/cyclic\_500-smoothscan-128-io_uring-3-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/xeon/cyclic\_500-smoothscan-128-sync-3-32GB.data"         using 1:3 with points pt 7 ps 0.75 title "sync", \
+     "data/xeon/cyclic\_500-smoothscan-128-worker-3-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "worker", \
+     "data/xeon/cyclic\_500-smoothscan-128-worker-12-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "worker (12)"
 set xrange[0.01:100]
 set yrange[0.01:51024.501]
 set title 'cyclic\_100 / bitmapscan' font 'Verdana Bold,12'
@@ -213,12 +311,26 @@ plot  "data/xeon/cyclic\_100-indexscan-128-io_uring-3-32GB.data"   using 1:3 wit
      "data/xeon/cyclic\_100-indexscan-128-worker-3-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "worker", \
      "data/xeon/cyclic\_100-indexscan-128-worker-12-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "worker (12)"
 
+set title 'cyclic\_100 / indexscan (prefetch)'
+
+plot  "data/xeon/cyclic\_100-indexscan-prefetch-128-io_uring-3-32GB.data"   using 1:3 with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/xeon/cyclic\_100-indexscan-prefetch-128-sync-3-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "sync", \
+     "data/xeon/cyclic\_100-indexscan-prefetch-128-worker-3-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "worker", \
+     "data/xeon/cyclic\_100-indexscan-prefetch-128-worker-12-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "worker (12)"
+
 set title 'cyclic\_100 / seqscan'
 
 plot "data/xeon/cyclic\_100-seqscan-128-io_uring-3-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/xeon/cyclic\_100-seqscan-128-sync-3-32GB.data"         using 1:3 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/cyclic\_100-seqscan-128-worker-3-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "worker", \
      "data/xeon/cyclic\_100-seqscan-128-worker-12-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "worker (12)"
+
+set title 'cyclic\_100 / smoothscan'
+
+plot "data/xeon/cyclic\_100-smoothscan-128-io_uring-3-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/xeon/cyclic\_100-smoothscan-128-sync-3-32GB.data"         using 1:3 with points pt 7 ps 0.75 title "sync", \
+     "data/xeon/cyclic\_100-smoothscan-128-worker-3-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "worker", \
+     "data/xeon/cyclic\_100-smoothscan-128-worker-12-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "worker (12)"
 set xrange[0.01:100]
 set yrange[0.01:45420.338]
 set title 'cyclic\_10 / bitmapscan' font 'Verdana Bold,12'
@@ -239,14 +351,28 @@ plot  "data/xeon/cyclic\_10-indexscan-128-io_uring-3-32GB.data"   using 1:3 with
      "data/xeon/cyclic\_10-indexscan-128-worker-3-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "worker", \
      "data/xeon/cyclic\_10-indexscan-128-worker-12-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "worker (12)"
 
+set title 'cyclic\_10 / indexscan (prefetch)'
+
+plot  "data/xeon/cyclic\_10-indexscan-prefetch-128-io_uring-3-32GB.data"   using 1:3 with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/xeon/cyclic\_10-indexscan-prefetch-128-sync-3-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "sync", \
+     "data/xeon/cyclic\_10-indexscan-prefetch-128-worker-3-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "worker", \
+     "data/xeon/cyclic\_10-indexscan-prefetch-128-worker-12-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "worker (12)"
+
 set title 'cyclic\_10 / seqscan'
 
 plot "data/xeon/cyclic\_10-seqscan-128-io_uring-3-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/xeon/cyclic\_10-seqscan-128-sync-3-32GB.data"         using 1:3 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/cyclic\_10-seqscan-128-worker-3-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "worker", \
      "data/xeon/cyclic\_10-seqscan-128-worker-12-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "worker (12)"
+
+set title 'cyclic\_10 / smoothscan'
+
+plot "data/xeon/cyclic\_10-smoothscan-128-io_uring-3-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/xeon/cyclic\_10-smoothscan-128-sync-3-32GB.data"         using 1:3 with points pt 7 ps 0.75 title "sync", \
+     "data/xeon/cyclic\_10-smoothscan-128-worker-3-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "worker", \
+     "data/xeon/cyclic\_10-smoothscan-128-worker-12-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "worker (12)"
 set xrange[0.01:100]
-set yrange[0.01:11399.368]
+set yrange[0.01:20986.765]
 set title 'cyclic\_1 / bitmapscan' font 'Verdana Bold,12'
 
 set ylabel 'duration'
@@ -265,14 +391,28 @@ plot  "data/xeon/cyclic\_1-indexscan-128-io_uring-3-32GB.data"   using 1:3 with 
      "data/xeon/cyclic\_1-indexscan-128-worker-3-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "worker", \
      "data/xeon/cyclic\_1-indexscan-128-worker-12-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "worker (12)"
 
+set title 'cyclic\_1 / indexscan (prefetch)'
+
+plot  "data/xeon/cyclic\_1-indexscan-prefetch-128-io_uring-3-32GB.data"   using 1:3 with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/xeon/cyclic\_1-indexscan-prefetch-128-sync-3-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "sync", \
+     "data/xeon/cyclic\_1-indexscan-prefetch-128-worker-3-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "worker", \
+     "data/xeon/cyclic\_1-indexscan-prefetch-128-worker-12-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "worker (12)"
+
 set title 'cyclic\_1 / seqscan'
 
 plot "data/xeon/cyclic\_1-seqscan-128-io_uring-3-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/xeon/cyclic\_1-seqscan-128-sync-3-32GB.data"         using 1:3 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/cyclic\_1-seqscan-128-worker-3-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "worker", \
      "data/xeon/cyclic\_1-seqscan-128-worker-12-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "worker (12)"
+
+set title 'cyclic\_1 / smoothscan'
+
+plot "data/xeon/cyclic\_1-smoothscan-128-io_uring-3-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/xeon/cyclic\_1-smoothscan-128-sync-3-32GB.data"         using 1:3 with points pt 7 ps 0.75 title "sync", \
+     "data/xeon/cyclic\_1-smoothscan-128-worker-3-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "worker", \
+     "data/xeon/cyclic\_1-smoothscan-128-worker-12-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "worker (12)"
 set xrange[0.01:100]
-set yrange[0.01:11062.663]
+set yrange[0.01:20253.789]
 set title 'cyclic / bitmapscan' font 'Verdana Bold,12'
 
 set ylabel 'duration'
@@ -291,9 +431,23 @@ plot  "data/xeon/cyclic-indexscan-128-io_uring-3-32GB.data"   using 1:3 with poi
      "data/xeon/cyclic-indexscan-128-worker-3-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "worker", \
      "data/xeon/cyclic-indexscan-128-worker-12-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "worker (12)"
 
+set title 'cyclic / indexscan (prefetch)'
+
+plot  "data/xeon/cyclic-indexscan-prefetch-128-io_uring-3-32GB.data"   using 1:3 with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/xeon/cyclic-indexscan-prefetch-128-sync-3-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "sync", \
+     "data/xeon/cyclic-indexscan-prefetch-128-worker-3-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "worker", \
+     "data/xeon/cyclic-indexscan-prefetch-128-worker-12-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "worker (12)"
+
 set title 'cyclic / seqscan'
 
 plot "data/xeon/cyclic-seqscan-128-io_uring-3-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/xeon/cyclic-seqscan-128-sync-3-32GB.data"         using 1:3 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/cyclic-seqscan-128-worker-3-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "worker", \
      "data/xeon/cyclic-seqscan-128-worker-12-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "worker (12)"
+
+set title 'cyclic / smoothscan'
+
+plot "data/xeon/cyclic-smoothscan-128-io_uring-3-32GB.data"     using 1:3 with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/xeon/cyclic-smoothscan-128-sync-3-32GB.data"         using 1:3 with points pt 7 ps 0.75 title "sync", \
+     "data/xeon/cyclic-smoothscan-128-worker-3-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "worker", \
+     "data/xeon/cyclic-smoothscan-128-worker-12-32GB.data"       using 1:3 with points pt 7 ps 0.75 title "worker (12)"

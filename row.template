@@ -16,9 +16,23 @@ plot  "data/MACHINE/DATASET-indexscan-PREFETCH-io_uring-3-BUFFERS.data"   using 
      "data/MACHINE/DATASET-indexscan-PREFETCH-worker-3-BUFFERS.data"     using X:Y with points pt 7 ps 0.75 title "worker", \
      "data/MACHINE/DATASET-indexscan-PREFETCH-worker-12-BUFFERS.data"     using X:Y with points pt 7 ps 0.75 title "worker (12)"
 
+set title 'DATASET / indexscan (prefetch)'
+
+plot  "data/MACHINE/DATASET-indexscan-prefetch-PREFETCH-io_uring-3-BUFFERS.data"   using X:Y with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/MACHINE/DATASET-indexscan-prefetch-PREFETCH-sync-3-BUFFERS.data"       using X:Y with points pt 7 ps 0.75 title "sync", \
+     "data/MACHINE/DATASET-indexscan-prefetch-PREFETCH-worker-3-BUFFERS.data"     using X:Y with points pt 7 ps 0.75 title "worker", \
+     "data/MACHINE/DATASET-indexscan-prefetch-PREFETCH-worker-12-BUFFERS.data"     using X:Y with points pt 7 ps 0.75 title "worker (12)"
+
 set title 'DATASET / seqscan'
 
 plot "data/MACHINE/DATASET-seqscan-PREFETCH-io_uring-3-BUFFERS.data"     using X:Y with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/MACHINE/DATASET-seqscan-PREFETCH-sync-3-BUFFERS.data"         using X:Y with points pt 7 ps 0.75 title "sync", \
      "data/MACHINE/DATASET-seqscan-PREFETCH-worker-3-BUFFERS.data"       using X:Y with points pt 7 ps 0.75 title "worker", \
      "data/MACHINE/DATASET-seqscan-PREFETCH-worker-12-BUFFERS.data"       using X:Y with points pt 7 ps 0.75 title "worker (12)"
+
+set title 'DATASET / smoothscan'
+
+plot "data/MACHINE/DATASET-smoothscan-PREFETCH-io_uring-3-BUFFERS.data"     using X:Y with points pt 7 ps 0.75 title "io\\\_uring", \
+     "data/MACHINE/DATASET-smoothscan-PREFETCH-sync-3-BUFFERS.data"         using X:Y with points pt 7 ps 0.75 title "sync", \
+     "data/MACHINE/DATASET-smoothscan-PREFETCH-worker-3-BUFFERS.data"       using X:Y with points pt 7 ps 0.75 title "worker", \
+     "data/MACHINE/DATASET-smoothscan-PREFETCH-worker-12-BUFFERS.data"       using X:Y with points pt 7 ps 0.75 title "worker (12)"
