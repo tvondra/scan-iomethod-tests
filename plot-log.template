@@ -1,13 +1,13 @@
-set terminal pdfcairo size 25,40 enhanced font 'Verdana,12'
-set output 'MACHINE-SEL-CACHE-BUFFERS-PREFETCH-log.pdf'
+set terminal pdfcairo size 25,35 enhanced font 'Verdana,12'
+set output 'MACHINE-SEL-CACHE-BUFFERS-EIC-log.pdf'
 #set output 'MACHINE-SEL-CACHE-BUFFERS-log.pdf'
 
 
 set log x
 set log y
 set yrange [0.01:]
-set key top left
+set key bottom right
 
 set xlabel 'selectivity'
 
-set multiplot layout 11,5 rowsfirst
+set multiplot layout 9,5 rowsfirst

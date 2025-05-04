@@ -3,6 +3,8 @@
 DB=$1
 DATADIR=$2
 TIMEOUT=$3
+MAXSTEP=10000
+NDISTINCT=100000
 
 set -e
 
@@ -15,44 +17,54 @@ while /bin/true; do
 
 	if [[ $delta -lt 1 ]]; then
 		delta=1
-	elif [[ $delta -gt 50 ]]; then
-		delta=50
+	elif [[ $delta -gt $MAXSTEP ]]; then
+		delta=$MAXSTEP
 	fi
 
 	cnt=$((cnt+delta))
 
-	if [[ $cnt -gt 1000 ]]; then
+	if [[ $cnt -gt $NDISTINCT ]]; then
 		break
 	fi
 
 	# which dataset to query
-	for dataset in uniform linear linear_1 linear_10 linear_100 linear_500 cyclic cyclic_1 cyclic_10 cyclic_100 cyclic_500; do
+	for dataset in uniform linear linear_1 linear_10 linear_25 cyclic cyclic_1 cyclic_10 cyclic_25; do
 
-		tuples_total=$(psql $DB -t -A -c "SELECT reltuples::bigint FROM pg_class WHERE relname = 'smoothscan_${dataset}'")
-		pages_total=$(psql $DB -t -A -c "SELECT relpages FROM pg_class WHERE relname = 'smoothscan_${dataset}'")
+		tuples_total=$(psql $DB -t -A -c "SELECT reltuples::bigint FROM pg_class WHERE relname = '${dataset}'")
+		pages_total=$(psql $DB -t -A -c "SELECT relpages FROM pg_class WHERE relname = '${dataset}'")
 
-		for scan in indexscan bitmapscan seqscan; do
+		for scan in indexscan bitmapscan seqscan smoothscan; do
 
-			for prefetch in 0 16 128; do
+			for prefetch in on off; do
 
-				# only bitmapscan supports prefetching
-				#if [ "$prefetch" == "16" ] && [ "$scan" != "bitmapscan" ]; then
-				#	continue
-				#fi
+				# index prefetch is only for index-only scans
+				if [ "$prefetch" == "on" ] && [ "$scan" != "indexscan" ]; then
+					continue
+				fi
 
-				# test all the interesting I/O methods
-				for iomethod in worker io_uring sync; do
+				for eic in 0 16 128; do
 
-					for ioworkers in 3 12; do
+					# only bitmapscan supports prefetching
+					# XXX not true - all scans relying on read_stream can prefetch
+					#if [ "$prefetch" == "16" ] && [ "$scan" != "bitmapscan" ]; then
+					#	continue
+					#fi
 
-						# only 'worker' method supports changing workers
-						if [ "$iomethod" != "worker" ] && [ "$ioworkers" != "3" ]; then
-							continue
-						fi
+					# test all the interesting I/O methods
+					for iomethod in worker io_uring sync; do
 
-						for shared_buffers in 4GB 32GB; do
+						for ioworkers in 3 12; do
 
-							echo $cnt $dataset $scan $prefetch $iomethod $ioworkers $shared_buffers $tuples_total $pages_total >> test.csv
+							# only 'worker' method supports changing workers
+							if [ "$iomethod" != "worker" ] && [ "$ioworkers" != "3" ]; then
+								continue
+							fi
+
+							for shared_buffers in 4GB 32GB; do
+
+								echo $cnt $dataset $scan $prefetch $eic $iomethod $ioworkers $shared_buffers $tuples_total $pages_total >> test.csv
+
+							done
 
 						done
 
@@ -82,11 +94,12 @@ for r in $(seq 1 5); do
 		dataset="${strarray[1]}"
 		scan="${strarray[2]}"
 		prefetch="${strarray[3]}"
-		iomethod="${strarray[4]}"
-		ioworkers="${strarray[5]}"
-		shared_buffers="${strarray[6]}"
-		tuples_total="${strarray[7]}"
-		pages_total="${strarray[8]}"
+		eic="${strarray[4]}"
+		iomethod="${strarray[5]}"
+		ioworkers="${strarray[6]}"
+		shared_buffers="${strarray[7]}"
+		tuples_total="${strarray[8]}"
+		pages_total="${strarray[9]}"
 
 		id=$((id+1))
 
@@ -103,7 +116,7 @@ for r in $(seq 1 5); do
 		fi
 
 		# maxval to pick at random
-		m=$((1000 - $cnt))
+		m=$(($NDISTINCT - $cnt))
 
 		# pick [start,end] so that it's within [0,1000]
 		start=$((RANDOM % m))
@@ -119,8 +132,9 @@ for r in $(seq 1 5); do
 
 		psql $DB > tmp.log 2>&1 <<EOF
 SET max_parallel_workers_per_gather = 0;
-SET effective_io_concurrency = $prefetch;
-EXPLAIN (COSTS OFF) SELECT * FROM smoothscan_${dataset} WHERE a BETWEEN $start AND $end;
+SET enable_indexscan_prefetch = $prefetch;
+SET effective_io_concurrency = $eic;
+EXPLAIN (COSTS OFF) SELECT * FROM ${dataset} WHERE a BETWEEN $start AND $end;
 EOF
 
 		if [ "$scan" == "bitmapscan" ]; then
@@ -137,16 +151,24 @@ EOF
 			optimal='no'
 		fi
 
+		if [ "$scan" == "smoothscan" ]; then
+			load="LOAD 'smoothscan'; SET smoothscan.enabled = true;"
+		else
+			load="";
+		fi
+
 		# run with cold caches
 		psql $DB > tmp.log 2>&1 <<EOF
+$load
 SET max_parallel_workers_per_gather = 0;
 SET enable_indexscan = $indexscan;
 SET enable_bitmapscan = $bitmapscan;
 SET enable_seqscan = $seqscan;
-SET effective_io_concurrency = $prefetch;
+SET enable_indexscan_prefetch = $prefetch;
+SET effective_io_concurrency = $eic;
 SET statement_timeout = $TIMEOUT;
 \timing on
-EXPLAIN (ANALYZE, TIMING OFF, SETTINGS ON) SELECT * FROM smoothscan_${dataset} WHERE a BETWEEN $start AND $end;
+EXPLAIN (ANALYZE, TIMING OFF, SETTINGS ON) SELECT * FROM ${dataset} WHERE a BETWEEN $start AND $end;
 EOF
 
 		c=$(grep 'canceling statement' tmp.log | wc -l)
@@ -157,19 +179,21 @@ EOF
 			time_uncached=$(grep '^Time:' tmp.log | awk '{print $2}')
 		fi
 
-		echo "===== $id / cold =====" >> explains.log
+		echo "===== $line / cold =====" >> explains.log
 		cat tmp.log >> explains.log
 
 		# run again, with warm caches
 		psql $DB > tmp.log 2>&1 <<EOF
+$load
 SET max_parallel_workers_per_gather = 0;
 SET enable_indexscan = $indexscan;
 SET enable_bitmapscan = $bitmapscan;
 SET enable_seqscan = $seqscan;
-SET effective_io_concurrency = $prefetch;
+SET enable_indexscan_prefetch = $prefetch;
+SET effective_io_concurrency = $eic;
 SET statement_timeout = $TIMEOUT;
 \timing on
-EXPLAIN (ANALYZE, TIMING OFF, SETTINGS ON) SELECT * FROM smoothscan_${dataset} WHERE a BETWEEN $start AND $end;
+EXPLAIN (ANALYZE, TIMING OFF, SETTINGS ON) SELECT * FROM ${dataset} WHERE a BETWEEN $start AND $end;
 EOF
 
 		c=$(grep 'canceling statement' tmp.log | wc -l)
@@ -180,14 +204,14 @@ EOF
 			time_cached=$(grep '^Time:' tmp.log | awk '{print $2}')
 		fi
 
-		echo "===== $id / warm =====" >> explains.log
+		echo "===== $line / warm =====" >> explains.log
 		cat tmp.log >> explains.log
 
 		# count matching tuples and pages (condition is random, better get precise result)
-		tuples=$(psql $DB -t -A -c "SELECT COUNT(*) FROM smoothscan_${dataset} WHERE a BETWEEN $start AND $end")
-		pages=$(psql $DB -t -A -c "SELECT COUNT(DISTINCT (ctid::text::point)[0]) FROM smoothscan_${dataset} WHERE a BETWEEN $start AND $end")
+		tuples=$(psql $DB -t -A -c "SELECT COUNT(*) FROM ${dataset} WHERE a BETWEEN $start AND $end")
+		pages=$(psql $DB -t -A -c "SELECT COUNT(DISTINCT (ctid::text::point)[0]) FROM ${dataset} WHERE a BETWEEN $start AND $end")
 
-		echo $id $cnt $dataset $scan $prefetch $r $iomethod $ioworkers $shared_buffers $start $end $optimal $tuples_total $tuples $pages_total $pages $time_uncached $time_cached >> results.csv
+		echo $id $cnt $dataset $scan $prefetch $eic $r $iomethod $ioworkers $shared_buffers $start $end $optimal $tuples_total $tuples $pages_total $pages $time_uncached $time_cached >> results.csv
 
 	done < test.random
 

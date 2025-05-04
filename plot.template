@@ -1,5 +1,5 @@
-set terminal pdfcairo size 25,40 enhanced font 'Verdana,12'
-set output 'MACHINE-SEL-CACHE-BUFFERS-PREFETCH.pdf'
+set terminal pdfcairo size 25,35 enhanced font 'Verdana,12'
+set output 'MACHINE-SEL-CACHE-BUFFERS-EIC.pdf'
 #set output 'MACHINE-SEL-CACHE-SCALE.pdf'
 
 
@@ -9,4 +9,4 @@ set key top left
 
 set xlabel 'selectivity'
 
-set multiplot layout 11,5 rowsfirst
+set multiplot layout 9,5 rowsfirst
