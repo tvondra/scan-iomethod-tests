@@ -12,8 +12,11 @@ rm -f *.pdf *.plot
 
 sqlite3 scans.db <<EOF
 create table results_xeon (seq int, cnt int, dataset text, scan text, prefetch text, eic int, run int, io_method text, io_workers int, shared_buffers text, start_val int, end_val int, optimal text, total_rows int, rows int, total_pages int, pages int, timing_cold numeric, timing_warm numeric);
+create table results_xeon_17 (seq int, cnt int, dataset text, scan text, prefetch text, eic int, run int, io_method text, io_workers int, shared_buffers text, start_val int, end_val int, optimal text, total_rows int, rows int, total_pages int, pages int, timing_cold numeric, timing_warm numeric);
 create table results_ryzen_nvme (seq int, cnt int, dataset text, scan text, prefetch text, eic int, run int, io_method text, io_workers int, shared_buffers text, start_val int, end_val int, optimal text, total_rows int, rows int, total_pages int, pages int, timing_cold numeric, timing_warm numeric);
+create table results_ryzen_nvme_17 (seq int, cnt int, dataset text, scan text, prefetch text, eic int, run int, io_method text, io_workers int, shared_buffers text, start_val int, end_val int, optimal text, total_rows int, rows int, total_pages int, pages int, timing_cold numeric, timing_warm numeric);
 create table results_ryzen_sata (seq int, cnt int, dataset text, scan text, prefetch int, eic int, run int, io_method text, io_workers int, shared_buffers text, start_val int, end_val int, optimal text, total_rows int, rows int, total_pages int, pages int, timing_cold numeric, timing_warm numeric);
+create table results_ryzen_sata_17 (seq int, cnt int, dataset text, scan text, prefetch int, eic int, run int, io_method text, io_workers int, shared_buffers text, start_val int, end_val int, optimal text, total_rows int, rows int, total_pages int, pages int, timing_cold numeric, timing_warm numeric);
 -- create table results_xeon_2 (seq int, cnt int, dataset text, scan text, prefetch int, run int, io_method text, io_workers int, shared_buffers text, start_val int, end_val int, optimal text, total_rows int, rows int, total_pages int, pages int, timing_cold numeric, timing_warm numeric);
 -- create table results_ryzen_nvme_2 (seq int, cnt int, dataset text, scan text, prefetch int, run int, io_method text, io_workers int, shared_buffers text, start_val int, end_val int, optimal text, total_rows int, rows int, total_pages int, pages int, timing_cold numeric, timing_warm numeric);
 EOF
@@ -22,21 +25,21 @@ sqlite3 scans.db <<EOF
 .mode csv
 .separator ' '
 .import ryzen-nvme.csv results_ryzen_nvme
---.import ryzen-nvme-smoothscan.csv results_ryzen_nvme
---.import ryzen-nvme-prefetch.csv results_ryzen_nvme_2
+.import ryzen-nvme-17.csv results_ryzen_nvme_17
+.import ryzen-sata-17.csv results_ryzen_sata_17
 .import ryzen-sata.csv results_ryzen_sata
---.import ryzen-sata2.csv results_ryzen_sata
 .import xeon.csv results_xeon
---.import xeon-smoothscan.csv results_xeon
---.import xeon-prefetch.csv results_xeon_2
---.import xeon2.csv results_xeon
+.import xeon-17.csv results_xeon_17
 EOF
 
 sqlite3 scans.db <<EOF
---update results_ryzen_nvme_2 set scan = 'indexscan-prefetch';
---update results_xeon_2 set scan = 'indexscan-prefetch';
---insert into results_ryzen_nvme select * from results_ryzen_nvme_2;
---insert into results_xeon select * from results_xeon_2;
+update results_ryzen_nvme_17 set scan = scan || '-17', io_workers = 0;
+update results_ryzen_sata_17 set scan = scan || '-17', io_workers = 0;
+update results_xeon_17 set scan = scan || '-17', io_workers = 0;
+
+insert into results_ryzen_nvme select * from results_ryzen_nvme_17;
+insert into results_ryzen_sata select * from results_ryzen_sata_17;
+insert into results_xeon select * from results_xeon_17;
 EOF
 
 for m in $MACHINES; do
@@ -66,7 +69,7 @@ EOF
 
 			sqlite3 scans.db > data/$m/$dataset-$scan-$prefetch-$eic-$iomethod-$ioworkers-$sb.data <<EOF
 .mode tab
-SELECT (rows * 100.0 / total_rows), (pages * 100.0 / total_pages), timing_cold, timing_warm FROM results_${m} WHERE dataset = '$dataset' AND scan = '$scan' AND prefetch = '$prefetch' AND eic = $eic AND io_method = '$iomethod' AND io_workers = $ioworkers AND shared_buffers = '$sb'
+SELECT (rows * 100.0 / total_rows), (pages * 100.0 / total_pages), timing_cold, timing_warm FROM results_${m} WHERE dataset = '$dataset' AND scan = '$scan' AND prefetch = '$prefetch' AND eic = $eic AND io_method = '$iomethod' AND io_workers = $ioworkers AND shared_buffers = '$sb' ORDER BY (rows * 100.0 / total_rows), (pages * 100.0 / total_pages)
 EOF
 
 		done < tmp.data
@@ -92,7 +95,7 @@ EOF
 
 				sqlite3 scans.db > data/$m/$dataset-$scan-$prefetch-$eic-$sb-$optimal.data <<EOF
 .mode tab
-SELECT (rows * 100.0 / total_rows), (pages * 100.0 / total_pages), timing_cold, timing_warm FROM results_${m} WHERE dataset = '$dataset' AND scan = '$scan' AND prefetch = '$prefetch' AND eic = $eic AND shared_buffers = '$sb' AND optimal = '$optimal'
+SELECT (rows * 100.0 / total_rows), (pages * 100.0 / total_pages), timing_cold, timing_warm FROM results_${m} WHERE dataset = '$dataset' AND scan = '$scan' AND prefetch = '$prefetch' AND eic = $eic AND shared_buffers = '$sb' AND optimal = '$optimal' ORDER BY (rows * 100.0 / total_rows), (pages * 100.0 / total_pages)
 EOF
 
 			done

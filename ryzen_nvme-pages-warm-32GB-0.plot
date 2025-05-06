@@ -19,7 +19,8 @@ set ylabel 'duration'
 plot "data/ryzen_nvme/uniform-bitmapscan-off-0-io_uring-3-32GB.data"  using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/ryzen_nvme/uniform-bitmapscan-off-0-sync-3-32GB.data"      using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_nvme/uniform-bitmapscan-off-0-worker-3-32GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/ryzen_nvme/uniform-bitmapscan-off-0-worker-12-32GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/ryzen_nvme/uniform-bitmapscan-off-0-worker-12-32GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/ryzen_nvme/uniform-bitmapscan-17-off-0-sync-0-32GB.data"    using 2:4 with points pt 7 ps 0.75 title "17"
 
 unset ylabel
 
@@ -28,7 +29,8 @@ set title 'uniform / indexscan'
 plot  "data/ryzen_nvme/uniform-indexscan-off-0-io_uring-3-32GB.data"   using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/ryzen_nvme/uniform-indexscan-off-0-sync-3-32GB.data"       using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_nvme/uniform-indexscan-off-0-worker-3-32GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/ryzen_nvme/uniform-indexscan-off-0-worker-12-32GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/ryzen_nvme/uniform-indexscan-off-0-worker-12-32GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/ryzen_nvme/uniform-indexscan-17-off-0-sync-0-32GB.data"     using 2:4 with points pt 7 ps 0.75 title "17"
 
 set title 'uniform / indexscan (prefetch)'
 
@@ -42,7 +44,8 @@ set title 'uniform / seqscan'
 plot "data/ryzen_nvme/uniform-seqscan-off-0-io_uring-3-32GB.data"     using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/ryzen_nvme/uniform-seqscan-off-0-sync-3-32GB.data"         using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_nvme/uniform-seqscan-off-0-worker-3-32GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/ryzen_nvme/uniform-seqscan-off-0-worker-12-32GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/ryzen_nvme/uniform-seqscan-off-0-worker-12-32GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/ryzen_nvme/uniform-seqscan-17-off-0-sync-0-32GB.data"       using 2:4 with points pt 7 ps 0.75 title "17"
 
 set title 'uniform / smoothscan'
 
@@ -59,7 +62,8 @@ set ylabel 'duration'
 plot "data/ryzen_nvme/linear\_25-bitmapscan-off-0-io_uring-3-32GB.data"  using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/ryzen_nvme/linear\_25-bitmapscan-off-0-sync-3-32GB.data"      using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_nvme/linear\_25-bitmapscan-off-0-worker-3-32GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/ryzen_nvme/linear\_25-bitmapscan-off-0-worker-12-32GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/ryzen_nvme/linear\_25-bitmapscan-off-0-worker-12-32GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/ryzen_nvme/linear\_25-bitmapscan-17-off-0-sync-0-32GB.data"    using 2:4 with points pt 7 ps 0.75 title "17"
 
 unset ylabel
 
@@ -68,7 +72,8 @@ set title 'linear\_25 / indexscan'
 plot  "data/ryzen_nvme/linear\_25-indexscan-off-0-io_uring-3-32GB.data"   using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/ryzen_nvme/linear\_25-indexscan-off-0-sync-3-32GB.data"       using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_nvme/linear\_25-indexscan-off-0-worker-3-32GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/ryzen_nvme/linear\_25-indexscan-off-0-worker-12-32GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/ryzen_nvme/linear\_25-indexscan-off-0-worker-12-32GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/ryzen_nvme/linear\_25-indexscan-17-off-0-sync-0-32GB.data"     using 2:4 with points pt 7 ps 0.75 title "17"
 
 set title 'linear\_25 / indexscan (prefetch)'
 
@@ -82,7 +87,8 @@ set title 'linear\_25 / seqscan'
 plot "data/ryzen_nvme/linear\_25-seqscan-off-0-io_uring-3-32GB.data"     using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/ryzen_nvme/linear\_25-seqscan-off-0-sync-3-32GB.data"         using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_nvme/linear\_25-seqscan-off-0-worker-3-32GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/ryzen_nvme/linear\_25-seqscan-off-0-worker-12-32GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/ryzen_nvme/linear\_25-seqscan-off-0-worker-12-32GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/ryzen_nvme/linear\_25-seqscan-17-off-0-sync-0-32GB.data"       using 2:4 with points pt 7 ps 0.75 title "17"
 
 set title 'linear\_25 / smoothscan'
 
@@ -99,7 +105,8 @@ set ylabel 'duration'
 plot "data/ryzen_nvme/linear\_10-bitmapscan-off-0-io_uring-3-32GB.data"  using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/ryzen_nvme/linear\_10-bitmapscan-off-0-sync-3-32GB.data"      using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_nvme/linear\_10-bitmapscan-off-0-worker-3-32GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/ryzen_nvme/linear\_10-bitmapscan-off-0-worker-12-32GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/ryzen_nvme/linear\_10-bitmapscan-off-0-worker-12-32GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/ryzen_nvme/linear\_10-bitmapscan-17-off-0-sync-0-32GB.data"    using 2:4 with points pt 7 ps 0.75 title "17"
 
 unset ylabel
 
@@ -108,7 +115,8 @@ set title 'linear\_10 / indexscan'
 plot  "data/ryzen_nvme/linear\_10-indexscan-off-0-io_uring-3-32GB.data"   using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/ryzen_nvme/linear\_10-indexscan-off-0-sync-3-32GB.data"       using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_nvme/linear\_10-indexscan-off-0-worker-3-32GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/ryzen_nvme/linear\_10-indexscan-off-0-worker-12-32GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/ryzen_nvme/linear\_10-indexscan-off-0-worker-12-32GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/ryzen_nvme/linear\_10-indexscan-17-off-0-sync-0-32GB.data"     using 2:4 with points pt 7 ps 0.75 title "17"
 
 set title 'linear\_10 / indexscan (prefetch)'
 
@@ -122,7 +130,8 @@ set title 'linear\_10 / seqscan'
 plot "data/ryzen_nvme/linear\_10-seqscan-off-0-io_uring-3-32GB.data"     using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/ryzen_nvme/linear\_10-seqscan-off-0-sync-3-32GB.data"         using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_nvme/linear\_10-seqscan-off-0-worker-3-32GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/ryzen_nvme/linear\_10-seqscan-off-0-worker-12-32GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/ryzen_nvme/linear\_10-seqscan-off-0-worker-12-32GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/ryzen_nvme/linear\_10-seqscan-17-off-0-sync-0-32GB.data"       using 2:4 with points pt 7 ps 0.75 title "17"
 
 set title 'linear\_10 / smoothscan'
 
@@ -139,7 +148,8 @@ set ylabel 'duration'
 plot "data/ryzen_nvme/linear\_1-bitmapscan-off-0-io_uring-3-32GB.data"  using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/ryzen_nvme/linear\_1-bitmapscan-off-0-sync-3-32GB.data"      using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_nvme/linear\_1-bitmapscan-off-0-worker-3-32GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/ryzen_nvme/linear\_1-bitmapscan-off-0-worker-12-32GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/ryzen_nvme/linear\_1-bitmapscan-off-0-worker-12-32GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/ryzen_nvme/linear\_1-bitmapscan-17-off-0-sync-0-32GB.data"    using 2:4 with points pt 7 ps 0.75 title "17"
 
 unset ylabel
 
@@ -148,7 +158,8 @@ set title 'linear\_1 / indexscan'
 plot  "data/ryzen_nvme/linear\_1-indexscan-off-0-io_uring-3-32GB.data"   using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/ryzen_nvme/linear\_1-indexscan-off-0-sync-3-32GB.data"       using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_nvme/linear\_1-indexscan-off-0-worker-3-32GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/ryzen_nvme/linear\_1-indexscan-off-0-worker-12-32GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/ryzen_nvme/linear\_1-indexscan-off-0-worker-12-32GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/ryzen_nvme/linear\_1-indexscan-17-off-0-sync-0-32GB.data"     using 2:4 with points pt 7 ps 0.75 title "17"
 
 set title 'linear\_1 / indexscan (prefetch)'
 
@@ -162,7 +173,8 @@ set title 'linear\_1 / seqscan'
 plot "data/ryzen_nvme/linear\_1-seqscan-off-0-io_uring-3-32GB.data"     using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/ryzen_nvme/linear\_1-seqscan-off-0-sync-3-32GB.data"         using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_nvme/linear\_1-seqscan-off-0-worker-3-32GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/ryzen_nvme/linear\_1-seqscan-off-0-worker-12-32GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/ryzen_nvme/linear\_1-seqscan-off-0-worker-12-32GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/ryzen_nvme/linear\_1-seqscan-17-off-0-sync-0-32GB.data"       using 2:4 with points pt 7 ps 0.75 title "17"
 
 set title 'linear\_1 / smoothscan'
 
@@ -179,7 +191,8 @@ set ylabel 'duration'
 plot "data/ryzen_nvme/linear-bitmapscan-off-0-io_uring-3-32GB.data"  using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/ryzen_nvme/linear-bitmapscan-off-0-sync-3-32GB.data"      using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_nvme/linear-bitmapscan-off-0-worker-3-32GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/ryzen_nvme/linear-bitmapscan-off-0-worker-12-32GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/ryzen_nvme/linear-bitmapscan-off-0-worker-12-32GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/ryzen_nvme/linear-bitmapscan-17-off-0-sync-0-32GB.data"    using 2:4 with points pt 7 ps 0.75 title "17"
 
 unset ylabel
 
@@ -188,7 +201,8 @@ set title 'linear / indexscan'
 plot  "data/ryzen_nvme/linear-indexscan-off-0-io_uring-3-32GB.data"   using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/ryzen_nvme/linear-indexscan-off-0-sync-3-32GB.data"       using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_nvme/linear-indexscan-off-0-worker-3-32GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/ryzen_nvme/linear-indexscan-off-0-worker-12-32GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/ryzen_nvme/linear-indexscan-off-0-worker-12-32GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/ryzen_nvme/linear-indexscan-17-off-0-sync-0-32GB.data"     using 2:4 with points pt 7 ps 0.75 title "17"
 
 set title 'linear / indexscan (prefetch)'
 
@@ -202,7 +216,8 @@ set title 'linear / seqscan'
 plot "data/ryzen_nvme/linear-seqscan-off-0-io_uring-3-32GB.data"     using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/ryzen_nvme/linear-seqscan-off-0-sync-3-32GB.data"         using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_nvme/linear-seqscan-off-0-worker-3-32GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/ryzen_nvme/linear-seqscan-off-0-worker-12-32GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/ryzen_nvme/linear-seqscan-off-0-worker-12-32GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/ryzen_nvme/linear-seqscan-17-off-0-sync-0-32GB.data"       using 2:4 with points pt 7 ps 0.75 title "17"
 
 set title 'linear / smoothscan'
 
@@ -219,7 +234,8 @@ set ylabel 'duration'
 plot "data/ryzen_nvme/cyclic\_25-bitmapscan-off-0-io_uring-3-32GB.data"  using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/ryzen_nvme/cyclic\_25-bitmapscan-off-0-sync-3-32GB.data"      using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_nvme/cyclic\_25-bitmapscan-off-0-worker-3-32GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/ryzen_nvme/cyclic\_25-bitmapscan-off-0-worker-12-32GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/ryzen_nvme/cyclic\_25-bitmapscan-off-0-worker-12-32GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/ryzen_nvme/cyclic\_25-bitmapscan-17-off-0-sync-0-32GB.data"    using 2:4 with points pt 7 ps 0.75 title "17"
 
 unset ylabel
 
@@ -228,7 +244,8 @@ set title 'cyclic\_25 / indexscan'
 plot  "data/ryzen_nvme/cyclic\_25-indexscan-off-0-io_uring-3-32GB.data"   using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/ryzen_nvme/cyclic\_25-indexscan-off-0-sync-3-32GB.data"       using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_nvme/cyclic\_25-indexscan-off-0-worker-3-32GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/ryzen_nvme/cyclic\_25-indexscan-off-0-worker-12-32GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/ryzen_nvme/cyclic\_25-indexscan-off-0-worker-12-32GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/ryzen_nvme/cyclic\_25-indexscan-17-off-0-sync-0-32GB.data"     using 2:4 with points pt 7 ps 0.75 title "17"
 
 set title 'cyclic\_25 / indexscan (prefetch)'
 
@@ -242,7 +259,8 @@ set title 'cyclic\_25 / seqscan'
 plot "data/ryzen_nvme/cyclic\_25-seqscan-off-0-io_uring-3-32GB.data"     using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/ryzen_nvme/cyclic\_25-seqscan-off-0-sync-3-32GB.data"         using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_nvme/cyclic\_25-seqscan-off-0-worker-3-32GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/ryzen_nvme/cyclic\_25-seqscan-off-0-worker-12-32GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/ryzen_nvme/cyclic\_25-seqscan-off-0-worker-12-32GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/ryzen_nvme/cyclic\_25-seqscan-17-off-0-sync-0-32GB.data"       using 2:4 with points pt 7 ps 0.75 title "17"
 
 set title 'cyclic\_25 / smoothscan'
 
@@ -259,7 +277,8 @@ set ylabel 'duration'
 plot "data/ryzen_nvme/cyclic\_10-bitmapscan-off-0-io_uring-3-32GB.data"  using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/ryzen_nvme/cyclic\_10-bitmapscan-off-0-sync-3-32GB.data"      using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_nvme/cyclic\_10-bitmapscan-off-0-worker-3-32GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/ryzen_nvme/cyclic\_10-bitmapscan-off-0-worker-12-32GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/ryzen_nvme/cyclic\_10-bitmapscan-off-0-worker-12-32GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/ryzen_nvme/cyclic\_10-bitmapscan-17-off-0-sync-0-32GB.data"    using 2:4 with points pt 7 ps 0.75 title "17"
 
 unset ylabel
 
@@ -268,7 +287,8 @@ set title 'cyclic\_10 / indexscan'
 plot  "data/ryzen_nvme/cyclic\_10-indexscan-off-0-io_uring-3-32GB.data"   using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/ryzen_nvme/cyclic\_10-indexscan-off-0-sync-3-32GB.data"       using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_nvme/cyclic\_10-indexscan-off-0-worker-3-32GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/ryzen_nvme/cyclic\_10-indexscan-off-0-worker-12-32GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/ryzen_nvme/cyclic\_10-indexscan-off-0-worker-12-32GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/ryzen_nvme/cyclic\_10-indexscan-17-off-0-sync-0-32GB.data"     using 2:4 with points pt 7 ps 0.75 title "17"
 
 set title 'cyclic\_10 / indexscan (prefetch)'
 
@@ -282,7 +302,8 @@ set title 'cyclic\_10 / seqscan'
 plot "data/ryzen_nvme/cyclic\_10-seqscan-off-0-io_uring-3-32GB.data"     using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/ryzen_nvme/cyclic\_10-seqscan-off-0-sync-3-32GB.data"         using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_nvme/cyclic\_10-seqscan-off-0-worker-3-32GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/ryzen_nvme/cyclic\_10-seqscan-off-0-worker-12-32GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/ryzen_nvme/cyclic\_10-seqscan-off-0-worker-12-32GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/ryzen_nvme/cyclic\_10-seqscan-17-off-0-sync-0-32GB.data"       using 2:4 with points pt 7 ps 0.75 title "17"
 
 set title 'cyclic\_10 / smoothscan'
 
@@ -299,7 +320,8 @@ set ylabel 'duration'
 plot "data/ryzen_nvme/cyclic\_1-bitmapscan-off-0-io_uring-3-32GB.data"  using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/ryzen_nvme/cyclic\_1-bitmapscan-off-0-sync-3-32GB.data"      using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_nvme/cyclic\_1-bitmapscan-off-0-worker-3-32GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/ryzen_nvme/cyclic\_1-bitmapscan-off-0-worker-12-32GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/ryzen_nvme/cyclic\_1-bitmapscan-off-0-worker-12-32GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/ryzen_nvme/cyclic\_1-bitmapscan-17-off-0-sync-0-32GB.data"    using 2:4 with points pt 7 ps 0.75 title "17"
 
 unset ylabel
 
@@ -308,7 +330,8 @@ set title 'cyclic\_1 / indexscan'
 plot  "data/ryzen_nvme/cyclic\_1-indexscan-off-0-io_uring-3-32GB.data"   using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/ryzen_nvme/cyclic\_1-indexscan-off-0-sync-3-32GB.data"       using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_nvme/cyclic\_1-indexscan-off-0-worker-3-32GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/ryzen_nvme/cyclic\_1-indexscan-off-0-worker-12-32GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/ryzen_nvme/cyclic\_1-indexscan-off-0-worker-12-32GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/ryzen_nvme/cyclic\_1-indexscan-17-off-0-sync-0-32GB.data"     using 2:4 with points pt 7 ps 0.75 title "17"
 
 set title 'cyclic\_1 / indexscan (prefetch)'
 
@@ -322,7 +345,8 @@ set title 'cyclic\_1 / seqscan'
 plot "data/ryzen_nvme/cyclic\_1-seqscan-off-0-io_uring-3-32GB.data"     using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/ryzen_nvme/cyclic\_1-seqscan-off-0-sync-3-32GB.data"         using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_nvme/cyclic\_1-seqscan-off-0-worker-3-32GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/ryzen_nvme/cyclic\_1-seqscan-off-0-worker-12-32GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/ryzen_nvme/cyclic\_1-seqscan-off-0-worker-12-32GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/ryzen_nvme/cyclic\_1-seqscan-17-off-0-sync-0-32GB.data"       using 2:4 with points pt 7 ps 0.75 title "17"
 
 set title 'cyclic\_1 / smoothscan'
 
@@ -339,7 +363,8 @@ set ylabel 'duration'
 plot "data/ryzen_nvme/cyclic-bitmapscan-off-0-io_uring-3-32GB.data"  using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/ryzen_nvme/cyclic-bitmapscan-off-0-sync-3-32GB.data"      using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_nvme/cyclic-bitmapscan-off-0-worker-3-32GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/ryzen_nvme/cyclic-bitmapscan-off-0-worker-12-32GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/ryzen_nvme/cyclic-bitmapscan-off-0-worker-12-32GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/ryzen_nvme/cyclic-bitmapscan-17-off-0-sync-0-32GB.data"    using 2:4 with points pt 7 ps 0.75 title "17"
 
 unset ylabel
 
@@ -348,7 +373,8 @@ set title 'cyclic / indexscan'
 plot  "data/ryzen_nvme/cyclic-indexscan-off-0-io_uring-3-32GB.data"   using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/ryzen_nvme/cyclic-indexscan-off-0-sync-3-32GB.data"       using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_nvme/cyclic-indexscan-off-0-worker-3-32GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/ryzen_nvme/cyclic-indexscan-off-0-worker-12-32GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/ryzen_nvme/cyclic-indexscan-off-0-worker-12-32GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/ryzen_nvme/cyclic-indexscan-17-off-0-sync-0-32GB.data"     using 2:4 with points pt 7 ps 0.75 title "17"
 
 set title 'cyclic / indexscan (prefetch)'
 
@@ -362,7 +388,8 @@ set title 'cyclic / seqscan'
 plot "data/ryzen_nvme/cyclic-seqscan-off-0-io_uring-3-32GB.data"     using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/ryzen_nvme/cyclic-seqscan-off-0-sync-3-32GB.data"         using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/ryzen_nvme/cyclic-seqscan-off-0-worker-3-32GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/ryzen_nvme/cyclic-seqscan-off-0-worker-12-32GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/ryzen_nvme/cyclic-seqscan-off-0-worker-12-32GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/ryzen_nvme/cyclic-seqscan-17-off-0-sync-0-32GB.data"       using 2:4 with points pt 7 ps 0.75 title "17"
 
 set title 'cyclic / smoothscan'
 

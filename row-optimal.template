@@ -2,10 +2,16 @@ set ylabel 'duration'
 
 plot "data/MACHINE/DATASET-indexscan-off-EIC-BUFFERS-no.data"    using 1:Y with points pt 7 ps 0.75 lc rgb "#ffcccc" title "indexscan", \
      "data/MACHINE/DATASET-indexscan-on-EIC-BUFFERS-no.data"    using 1:Y with points pt 7 ps 0.75 lc rgb "#ffeecc" title "indexscan prefetch", \
+     "data/MACHINE/DATASET-indexscan-17-off-EIC-BUFFERS-no.data"    using 1:Y with points pt 6 ps 0.75 lc rgb "#ffeeee" title "indexscan (17)", \
      "data/MACHINE/DATASET-bitmapscan-off-EIC-BUFFERS-no.data"   using 1:Y with points pt 7 ps 0.75 lc rgb "#cceecc" title "bitmapscan", \
+     "data/MACHINE/DATASET-bitmapscan-17-off-EIC-BUFFERS-no.data"   using 1:Y with points pt 6 ps 0.75 lc rgb "#cceeee" title "bitmapscan (17)", \
      "data/MACHINE/DATASET-seqscan-off-EIC-BUFFERS-no.data"      using 1:Y with points pt 7 ps 0.75 lc rgb "#ccddff" title "seqscan", \
+     "data/MACHINE/DATASET-seqscan-17-off-EIC-BUFFERS-no.data"      using 1:Y with points pt 6 ps 0.75 lc rgb "#ccdddd" title "seqscan (17)", \
      "data/MACHINE/DATASET-smoothscan-off-EIC-BUFFERS-no.data"   using 1:Y with points pt 7 ps 0.75 lc rgb "#dddddd" title "smoothscan", \
      "data/MACHINE/DATASET-indexscan-off-EIC-BUFFERS-yes.data"   using 1:Y with points pt 7 ps 0.75 lc rgb "#cc0000" title "indexscan (optimal)", \
+     "data/MACHINE/DATASET-indexscan-17-off-EIC-BUFFERS-yes.data"   using 1:Y with points pt 6 ps 0.75 lc rgb "#cc5555" title "indexscan (17, optimal)", \
      "data/MACHINE/DATASET-indexscan-on-EIC-BUFFERS-yes.data"   using 1:Y with points pt 7 ps 0.75 lc rgb "#eeaa00" title "indexscan prefetch (optimal)", \
      "data/MACHINE/DATASET-bitmapscan-off-EIC-BUFFERS-yes.data"  using 1:Y with points pt 7 ps 0.75 lc rgb "#00bb00" title "bitmapscan (optimal)", \
-     "data/MACHINE/DATASET-seqscan-off-EIC-BUFFERS-yes.data"     using 1:Y with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)"
+     "data/MACHINE/DATASET-bitmapscan-17-off-EIC-BUFFERS-yes.data"  using 1:Y with points pt 6 ps 0.75 lc rgb "#55bb55" title "bitmapscan (17, optimal)", \
+     "data/MACHINE/DATASET-seqscan-off-EIC-BUFFERS-yes.data"     using 1:Y with points pt 7 ps 0.75 lc rgb "#0000cc" title "seqscan (optimal)", \
+     "data/MACHINE/DATASET-seqscan-17-off-EIC-BUFFERS-yes.data"     using 1:Y with points pt 6 ps 0.75 lc rgb "#5555cc" title "seqscan (17, optimal)"

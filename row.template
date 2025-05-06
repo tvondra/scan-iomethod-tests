@@ -5,7 +5,8 @@ set ylabel 'duration'
 plot "data/MACHINE/DATASET-bitmapscan-off-EIC-io_uring-3-BUFFERS.data"  using X:Y with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/MACHINE/DATASET-bitmapscan-off-EIC-sync-3-BUFFERS.data"      using X:Y with points pt 7 ps 0.75 title "sync", \
      "data/MACHINE/DATASET-bitmapscan-off-EIC-worker-3-BUFFERS.data"    using X:Y with points pt 7 ps 0.75 title "worker", \
-     "data/MACHINE/DATASET-bitmapscan-off-EIC-worker-12-BUFFERS.data"    using X:Y with points pt 7 ps 0.75 title "worker (12)"
+     "data/MACHINE/DATASET-bitmapscan-off-EIC-worker-12-BUFFERS.data"    using X:Y with points pt 7 ps 0.75 title "worker (12)", \
+     "data/MACHINE/DATASET-bitmapscan-17-off-EIC-sync-0-BUFFERS.data"    using X:Y with points pt 7 ps 0.75 title "17"
 
 unset ylabel
 
@@ -14,7 +15,8 @@ set title 'DATASET / indexscan'
 plot  "data/MACHINE/DATASET-indexscan-off-EIC-io_uring-3-BUFFERS.data"   using X:Y with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/MACHINE/DATASET-indexscan-off-EIC-sync-3-BUFFERS.data"       using X:Y with points pt 7 ps 0.75 title "sync", \
      "data/MACHINE/DATASET-indexscan-off-EIC-worker-3-BUFFERS.data"     using X:Y with points pt 7 ps 0.75 title "worker", \
-     "data/MACHINE/DATASET-indexscan-off-EIC-worker-12-BUFFERS.data"     using X:Y with points pt 7 ps 0.75 title "worker (12)"
+     "data/MACHINE/DATASET-indexscan-off-EIC-worker-12-BUFFERS.data"     using X:Y with points pt 7 ps 0.75 title "worker (12)", \
+     "data/MACHINE/DATASET-indexscan-17-off-EIC-sync-0-BUFFERS.data"     using X:Y with points pt 7 ps 0.75 title "17"
 
 set title 'DATASET / indexscan (prefetch)'
 
@@ -28,7 +30,8 @@ set title 'DATASET / seqscan'
 plot "data/MACHINE/DATASET-seqscan-off-EIC-io_uring-3-BUFFERS.data"     using X:Y with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/MACHINE/DATASET-seqscan-off-EIC-sync-3-BUFFERS.data"         using X:Y with points pt 7 ps 0.75 title "sync", \
      "data/MACHINE/DATASET-seqscan-off-EIC-worker-3-BUFFERS.data"       using X:Y with points pt 7 ps 0.75 title "worker", \
-     "data/MACHINE/DATASET-seqscan-off-EIC-worker-12-BUFFERS.data"       using X:Y with points pt 7 ps 0.75 title "worker (12)"
+     "data/MACHINE/DATASET-seqscan-off-EIC-worker-12-BUFFERS.data"       using X:Y with points pt 7 ps 0.75 title "worker (12)", \
+     "data/MACHINE/DATASET-seqscan-17-off-EIC-sync-0-BUFFERS.data"       using X:Y with points pt 7 ps 0.75 title "17"
 
 set title 'DATASET / smoothscan'
 

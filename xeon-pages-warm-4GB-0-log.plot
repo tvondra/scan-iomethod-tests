@@ -11,7 +11,7 @@ set key bottom right
 set xlabel 'selectivity'
 
 set multiplot layout 9,5 rowsfirst
-set xrange[0.0143999884800092:100]
+set xrange[0.0131399894880084:100]
 set yrange[0.01:23232.677]
 set title 'uniform / bitmapscan' font 'Verdana Bold,12'
 
@@ -20,7 +20,8 @@ set ylabel 'duration'
 plot "data/xeon/uniform-bitmapscan-off-0-io_uring-3-4GB.data"  using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/xeon/uniform-bitmapscan-off-0-sync-3-4GB.data"      using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/uniform-bitmapscan-off-0-worker-3-4GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/xeon/uniform-bitmapscan-off-0-worker-12-4GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/xeon/uniform-bitmapscan-off-0-worker-12-4GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/xeon/uniform-bitmapscan-17-off-0-sync-0-4GB.data"    using 2:4 with points pt 7 ps 0.75 title "17"
 
 unset ylabel
 
@@ -29,7 +30,8 @@ set title 'uniform / indexscan'
 plot  "data/xeon/uniform-indexscan-off-0-io_uring-3-4GB.data"   using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/xeon/uniform-indexscan-off-0-sync-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/uniform-indexscan-off-0-worker-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/xeon/uniform-indexscan-off-0-worker-12-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/xeon/uniform-indexscan-off-0-worker-12-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/xeon/uniform-indexscan-17-off-0-sync-0-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "17"
 
 set title 'uniform / indexscan (prefetch)'
 
@@ -43,7 +45,8 @@ set title 'uniform / seqscan'
 plot "data/xeon/uniform-seqscan-off-0-io_uring-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/xeon/uniform-seqscan-off-0-sync-3-4GB.data"         using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/uniform-seqscan-off-0-worker-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/xeon/uniform-seqscan-off-0-worker-12-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/xeon/uniform-seqscan-off-0-worker-12-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/xeon/uniform-seqscan-17-off-0-sync-0-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "17"
 
 set title 'uniform / smoothscan'
 
@@ -60,7 +63,8 @@ set ylabel 'duration'
 plot "data/xeon/linear\_25-bitmapscan-off-0-io_uring-3-4GB.data"  using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/xeon/linear\_25-bitmapscan-off-0-sync-3-4GB.data"      using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/linear\_25-bitmapscan-off-0-worker-3-4GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/xeon/linear\_25-bitmapscan-off-0-worker-12-4GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/xeon/linear\_25-bitmapscan-off-0-worker-12-4GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/xeon/linear\_25-bitmapscan-17-off-0-sync-0-4GB.data"    using 2:4 with points pt 7 ps 0.75 title "17"
 
 unset ylabel
 
@@ -69,7 +73,8 @@ set title 'linear\_25 / indexscan'
 plot  "data/xeon/linear\_25-indexscan-off-0-io_uring-3-4GB.data"   using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/xeon/linear\_25-indexscan-off-0-sync-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/linear\_25-indexscan-off-0-worker-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/xeon/linear\_25-indexscan-off-0-worker-12-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/xeon/linear\_25-indexscan-off-0-worker-12-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/xeon/linear\_25-indexscan-17-off-0-sync-0-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "17"
 
 set title 'linear\_25 / indexscan (prefetch)'
 
@@ -83,7 +88,8 @@ set title 'linear\_25 / seqscan'
 plot "data/xeon/linear\_25-seqscan-off-0-io_uring-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/xeon/linear\_25-seqscan-off-0-sync-3-4GB.data"         using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/linear\_25-seqscan-off-0-worker-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/xeon/linear\_25-seqscan-off-0-worker-12-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/xeon/linear\_25-seqscan-off-0-worker-12-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/xeon/linear\_25-seqscan-17-off-0-sync-0-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "17"
 
 set title 'linear\_25 / smoothscan'
 
@@ -100,7 +106,8 @@ set ylabel 'duration'
 plot "data/xeon/linear\_10-bitmapscan-off-0-io_uring-3-4GB.data"  using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/xeon/linear\_10-bitmapscan-off-0-sync-3-4GB.data"      using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/linear\_10-bitmapscan-off-0-worker-3-4GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/xeon/linear\_10-bitmapscan-off-0-worker-12-4GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/xeon/linear\_10-bitmapscan-off-0-worker-12-4GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/xeon/linear\_10-bitmapscan-17-off-0-sync-0-4GB.data"    using 2:4 with points pt 7 ps 0.75 title "17"
 
 unset ylabel
 
@@ -109,7 +116,8 @@ set title 'linear\_10 / indexscan'
 plot  "data/xeon/linear\_10-indexscan-off-0-io_uring-3-4GB.data"   using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/xeon/linear\_10-indexscan-off-0-sync-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/linear\_10-indexscan-off-0-worker-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/xeon/linear\_10-indexscan-off-0-worker-12-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/xeon/linear\_10-indexscan-off-0-worker-12-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/xeon/linear\_10-indexscan-17-off-0-sync-0-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "17"
 
 set title 'linear\_10 / indexscan (prefetch)'
 
@@ -123,7 +131,8 @@ set title 'linear\_10 / seqscan'
 plot "data/xeon/linear\_10-seqscan-off-0-io_uring-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/xeon/linear\_10-seqscan-off-0-sync-3-4GB.data"         using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/linear\_10-seqscan-off-0-worker-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/xeon/linear\_10-seqscan-off-0-worker-12-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/xeon/linear\_10-seqscan-off-0-worker-12-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/xeon/linear\_10-seqscan-17-off-0-sync-0-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "17"
 
 set title 'linear\_10 / smoothscan'
 
@@ -140,7 +149,8 @@ set ylabel 'duration'
 plot "data/xeon/linear\_1-bitmapscan-off-0-io_uring-3-4GB.data"  using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/xeon/linear\_1-bitmapscan-off-0-sync-3-4GB.data"      using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/linear\_1-bitmapscan-off-0-worker-3-4GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/xeon/linear\_1-bitmapscan-off-0-worker-12-4GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/xeon/linear\_1-bitmapscan-off-0-worker-12-4GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/xeon/linear\_1-bitmapscan-17-off-0-sync-0-4GB.data"    using 2:4 with points pt 7 ps 0.75 title "17"
 
 unset ylabel
 
@@ -149,7 +159,8 @@ set title 'linear\_1 / indexscan'
 plot  "data/xeon/linear\_1-indexscan-off-0-io_uring-3-4GB.data"   using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/xeon/linear\_1-indexscan-off-0-sync-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/linear\_1-indexscan-off-0-worker-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/xeon/linear\_1-indexscan-off-0-worker-12-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/xeon/linear\_1-indexscan-off-0-worker-12-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/xeon/linear\_1-indexscan-17-off-0-sync-0-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "17"
 
 set title 'linear\_1 / indexscan (prefetch)'
 
@@ -163,7 +174,8 @@ set title 'linear\_1 / seqscan'
 plot "data/xeon/linear\_1-seqscan-off-0-io_uring-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/xeon/linear\_1-seqscan-off-0-sync-3-4GB.data"         using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/linear\_1-seqscan-off-0-worker-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/xeon/linear\_1-seqscan-off-0-worker-12-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/xeon/linear\_1-seqscan-off-0-worker-12-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/xeon/linear\_1-seqscan-17-off-0-sync-0-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "17"
 
 set title 'linear\_1 / smoothscan'
 
@@ -180,7 +192,8 @@ set ylabel 'duration'
 plot "data/xeon/linear-bitmapscan-off-0-io_uring-3-4GB.data"  using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/xeon/linear-bitmapscan-off-0-sync-3-4GB.data"      using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/linear-bitmapscan-off-0-worker-3-4GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/xeon/linear-bitmapscan-off-0-worker-12-4GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/xeon/linear-bitmapscan-off-0-worker-12-4GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/xeon/linear-bitmapscan-17-off-0-sync-0-4GB.data"    using 2:4 with points pt 7 ps 0.75 title "17"
 
 unset ylabel
 
@@ -189,7 +202,8 @@ set title 'linear / indexscan'
 plot  "data/xeon/linear-indexscan-off-0-io_uring-3-4GB.data"   using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/xeon/linear-indexscan-off-0-sync-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/linear-indexscan-off-0-worker-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/xeon/linear-indexscan-off-0-worker-12-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/xeon/linear-indexscan-off-0-worker-12-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/xeon/linear-indexscan-17-off-0-sync-0-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "17"
 
 set title 'linear / indexscan (prefetch)'
 
@@ -203,7 +217,8 @@ set title 'linear / seqscan'
 plot "data/xeon/linear-seqscan-off-0-io_uring-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/xeon/linear-seqscan-off-0-sync-3-4GB.data"         using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/linear-seqscan-off-0-worker-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/xeon/linear-seqscan-off-0-worker-12-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/xeon/linear-seqscan-off-0-worker-12-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/xeon/linear-seqscan-17-off-0-sync-0-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "17"
 
 set title 'linear / smoothscan'
 
@@ -220,7 +235,8 @@ set ylabel 'duration'
 plot "data/xeon/cyclic\_25-bitmapscan-off-0-io_uring-3-4GB.data"  using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/xeon/cyclic\_25-bitmapscan-off-0-sync-3-4GB.data"      using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/cyclic\_25-bitmapscan-off-0-worker-3-4GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/xeon/cyclic\_25-bitmapscan-off-0-worker-12-4GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/xeon/cyclic\_25-bitmapscan-off-0-worker-12-4GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/xeon/cyclic\_25-bitmapscan-17-off-0-sync-0-4GB.data"    using 2:4 with points pt 7 ps 0.75 title "17"
 
 unset ylabel
 
@@ -229,7 +245,8 @@ set title 'cyclic\_25 / indexscan'
 plot  "data/xeon/cyclic\_25-indexscan-off-0-io_uring-3-4GB.data"   using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/xeon/cyclic\_25-indexscan-off-0-sync-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/cyclic\_25-indexscan-off-0-worker-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/xeon/cyclic\_25-indexscan-off-0-worker-12-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/xeon/cyclic\_25-indexscan-off-0-worker-12-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/xeon/cyclic\_25-indexscan-17-off-0-sync-0-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "17"
 
 set title 'cyclic\_25 / indexscan (prefetch)'
 
@@ -243,7 +260,8 @@ set title 'cyclic\_25 / seqscan'
 plot "data/xeon/cyclic\_25-seqscan-off-0-io_uring-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/xeon/cyclic\_25-seqscan-off-0-sync-3-4GB.data"         using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/cyclic\_25-seqscan-off-0-worker-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/xeon/cyclic\_25-seqscan-off-0-worker-12-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/xeon/cyclic\_25-seqscan-off-0-worker-12-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/xeon/cyclic\_25-seqscan-17-off-0-sync-0-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "17"
 
 set title 'cyclic\_25 / smoothscan'
 
@@ -260,7 +278,8 @@ set ylabel 'duration'
 plot "data/xeon/cyclic\_10-bitmapscan-off-0-io_uring-3-4GB.data"  using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/xeon/cyclic\_10-bitmapscan-off-0-sync-3-4GB.data"      using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/cyclic\_10-bitmapscan-off-0-worker-3-4GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/xeon/cyclic\_10-bitmapscan-off-0-worker-12-4GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/xeon/cyclic\_10-bitmapscan-off-0-worker-12-4GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/xeon/cyclic\_10-bitmapscan-17-off-0-sync-0-4GB.data"    using 2:4 with points pt 7 ps 0.75 title "17"
 
 unset ylabel
 
@@ -269,7 +288,8 @@ set title 'cyclic\_10 / indexscan'
 plot  "data/xeon/cyclic\_10-indexscan-off-0-io_uring-3-4GB.data"   using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/xeon/cyclic\_10-indexscan-off-0-sync-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/cyclic\_10-indexscan-off-0-worker-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/xeon/cyclic\_10-indexscan-off-0-worker-12-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/xeon/cyclic\_10-indexscan-off-0-worker-12-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/xeon/cyclic\_10-indexscan-17-off-0-sync-0-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "17"
 
 set title 'cyclic\_10 / indexscan (prefetch)'
 
@@ -283,7 +303,8 @@ set title 'cyclic\_10 / seqscan'
 plot "data/xeon/cyclic\_10-seqscan-off-0-io_uring-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/xeon/cyclic\_10-seqscan-off-0-sync-3-4GB.data"         using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/cyclic\_10-seqscan-off-0-worker-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/xeon/cyclic\_10-seqscan-off-0-worker-12-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/xeon/cyclic\_10-seqscan-off-0-worker-12-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/xeon/cyclic\_10-seqscan-17-off-0-sync-0-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "17"
 
 set title 'cyclic\_10 / smoothscan'
 
@@ -291,7 +312,7 @@ plot "data/xeon/cyclic\_10-smoothscan-off-0-io_uring-3-4GB.data"     using 2:4 w
      "data/xeon/cyclic\_10-smoothscan-off-0-sync-3-4GB.data"         using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/cyclic\_10-smoothscan-off-0-worker-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker", \
      "data/xeon/cyclic\_10-smoothscan-off-0-worker-12-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)"
-set xrange[0.0107999913600069:100]
+set xrange[0.00845999323200541:100]
 set yrange[0.01:18181.919]
 set title 'cyclic\_1 / bitmapscan' font 'Verdana Bold,12'
 
@@ -300,7 +321,8 @@ set ylabel 'duration'
 plot "data/xeon/cyclic\_1-bitmapscan-off-0-io_uring-3-4GB.data"  using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/xeon/cyclic\_1-bitmapscan-off-0-sync-3-4GB.data"      using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/cyclic\_1-bitmapscan-off-0-worker-3-4GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/xeon/cyclic\_1-bitmapscan-off-0-worker-12-4GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/xeon/cyclic\_1-bitmapscan-off-0-worker-12-4GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/xeon/cyclic\_1-bitmapscan-17-off-0-sync-0-4GB.data"    using 2:4 with points pt 7 ps 0.75 title "17"
 
 unset ylabel
 
@@ -309,7 +331,8 @@ set title 'cyclic\_1 / indexscan'
 plot  "data/xeon/cyclic\_1-indexscan-off-0-io_uring-3-4GB.data"   using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/xeon/cyclic\_1-indexscan-off-0-sync-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/cyclic\_1-indexscan-off-0-worker-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/xeon/cyclic\_1-indexscan-off-0-worker-12-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/xeon/cyclic\_1-indexscan-off-0-worker-12-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/xeon/cyclic\_1-indexscan-17-off-0-sync-0-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "17"
 
 set title 'cyclic\_1 / indexscan (prefetch)'
 
@@ -323,7 +346,8 @@ set title 'cyclic\_1 / seqscan'
 plot "data/xeon/cyclic\_1-seqscan-off-0-io_uring-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/xeon/cyclic\_1-seqscan-off-0-sync-3-4GB.data"         using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/cyclic\_1-seqscan-off-0-worker-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/xeon/cyclic\_1-seqscan-off-0-worker-12-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/xeon/cyclic\_1-seqscan-off-0-worker-12-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/xeon/cyclic\_1-seqscan-17-off-0-sync-0-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "17"
 
 set title 'cyclic\_1 / smoothscan'
 
@@ -340,7 +364,8 @@ set ylabel 'duration'
 plot "data/xeon/cyclic-bitmapscan-off-0-io_uring-3-4GB.data"  using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/xeon/cyclic-bitmapscan-off-0-sync-3-4GB.data"      using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/cyclic-bitmapscan-off-0-worker-3-4GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/xeon/cyclic-bitmapscan-off-0-worker-12-4GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/xeon/cyclic-bitmapscan-off-0-worker-12-4GB.data"    using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/xeon/cyclic-bitmapscan-17-off-0-sync-0-4GB.data"    using 2:4 with points pt 7 ps 0.75 title "17"
 
 unset ylabel
 
@@ -349,7 +374,8 @@ set title 'cyclic / indexscan'
 plot  "data/xeon/cyclic-indexscan-off-0-io_uring-3-4GB.data"   using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/xeon/cyclic-indexscan-off-0-sync-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/cyclic-indexscan-off-0-worker-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/xeon/cyclic-indexscan-off-0-worker-12-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/xeon/cyclic-indexscan-off-0-worker-12-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/xeon/cyclic-indexscan-17-off-0-sync-0-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "17"
 
 set title 'cyclic / indexscan (prefetch)'
 
@@ -363,7 +389,8 @@ set title 'cyclic / seqscan'
 plot "data/xeon/cyclic-seqscan-off-0-io_uring-3-4GB.data"     using 2:4 with points pt 7 ps 0.75 title "io\\\_uring", \
      "data/xeon/cyclic-seqscan-off-0-sync-3-4GB.data"         using 2:4 with points pt 7 ps 0.75 title "sync", \
      "data/xeon/cyclic-seqscan-off-0-worker-3-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker", \
-     "data/xeon/cyclic-seqscan-off-0-worker-12-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)"
+     "data/xeon/cyclic-seqscan-off-0-worker-12-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "worker (12)", \
+     "data/xeon/cyclic-seqscan-17-off-0-sync-0-4GB.data"       using 2:4 with points pt 7 ps 0.75 title "17"
 
 set title 'cyclic / smoothscan'
 
